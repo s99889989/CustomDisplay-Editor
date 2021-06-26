@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.daxton'
+version = '1.0-SNAPSHOT'
+description = 'Main'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    compile 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    //compile fileTree(dir: 'lib', include: ['spigot-1.16.5.jar'])
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.daxton.Main'
+        )
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    into('assets') {
+        from 'assets'
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
