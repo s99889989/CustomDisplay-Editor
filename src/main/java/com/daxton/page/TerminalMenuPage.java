@@ -4,10 +4,12 @@ import com.daxton.Main;
 import com.daxton.controller.ClassMenu;
 import com.daxton.controller.TerminalMenu;
 import com.daxton.function.Manager;
+import com.daxton.terminal.CmdMain;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
@@ -30,6 +32,7 @@ public class TerminalMenuPage {
             Parent root = loader.load();
 
             Main.mainWindows.setTitle("CustomDisplay-編輯器");
+            Main.mainWindows.setOnCloseRequest(event -> CmdMain.forcedEnd());
             Scene scene = new Scene(root);
             scene.getStylesheets().add("resource/style.css");
             Main.mainWindows.getIcons().add(new Image(Main.resourcePath+"/icon.png"));
@@ -47,8 +50,18 @@ public class TerminalMenuPage {
 
     public static void print(String message){
         TerminalMenu terminalMenu = (TerminalMenu) Manager.controller_Map.get("TerminalMenu");
-        terminalMenu.message.setText(terminalMenu.message.getText()+"\n"+message);
+        terminalMenu.message.appendText(message+"\n");
+        //terminalMenu.message.setText(terminalMenu.message.getText()+"\n"+message);
+        //terminalMenu.message.setScrollTop(terminalMenu.message.getText().length()+2);
+        //terminalMenu.message.caretPositionProperty();
+    }
 
+    public static void enter(){
+        TerminalMenu terminalMenu = (TerminalMenu) Manager.controller_Map.get("TerminalMenu");
+        TextField textField = terminalMenu.inputText;
+        print("[指令]: "+textField.getText());
+        CmdMain.command(textField.getText());
+        textField.clear();
     }
 
 }

@@ -1,79 +1,95 @@
 package com.daxton.terminal;
 
 import com.daxton.page.TerminalMenuPage;
+import javafx.application.Platform;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class CmdMain {
 
-    public static void runrun2(){
-        //String cmd = "ipconfig";
-        String cmd = "cmd /c start  "+System.getProperty("user.dir")+"/RunServer.bat";
-        //String cmd = "-d64 -server -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+UseStringDeduplication -Xms1G -Xmx1G -Dfile.encoding=UTF-8 -XX:hashCode=5 -jar paper-1.16.5-778.jar";
-        try {
-            Process process = Runtime.getRuntime().exec(cmd);
-            InputStream is = process.getInputStream();
-            InputStreamReader isr = new InputStreamReader(is);
-            BufferedReader br = new BufferedReader(isr);
-            String content = br.readLine();
-            while (content != null) {
-                //System.out.println(content);
-                TerminalMenuPage.print(content);
-                content = br.readLine();
+    public static Process process;
+
+    public static String message;
+    //開啟伺服器
+    public static void startServer(){
+        String cmd6 = "java -jar ./paper-1.16.5-778.jar nogui";
+        if(process == null){
+            try {
+                process = Runtime.getRuntime().exec(cmd6);
+                new Thread(() -> {
+                    try {
+                        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                        String content = br.readLine();
+                        while (content != null) {
+                            message = content;
+                            Platform.runLater(()-> { TerminalMenuPage.print(message);});
+                            content = br.readLine();
+                        }
+                    }catch (IOException exception) {
+                        exception.printStackTrace();
+                    }
+                }).start();
+
+            } catch (IOException exception) {
+                exception.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+
+    }
+    //停止伺服器
+    public static void stopServer(){
+        if(process != null){
+            try {
+                BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+                br.write("stop"+"\n");
+                br.flush();
+            }catch (IOException exception){
+                exception.printStackTrace();
+            }
+        }
+
+
+    }
+
+    public static void command(String command){
+        if(process != null){
+            try {
+
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+                bufferedWriter.write(command+"\n");
+                //bufferedWriter.newLine();
+                bufferedWriter.flush();
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
         }
 
     }
 
-    public static void runrun(){
-        TerminalMenuPage.print("開始");
-// 執行批處理檔案
-        //String strcmd = "cmd /c start  E:\\run.bat";
-        String strcmd = "cmd /c start  "+System.getProperty("user.dir")+"/RunServer.bat";
-        Runtime rt = Runtime.getRuntime();
-        Process ps = null;
-        try {
-            ps = rt.exec(strcmd);
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        try {
-            ps.waitFor();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
-            InputStream child_in = ps.getInputStream();
-            int c;
-            while ((c = child_in.read()) != -1) {
-                //System.out.print((char)c);
-                char cc = (char)c;
-                String mm = String.valueOf(c);
-                TerminalMenuPage.print(mm);
-            }
-        }catch (IOException e) {
-            //
-        }
-        int i = ps.exitValue();
-        if (i == 0) {
-            System.out.println("執行完成.");
-        } else {
-            System.out.println("執行失敗.");
-        }
-        ps.destroy();
-        ps = null;
 
 
-        // 批處理執行完後，根據cmd.exe程序名稱
-        // kill掉cmd視窗
-        new CmdMain().killProcess();
+    public static void forcedEnd(){
+        if(process != null){
+            process.destroy();
+        }
     }
+
+    public static void restopRun(){
+        try {
+            BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+            br.write("stop");
+            br.flush();
+            br.close();
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
+        if(process.isAlive()){
+            TerminalMenuPage.print("伺服器執行中!");
+        }
+
+    }
+
+
 
     public void killProcess() {
         Runtime rt = Runtime.getRuntime();
