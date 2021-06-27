@@ -20,10 +20,16 @@
                         <MenuItem mnemonicParsing="false" text="%top-file-exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%top-edit">
+                <Menu mnemonicParsing="false" text="%top-function">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="%top-edit-class" />
-                        <MenuItem mnemonicParsing="false" onAction="#openSkillMenu" text="%top-edit-skill" />
+                        <MenuItem mnemonicParsing="false" onAction="#openServerMenu" text="%top-function-server" />
+                        <MenuItem mnemonicParsing="false" onAction="#openClassMenu" text="%top-function-class" />
+                        <MenuItem mnemonicParsing="false" onAction="#openSkillMenu" text="%top-function-skill" />
+                        <MenuItem mnemonicParsing="false" onAction="#openActionMenu" text="%top-function-action" />
+                        <MenuItem mnemonicParsing="false" onAction="#opCharacterMenu" text="%top-function-character" />
+                        <MenuItem mnemonicParsing="false" onAction="#opGUIMenu" text="%top-function-gui" />
+                        <MenuItem mnemonicParsing="false" onAction="#openItemsMenu" text="%top-function-items" />
+                        <MenuItem mnemonicParsing="false" onAction="#openTextureMenu" text="%top-function-texture" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="%top-help">
@@ -35,21 +41,41 @@
         </MenuBar>
     </top>
     <center>
-        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
             <children>
-                <VBox prefHeight="742.0" prefWidth="142.0" spacing="10.0">
+                <VBox prefHeight="742.0" prefWidth="166.0" spacing="10.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#start" text="開始" />
-                        <Button mnemonicParsing="false" onAction="#stop" text="停止" />
-                        <Button mnemonicParsing="false" onAction="#restart" text="重新啟動" />
-                        <Button mnemonicParsing="false" onAction="#forcedEnd" text="強制結束" />
+                        <HBox prefHeight="30.0" prefWidth="142.0" spacing="10.0">
+                            <children>
+                                <Label text="%server-status">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Text fx:id="state" fill="#9e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="%server-close" wrappingWidth="54.0">
+                                    <HBox.margin>
+                                        <Insets top="2.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#start" text="%server-start" />
+                        <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#stop" text="%server-stop" />
+                        <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#restart" text="%server-restart" />
+                        <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#forcedEnd" text="%server-forced-end" />
                         <Label text="CustomDisplay" />
-                        <Button mnemonicParsing="false" onAction="#cdreload" text="reload" />
+                        <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#cdreload" text="%server-customdisplay-reload"/>
                     </children>
                 </VBox>
                 <VBox prefHeight="742.0" prefWidth="1094.0" spacing="10.0">
                     <children>
-                        <TextArea fx:id="message" prefHeight="686.0" prefWidth="1066.0" wrapText="true" />
+                        <TextArea fx:id="message" prefHeight="686.0" prefWidth="1066.0" wrapText="true">
+                            <font>
+                                <Font size="20.0" />
+                            </font></TextArea>
                         <HBox prefHeight="50.0" prefWidth="1140.0" spacing="10.0">
                             <children>
                                 <TextField fx:id="inputText" onKeyPressed="#onEnter" prefHeight="36.0" prefWidth="1139.0" />

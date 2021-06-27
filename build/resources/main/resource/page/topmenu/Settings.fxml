@@ -6,21 +6,41 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="555.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.topmenu.Settings">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="555.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.topmenu.Settings">
     <children>
         <Label text="設置">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <HBox prefHeight="115.0" prefWidth="535.0" spacing="10.0">
+        <HBox prefHeight="94.0" prefWidth="535.0" spacing="10.0">
             <children>
-                <Label text="語言">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="languageList" prefWidth="150.0" />
+                <VBox prefHeight="171.0" prefWidth="98.0" spacing="10.0">
+                    <children>
+                        <Label text="語言">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label text="啟動參數">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </VBox>
+                <VBox prefHeight="171.0" prefWidth="425.0" spacing="8.0">
+                    <children>
+                        <ChoiceBox fx:id="languageList" prefHeight="30.0" prefWidth="150.0" />
+                        <TextField fx:id="serverParameters" prefHeight="19.0" prefWidth="425.0">
+                            <font>
+                                <Font size="20.0" />
+                            </font></TextField>
+                    </children>
+                </VBox>
             </children>
         </HBox>
         <HBox prefHeight="34.0" prefWidth="535.0" spacing="10.0">

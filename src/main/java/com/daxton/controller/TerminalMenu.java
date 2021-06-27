@@ -3,10 +3,10 @@ package com.daxton.controller;
 import com.daxton.Main;
 import com.daxton.config.FileControl;
 import com.daxton.function.LoadConfig;
+import com.daxton.page.SkillMenuPage;
 import com.daxton.page.TerminalMenuPage;
 import com.daxton.page.topmenu.SettingsPage;
 import com.daxton.terminal.CmdMain;
-import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 
 import java.io.File;
@@ -24,10 +25,9 @@ import java.net.URL;
 
 public class TerminalMenu {
 
-    final JFXPanel fxPanel = new JFXPanel();
-
     @FXML public TextArea message;
     @FXML public TextField inputText;
+    @FXML public Text state;
 
     //打開設定檔
     public void open() {
@@ -68,21 +68,21 @@ public class TerminalMenu {
 //        TerminalMenuPage.print(strMsg);
         //System.out.println(strMsg);
     }
-
+    //關閉
     public void stop(){
         CmdMain.stopServer();
     }
     public void restart(){
-        CmdMain.restopRun();
+        CmdMain.restartServer();
     }
 
     public void forcedEnd(){
-        CmdMain.forcedEnd();
+        CmdMain.forcedEndServer();
     }
 
     public void cdreload(){
-        CmdMain.command("customdisplay reload");
-        TerminalMenuPage.print(System.getProperty("user.dir")+"/CustomDisplay-Editor/swish1.mp3");
+        CmdMain.commandServer("customdisplay reload");
+        TerminalMenuPage.print(System.getProperty("user.dir")+"/CustomDisplay-Editor/buttom.mp3");
         Media sound=new Media(new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/swish1.mp3").toURI().toString());
         MediaPlayer mediaPlayer=new MediaPlayer(sound);
         mediaPlayer.play();
@@ -112,30 +112,20 @@ public class TerminalMenu {
         FileControl.save();
     }
 
+    //
+    public void openServerMenu(){ }
+    //
+    public void openClassMenu(){ }
     //打開技能編輯介面
-    public void openSkillMenu(){
-
-        URL location = Main.main.getClass().getResource("");
-
-        try {
-            //URL newURL = new URL(location.toString().replace("/com/daxton","")+"resource/page/SkillMenu.fxml");
-            URL newURL;
-            if (location != null) {
-                newURL = new URL(location.toString().replace("/classes/java/main/com/daxton","")+"resources/main/resource/page/SkillMenu.fxml");
-                Parent root = FXMLLoader.load(newURL);
-
-                Main.mainWindows.setTitle("CustomDisplay-編輯器");
-                Scene scene = new Scene(root, 1280, 800);
-                scene.getStylesheets().add("resource/style.css");
-                Main.mainWindows.setScene(scene);
-                Main.mainWindows.show();
-            }
-
-
-        }catch (Exception exception){
-
-        }
-
-    }
-
+    public void openSkillMenu(){ SkillMenuPage.display(); }
+    //
+    public void openActionMenu(){ }
+    //
+    public void opCharacterMenu(){ }
+    //
+    public void opGUIMenu(){ }
+    //
+    public void openItemsMenu(){ }
+    //
+    public void openTextureMenu(){ }
 }

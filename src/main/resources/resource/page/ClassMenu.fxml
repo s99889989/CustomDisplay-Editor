@@ -20,10 +20,10 @@
                         <MenuItem mnemonicParsing="false" text="%top-file-exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%top-edit">
+                <Menu mnemonicParsing="false" text="%top-function">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="%top-edit-class" />
-                        <MenuItem mnemonicParsing="false" onAction="#openSkillMenu" text="%top-edit-skill" />
+                        <MenuItem mnemonicParsing="false" text="%top-function-class" />
+                        <MenuItem mnemonicParsing="false" onAction="#openSkillMenu" text="%top-function-skill" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="%top-help">

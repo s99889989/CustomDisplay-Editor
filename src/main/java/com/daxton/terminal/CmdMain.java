@@ -1,5 +1,7 @@
 package com.daxton.terminal;
 
+import com.daxton.Main;
+import com.daxton.function.Task;
 import com.daxton.page.TerminalMenuPage;
 import javafx.application.Platform;
 
@@ -12,10 +14,14 @@ public class CmdMain {
     public static String message;
     //開啟伺服器
     public static void startServer(){
-        String cmd6 = "java -jar ./paper-1.16.5-778.jar nogui";
-        if(process == null){
+        String path = Main.config.getString("Server-Settings.Startup-Parameters");
+        String cmd = "java "+path+" nogui";
+
+        if(process == null || !process.isAlive()){
+            TerminalMenuPage.print("==========================================================================================");
             try {
-                process = Runtime.getRuntime().exec(cmd6);
+                process = Runtime.getRuntime().exec(cmd);
+                TerminalMenuPage.setServerState(true);
                 new Thread(() -> {
                     try {
                         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -38,7 +44,8 @@ public class CmdMain {
     }
     //停止伺服器
     public static void stopServer(){
-        if(process != null){
+        if(process != null && process.isAlive()){
+            TerminalMenuPage.print("==========================================================================================");
             try {
                 BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
                 br.write("stop"+"\n");
@@ -51,10 +58,9 @@ public class CmdMain {
 
     }
 
-    public static void command(String command){
-        if(process != null){
+    public static void commandServer(String command){
+        if(process != null && process.isAlive()){
             try {
-
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
                 bufferedWriter.write(command+"\n");
                 //bufferedWriter.newLine();
@@ -68,37 +74,29 @@ public class CmdMain {
 
 
 
-    public static void forcedEnd(){
-        if(process != null){
+    public static void forcedEndServer(){
+        if(process != null && process.isAlive()){
             process.destroy();
+            TerminalMenuPage.print("強制結束伺服器");
+            TerminalMenuPage.print("==========================================================================================");
         }
     }
 
-    public static void restopRun(){
-        try {
-            BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
-            br.write("stop");
-            br.flush();
-            br.close();
-        }catch (IOException exception){
-            exception.printStackTrace();
-        }
-        if(process.isAlive()){
-            TerminalMenuPage.print("伺服器執行中!");
+    public static void restartServer(){
+        if(process != null && process.isAlive()){
+            TerminalMenuPage.print("==========================================================================================");
+            try {
+                BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+                br.write("stop"+"\n");
+                br.flush();
+                Task.restart = true;
+            }catch (IOException exception){
+                exception.printStackTrace();
+            }
         }
 
     }
 
 
-
-    public void killProcess() {
-        Runtime rt = Runtime.getRuntime();
-        Process p = null;
-        try {
-            rt.exec("cmd.exe /C start wmic process where name='cmd.exe' call terminate");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
