@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.main.ActionMenu">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="%top-file">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#open" text="%top-file-open-directory" />
+                        <MenuItem mnemonicParsing="false" text="%top-file-load" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveFile" text="%top-file-save" />
+                        <MenuItem mnemonicParsing="false" onAction="#openSettings" text="%top-file-settings" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit"  text="%top-file-exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%top-function">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openServerMenu" text="%top-function-server" />
+                        <MenuItem mnemonicParsing="false" onAction="#openClassMenu" text="%top-function-class" />
+                        <MenuItem mnemonicParsing="false" onAction="#openSkillMenu" text="%top-function-skill" />
+                        <MenuItem mnemonicParsing="false" onAction="#openActionMenu" text="%top-function-action" />
+                        <MenuItem mnemonicParsing="false" onAction="#opCharacterMenu" text="%top-function-character" />
+                        <MenuItem mnemonicParsing="false" onAction="#opGUIMenu" text="%top-function-gui" />
+                        <MenuItem mnemonicParsing="false" onAction="#openItemsMenu" text="%top-function-items" />
+                        <MenuItem mnemonicParsing="false" onAction="#openTextureMenu" text="%top-function-texture" />
+                  <MenuItem mnemonicParsing="false" onAction="#openModsMenu" text="%top-function-mobs" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%top-help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="%top-help-about" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+   <center>
+       <Label text="ActionMenu" BorderPane.alignment="CENTER">
+           <font>
+               <Font size="30.0" />
+           </font>
+       </Label>
+   </center>
+</BorderPane>

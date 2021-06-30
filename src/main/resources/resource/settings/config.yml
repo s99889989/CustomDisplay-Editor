@@ -1,0 +1,15 @@
+#語言(英語,繁體中文,簡體中文,巴西葡萄牙語,韓語)
+#Language (English,Chinese_TW,Chinese_CN,Portuguese_BR,Korean_KR)
+Language: English
+
+
+Server-Settings:
+  #伺服器啟動參數
+  #Server startup parameters.
+  Startup-Parameters: '-jar ./paper-1.16.5-778.jar'
+
+
+CustomDisplay:
+  #預設資料夾路徑
+  #Default folder path
+  Folder-Path: './plugins/CustomDisplay'

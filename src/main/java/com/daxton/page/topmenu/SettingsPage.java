@@ -1,19 +1,14 @@
 package com.daxton.page.topmenu;
 
 import com.daxton.Main;
+import com.daxton.api.FxmlLoader;
 import com.daxton.config.FileConfig;
 import com.daxton.controller.topmenu.Settings;
 import com.daxton.function.Manager;
-import com.daxton.page.TerminalMenuPage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SettingsPage {
@@ -24,72 +19,89 @@ public class SettingsPage {
 
     //打開設定介面
     public static void display(){
-
-        settingsWindow = new Stage();
-
-        try {
-            URL newURL = new URL(Main.resourcePath+"/page/topmenu/Settings.fxml");
-
-            ResourceBundle language = Main.language;
-
-            FXMLLoader loader = new FXMLLoader(newURL, language);
-
-            Parent root = loader.load();
-
-
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add("resource/style.css");
-            settingsWindow.getIcons().add(new Image(Main.resourcePath+"/icon.png"));
-            settingsWindow.setScene(scene);
-            settingsWindow.show();
-
-            Settings settings = loader.getController();
+        Settings settings = FxmlLoader.display("/page/topmenu/Settings.fxml", Main.secondaryWindow);
+        if(settings != null){
             Manager.controller_Map.put("Settings", settings);
-
-            String path = Main.main.getClass().getResource("").getPath();
 
             for(String lang : languageList){
                 settings.languageList.getItems().add(lang);
 
             }
 
-
             settings.languageList.setValue(Main.config.getString("Language"));
             settings.serverParameters.setText(Main.config.getString("Server-Settings.Startup-Parameters"));
-
-//            try {
-//                List<String> fileList = FileSearch.readZipFile(path.replace("!/com/daxton/","").replace("file:/",""));//
-//                fileList.forEach(s -> settings.languageList.getItems().add(s.substring(s.indexOf("ge/lang_")+8, s.indexOf(".properties"))));
-//            }catch (Exception exception){
-//
-//            }
-
-            //settings.languageList.getItems().add(path.replace("!/com/daxton/","").replace("file:/",""));
-            //settings.languageList.getItems().add("TEST");
-
-        }catch (IOException exception){
-            //
+            settings.cdParameters.setText(Main.config.getString("CustomDisplay.Folder-Path"));
         }
 
     }
 
-    public static void addKEY(){
+    //改變伺服器參數
+    public static void changeCustomDisplayFolderPath(){
         Settings settings = (Settings) Manager.controller_Map.get("Settings");
         if(settings != null){
-            //System.out.println(settings.languageList.getValue());
-            //settings.languageList.getItems().add("TEST");
-            settings.languageList.setValue(settings.languageList.getValue());
-            Main.language = ResourceBundle.getBundle("resource/language/lang", FileConfig.getLocale());
-            Main.config.set("Language", settings.languageList.getValue());
-            File file2 = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
-            try {
-                Main.config.save(file2);
-            }catch (IOException exception){
 
+            String defaultCustomDisplayFolderPath = Main.config.getString("CustomDisplay.Folder-Path");
+            if(defaultCustomDisplayFolderPath != null && !defaultCustomDisplayFolderPath.equals(settings.cdParameters.getText())){
+                Main.config.set("CustomDisplay.Folder-Path", settings.cdParameters.getText());
+
+                File configFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
+                try {
+                    Main.config.save(configFile);
+                }catch (IOException exception){
+                    exception.printStackTrace();
+                }
             }
-            settingsWindow.close();
-            Main.mainWindows.close();
-            TerminalMenuPage.display();
+
+        }
+    }
+
+    //改變伺服器參數
+    public static void changeServerParameters(){
+        Settings settings = (Settings) Manager.controller_Map.get("Settings");
+        if(settings != null){
+
+            String defaultServerParameters = Main.config.getString("Server-Settings.Startup-Parameters");
+            if(defaultServerParameters != null && !defaultServerParameters.equals(settings.serverParameters.getText())){
+                Main.config.set("Server-Settings.Startup-Parameters", settings.serverParameters.getText());
+
+                File configFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
+                try {
+                    Main.config.save(configFile);
+                }catch (IOException exception){
+                    exception.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+    //改變語言
+    public static void changeLanguage(){
+        Settings settings = (Settings) Manager.controller_Map.get("Settings");
+        if(settings != null){
+
+            String defaultLanguage = Main.config.getString("Language");
+            if(defaultLanguage != null && !defaultLanguage.equals(settings.languageList.getValue())){
+                settings.languageList.setValue(settings.languageList.getValue());
+
+                Main.config.set("Language", settings.languageList.getValue());
+
+                File file2 = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
+                try {
+                    Main.config.save(file2);
+                }catch (IOException exception){
+                    exception.printStackTrace();
+                }
+
+                Main.language = ResourceBundle.getBundle("resource/language/lang", FileConfig.getLocale());
+
+
+                Main.mainWindow.close();
+                Main.openMainPage();
+            }
+
+
+
         }
 
     }

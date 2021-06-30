@@ -7,31 +7,46 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class FileConfig {
 
-    public static FileConfiguration create(){
+    static FileConfiguration config;
+
+    static FileConfiguration languageConfig;
+
+    public static boolean create(){
         File file = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor");
         if(!file.exists()){
             file.mkdir();
         }
-        File file2 = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
-        if(!file2.exists()){
-            //建立設定檔
-            saveResource("resource/config.yml","./CustomDisplay-Editor/config.yml", false);
 
-            if(file2.exists()){
-                return YamlConfiguration.loadConfiguration(file2);
-            }
-
-        }else {
-            return YamlConfiguration.loadConfiguration(file2);
+        try {
+            List<String> ll = FileSearch.readZipFile(Objects.requireNonNull(Main.main.getClass().getResource("")).getPath().replace("!/com/daxton/","").replace("file:/",""));
+            ll.forEach(s -> {
+                if(s.endsWith(".yml")){
+                    saveResource(s, "./CustomDisplay-Editor/" + s.replace("resource/settings/", ""), false);
+                }
+            });
+        }catch (Exception exception){
+            exception.printStackTrace();
         }
-        return null;
+
+        File configFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
+        config = YamlConfiguration.loadConfiguration(configFile);
+        String languageString = config.getString("Language");
+        File languageFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/Language/"+languageString+".yml");
+        languageConfig = YamlConfiguration.loadConfiguration(languageFile);
+
+        FileControl.loadSettings();
+
+        return config != null && languageConfig != null;
+
     }
 
-
+    //語言設定
     public static Locale getLocale(){
         FileConfiguration fileConfiguration = Main.config;
 
@@ -50,6 +65,12 @@ public class FileConfig {
                 case "chinese_cn":
                     locale = new Locale("zh", "CN");
                     break;
+                case "portuguese_br":
+                    locale = new Locale("pt", "BR");
+                    break;
+                case "korean_kr":
+                    locale = new Locale("ko", "");
+                    break;
                 default:
                     locale = new Locale("", "");
                     break;
@@ -61,8 +82,16 @@ public class FileConfig {
         return locale;
     }
 
-    public static void saveResource(String resourcePath,String savePath, boolean replace) {
+    public static FileConfiguration getConfig() {
+        return config;
+    }
 
+    public static FileConfiguration getLanguageConfig() {
+        return languageConfig;
+    }
+
+    //複製設定檔
+    public static void saveResource(String resourcePath,String savePath, boolean replace) {
 
         InputStream in = getResource(resourcePath);
 
@@ -73,7 +102,6 @@ public class FileConfig {
         if (!outDir.exists()) {
             outDir.mkdirs();
         }
-
 
         try {
             if (!outFile.exists() || replace) {
@@ -96,7 +124,6 @@ public class FileConfig {
 
     }
 
-
     public static InputStream getResource(String filename) {
 
         if (filename == null) {
@@ -115,7 +142,6 @@ public class FileConfig {
         } catch (IOException ex) {
             return null;
         }
-
 
     }
 

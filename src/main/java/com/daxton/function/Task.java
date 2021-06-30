@@ -1,6 +1,6 @@
 package com.daxton.function;
 
-import com.daxton.page.TerminalMenuPage;
+import com.daxton.page.main.ServerMenuPage;
 import com.daxton.terminal.CmdMain;
 
 import java.util.TimerTask;
@@ -12,9 +12,9 @@ public class Task extends TimerTask {
     public void run(){
 
         if(CmdMain.process != null && CmdMain.process.isAlive()){
-            TerminalMenuPage.setServerState(true);
+            ServerMenuPage.setServerState(true);
         }else {
-            TerminalMenuPage.setServerState(false);
+            ServerMenuPage.setServerState(false);
             if(restart){
                 restart = false;
                 CmdMain.startServer();

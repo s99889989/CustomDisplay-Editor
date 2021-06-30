@@ -1,5 +1,6 @@
 package com.daxton.controller.topmenu;
 
+import com.daxton.Main;
 import com.daxton.page.topmenu.SettingsPage;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -9,17 +10,21 @@ public class Settings {
 
     @FXML public ChoiceBox<String> languageList;
     @FXML public TextField serverParameters;
+    @FXML public TextField cdParameters;
 
     public void define(){
 
-        SettingsPage.addKEY();
+        SettingsPage.changeLanguage();
+        SettingsPage.changeCustomDisplayFolderPath();
+        SettingsPage.changeServerParameters();
 
-        //SettingsPage.addActionWindow.close();
+        Main.secondaryWindow.close();
+
 
     }
 
     public void cancel(){
-        SettingsPage.settingsWindow.close();
+        Main.secondaryWindow.close();
     }
 
 

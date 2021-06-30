@@ -1,0 +1,22 @@
+Skills:
+  Example_1:
+    BarName: 䄽
+    Material: COAL
+    CustomModelData: 257
+    Name: §e緊急治療-FirstAid(&self_class_skill_Novice_FirstAid_now&/&self_class_skill_Novice_FirstAid_max&)
+    Lore:
+    - ''
+    - §6快速恢復自身&self_class_skill_Novice_FirstAid_amount&點生命值
+    - Quickly restore &self_class_skill_Novice_FirstAid_amount& HP
+    - ''
+    - '§6施法距離-Casting distance : 1.0m'
+    - '§6技能冷卻-Skill cooldown : 10.0秒'
+    PassiveSkill: false
+    NeedTarget: false
+    TargetDistance: 2.0
+    CoolDown: 2.0
+    CastTime: 1.0
+    CastDelay: 0.0
+    Mana: 1.0
+    Action:
+    - Action[a=Novice_FirstAid]
