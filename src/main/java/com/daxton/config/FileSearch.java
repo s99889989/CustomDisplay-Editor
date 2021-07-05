@@ -105,7 +105,7 @@ public class FileSearch {
             if (num1 == 1 && num2 == 1) {
                 //設定動作類型
                 String actionType = inputString.substring(0, inputString.indexOf("[")).trim();
-                actionMap.put("actiontype",actionType.toLowerCase().trim());
+                actionMap.put("actiontype",actionType.trim());
                 //cd.getLogger().info("ActionType"+" : "+actionType);
 
                 //從]往後的字串

@@ -1,9 +1,13 @@
 package com.daxton;
 
+import com.daxton.api.Discord;
+import com.daxton.api.StringConversion;
 import com.daxton.config.FileConfig;
 import com.daxton.config.FileControl;
+import com.daxton.config.FileSearch;
 import com.daxton.function.Task;
 import com.daxton.page.main.*;
+import com.daxton.page.test.ControllerPage;
 import com.daxton.terminal.CmdMain;
 import javafx.application.Application;
 import javafx.scene.image.Image;
@@ -38,8 +42,14 @@ public class Main extends Application {
 
     public static Timer timer = new Timer();
 
+    public static Discord discord;
+
     public static void main(String[] args) {
         launch(args);
+//        String message = "Attribute[Attribute=GENERIC_ARMOR_TOUGHNESS];Label=4;Amount=4;Duration=4]";
+//        String actionType = StringConversion.getActionKey(FileSearch.setClassAction(message), new String[]{"actiontype"});
+//        System.out.println(message);
+//        System.out.println(actionType);
     }
 
     @Override
@@ -63,16 +73,33 @@ public class Main extends Application {
         //語言
 
         language = ResourceBundle.getBundle("resource/language/lang", FileConfig.getLocale());
-        timer.schedule(new Task(), 0,5 * 1000);
+        //timer.schedule(new Task(), 0,5 * 1000);
 
         setDefaultMainWindow();
         setSecondaryWindow();
 
+        ActionMenuPage.display();
         //ClassMenuPage.display();
         //ServerMenuPage.display();
-        SkillMenuPage.display();
+        //SkillMenuPage.display();
+        //ControllerPage.display();
 
         //System.setOut(new PrintStream(new FileOutputStream("log.txt",true)));
+        //Thread thread = new Thread(this::setDiscord);
+        //thread.start();
+
+    }
+
+    public void setDiscord(){
+        //機器人設定
+        boolean dcenable = config.getBoolean("Backups.Discord.enable");
+        String token = config.getString("Backups.Discord.token");
+        long channelID = config.getLong("Backups.Discord.channelID");
+
+        if(dcenable){
+            discord = new Discord(token,channelID,true);
+
+        }
     }
 
     //設置主頁面
@@ -87,8 +114,14 @@ public class Main extends Application {
         mainWindow.getIcons().add(new Image(Main.resourcePath+"/icon.png"));
         mainWindow.setOnCloseRequest(event -> {
             secondaryWindow.close();
-            timer.cancel();
-            CmdMain.forcedEndServer();
+            if(timer != null){
+                try {
+                    timer.cancel();
+                }catch (Exception exception){
+
+                }
+                CmdMain.forcedEndServer();
+            }
         });
 
     }

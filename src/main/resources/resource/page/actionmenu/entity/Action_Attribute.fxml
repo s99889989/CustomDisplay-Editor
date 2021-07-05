@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="530.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.entity.Action_Attribute">
+   <children>
+      <HBox prefHeight="607.0" prefWidth="830.0" spacing="5.0">
+         <children>
+            <VBox prefHeight="547.0" prefWidth="358.0">
+               <children>
+                  <Label text="屬性">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="attrlist" onMouseClicked="#onSelectAttr" prefHeight="495.0" prefWidth="390.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox prefHeight="547.0" prefWidth="357.0">
+               <children>
+                  <Label text="標籤">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="label" onKeyReleased="#onLabelPeleased" />
+                  <Label text="量">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="amount" onKeyReleased="#onAmountReleased" />
+                  <Label text="持續時間">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="duration" onKeyReleased="#onDurationReleased" />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
+</VBox>

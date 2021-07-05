@@ -62,3 +62,2335 @@ Trigger:
   ~onLeverOn: '當控制桿開啟時'
   ~onLeverOff: '當控制桿關閉時'
   ~onButton: '當按下按鈕時'
+
+Actions:
+  Attribute: '設置臨時屬性。'
+  Damage: '造成指定傷害。'
+  DCMessage: '向Discord發送訊息。'
+  Glow: '使目標發光。'
+  Heal: '回復目標血量。'
+  Invisible: '使目標隱形包括裝備。'
+  LoggerInfo: '在後台顯示訊息。'
+  Message: '發送聊天訊息。'
+  Move: '使目標移動一段距離。'
+  MythicSkill: '使用MythicMobs的技能。'
+  Name: '自訂顯示名稱，只改變顯示，實際並不修改。'
+  PotionEffect: '向目標添加藥水效果。'
+  Teleport: '瞬間到指定位置。'
+  ActionBar: '物品欄上方顯示。'
+  BossBar: '上方欄位顯示。'
+  Command: '執行指令。'
+  Exp: '給予經驗。'
+  Item: '對物品的相關操作。'
+  Inventory: '對背包的相關操作。'
+  Level: '修改等級。'
+  Mana: '修改魔量。'
+  Money: '錢相關的功能。'
+  Title: '畫面中間顯示。'
+  Block: '放置方塊。'
+  Guise: '偽裝物品。'
+  Hologram: '全息顯示。'
+  Light: '發出類似火把的亮光。'
+  Model: 'ModelEngine實體。'
+  Particle: '粒子。'
+  Sound: '聲音。'
+  Action: '可以觸發其他動作列表。'
+  Break: '依照條件判斷是否中斷動作。'
+  Delay: '延遲。'
+  FixedPoint: '定點持續動作。'
+  Loop: '可以在時間內持續觸發動作列表。'
+  LocPng: '依照PNG圖片給座標動作。'
+  Orbital: '軌道式持續動作。'
+  SwitchAction: '條件選擇動作。'
+  CustomPoint: '點數。(升級時所獲得的點數，可用來升級屬性點)'
+  AttributePoint: '屬性點。(人物的一項統計屬性，可以把此屬性的佔位符放到Damage動作，來增加技能攻擊)'
+  ClassAttr: '設置臨時職業屬性。'
+  SetSkillLevel: '技能相關的操作。'
+  ModMessage: '在畫面指定位置發送訊息。'
+
+Attribute:
+  GENERIC_MAX_HEALTH: '生物的最大血量。'
+  GENERIC_KNOCKBACK_RESISTANCE: '當生物被攻擊的時候的擊退抗性。'
+  GENERIC_MOVEMENT_SPEED: '生物的移動速度。'
+  GENERIC_ATTACK_DAMAGE: '當生物攻擊其他生物/實體時所造成的傷害。'
+  GENERIC_ATTACK_SPEED: '生物的攻擊速率。'
+  GENERIC_ARMOR: '護甲的防禦值。'
+  GENERIC_ARMOR_TOUGHNESS: '護甲的韌性。'
+  GENERIC_LUCK: '掉落物品的運氣。'
+
+ChatColor:
+  AQUA: '淡藍色'
+  BLACK: '黑色'
+  BLUE: '藍色色'
+  DARK_AQUA: '深水色'
+  DARK_BLUE: '深藍色'
+  DARK_GRAY: '深灰色'
+  DARK_GREEN: '深綠色'
+  DARK_PURPLE: '深紫色色'
+  DARK_RED: '深紅'
+  GOLD: '橙色色'
+  GRAY: '灰色色'
+  GREEN: '綠色'
+  LIGHT_PURPLE: '紫色'
+  RED: '紅色'
+  WHITE: '白色'
+  YELLOW: '黃色'
+
+PotionEffectType:
+  ABSORPTION: '提高生命值無法再生但每 30 秒補充一次的實體的最大生命值。'
+  BAD_OMEN: '凶兆。'
+  BLINDNESS: '致盲一個實體。'
+  CONDUIT_POWER: '附近管道賦予的效果。'
+  CONFUSION: '扭曲客戶的願景。'
+  DAMAGE_RESISTANCE: '減少對實體造成的傷害。'
+  DOLPHINS_GRACE: '海豚恩典。'
+  FAST_DIGGING: '提高挖掘速度。'
+  FIRE_RESISTANCE: '停止火焰傷害。'
+  GLOWING: '勾勒出實體的輪廓，以便從遠處看到它。'
+  HARM: '傷害實體。'
+  HEAL: '治愈一個實體。'
+  HEALTH_BOOST: '增加一個實體的最大生命值。'
+  HERO_OF_THE_VILLAGE: '\o/.'
+  HUNGER: '增加飢餓感。'
+  INCREASE_DAMAGE: '增加造成的傷害。'
+  INVISIBILITY: '授予隱形。'
+  JUMP: '增加跳躍高度。'
+  LEVITATION: '使實體漂浮在空中。'
+  LUCK: '戰利品表運氣。'
+  NIGHT_VISION: '允許實體在黑暗中看到。'
+  POISON: '隨著時間的推移對實體造成傷害。'
+  REGENERATION: '恢復健康。'
+  SATURATION: '每跳增加一個實體的食物等級。'
+  SLOW: '降低移動速度。'
+  SLOW_DIGGING: '降低挖掘速度。'
+  SLOW_FALLING: '減慢實體掉落率。'
+  SPEED: '增加移動速度。'
+  UNLUCK: '戰利品表倒霉。'
+  WATER_BREATHING: '允許在水下呼吸。'
+  WEAKNESS: '減少實體造成的傷害。'
+  WITHER: '隨著時間的推移對實體造成傷害並為射手提供生命值。'
+
+BarStyle:
+  SOLID: '1個部分'
+  SEGMENTED_6: '分為6個部分'
+  SEGMENTED_10: '分為10個部分'
+  SEGMENTED_12: '分為12個部分'
+  SEGMENTED_20: '分為20個部分'
+
+BarColor:
+  BLUE: '藍色'
+  GREEN: '綠色'
+  PINK: '粉紅色'
+  PURPLE: '紫色'
+  RED: '紅色'
+  WHITE: '白色'
+  YELLOW: '黃色'
+
+BarFlag:
+  CREATE_FOG: '在血條所在的世界產生迷霧'
+  DARKEN_SKY: '凋零血條的屬性（戰鬥時天空會變暗）'
+  PLAY_BOSS_MUSIC: '終界龍的血條屬性，告訴客戶端該播放打終界龍時候的BGM'
+
+Particle:
+  ASH: ''
+  BARRIER: ''
+  BLOCK_CRACK: ''
+  BLOCK_DUST: ''
+  BUBBLE_COLUMN_UP: ''
+  BUBBLE_POP: ''
+  CAMPFIRE_COSY_SMOKE: ''
+  CAMPFIRE_SIGNAL_SMOKE: ''
+  CLOUD: ''
+  COMPOSTER: ''
+  CRIMSON_SPORE: ''
+  CRIT: ''
+  CRIT_MAGIC: ''
+  CURRENT_DOWN: ''
+  DAMAGE_INDICATOR: ''
+  DOLPHIN: ''
+  DRAGON_BREATH: ''
+  DRIP_LAVA: ''
+  DRIP_WATER: ''
+  DRIPPING_DRIPSTONE_LAVA: ''
+  DRIPPING_DRIPSTONE_WATER: ''
+  DRIPPING_HONEY: ''
+  DRIPPING_OBSIDIAN_TEAR: ''
+  DUST_COLOR_TRANSITION: ''
+  ELECTRIC_SPARK: ''
+  ENCHANTMENT_TABLE: ''
+  END_ROD: ''
+  EXPLOSION_HUGE: ''
+  EXPLOSION_LARGE: ''
+  EXPLOSION_NORMAL: ''
+  FALLING_DRIPSTONE_LAVA: ''
+  FALLING_DRIPSTONE_WATER: ''
+  FALLING_DUST: ''
+  FALLING_HONEY: ''
+  FALLING_LAVA: ''
+  FALLING_NECTAR: ''
+  FALLING_OBSIDIAN_TEAR: ''
+  FALLING_SPORE_BLOSSOM: ''
+  FALLING_WATER: ''
+  FIREWORKS_SPARK: ''
+  FLAME: ''
+  FLASH: ''
+  GLOW: ''
+  GLOW_SQUID_INK: ''
+  HEART: ''
+  ITEM_CRACK: ''
+  LANDING_HONEY: ''
+  LANDING_LAVA: ''
+  LANDING_OBSIDIAN_TEAR: ''
+  LAVA: ''
+  LEGACY_BLOCK_CRACK: ''
+  LEGACY_BLOCK_DUST: ''
+  LEGACY_FALLING_DUST: ''
+  LIGHT: ''
+  MOB_APPEARANCE: ''
+  NAUTILUS: ''
+  NOTE: ''
+  PORTAL: ''
+  REDSTONE: ''
+  REVERSE_PORTAL: ''
+  SCRAPE: ''
+  SLIME: ''
+  SMALL_FLAME: ''
+  SMOKE_LARGE: ''
+  SMOKE_NORMAL: ''
+  SNEEZE: ''
+  SNOW_SHOVEL: ''
+  SNOWBALL: ''
+  SNOWFLAKE: ''
+  SOUL: ''
+  SOUL_FIRE_FLAME: ''
+  SPELL: ''
+  SPELL_INSTANT: ''
+  SPELL_MOB: ''
+  SPELL_MOB_AMBIENT: ''
+  SPELL_WITCH: ''
+  SPIT: ''
+  SPORE_BLOSSOM_AIR: ''
+  SQUID_INK: ''
+  SUSPENDED: ''
+  SUSPENDED_DEPTH: ''
+  SWEEP_ATTACK: ''
+  TOTEM: ''
+  TOWN_AURA: ''
+  VIBRATION: ''
+  VILLAGER_ANGRY: ''
+  VILLAGER_HAPPY: ''
+  WARPED_SPORE: ''
+  WATER_BUBBLE: ''
+  WATER_DROP: ''
+  WATER_SPLASH: ''
+  WATER_WAKE: ''
+  WAX_OFF: ''
+  WAX_ON: ''
+  WHITE_ASH: ''
+
+Material:
+  AIR: air
+  STONE: stone
+  GRANITE: granite
+  POLISHED_GRANITE: polished granite
+  DIORITE: diorite
+  POLISHED_DIORITE: polished diorite
+  ANDESITE: andesite
+  POLISHED_ANDESITE: polished andesite
+  GRASS_BLOCK: grass block
+  DIRT: dirt
+  COARSE_DIRT: coarse dirt
+  PODZOL: podzol
+  CRIMSON_NYLIUM: crimson nylium
+  WARPED_NYLIUM: warped nylium
+  COBBLESTONE: cobblestone
+  OAK_PLANKS: oak planks
+  SPRUCE_PLANKS: spruce planks
+  BIRCH_PLANKS: birch planks
+  JUNGLE_PLANKS: jungle planks
+  ACACIA_PLANKS: acacia planks
+  DARK_OAK_PLANKS: dark oak planks
+  CRIMSON_PLANKS: crimson planks
+  WARPED_PLANKS: warped planks
+  OAK_SAPLING: oak sapling
+  SPRUCE_SAPLING: spruce sapling
+  BIRCH_SAPLING: birch sapling
+  JUNGLE_SAPLING: jungle sapling
+  ACACIA_SAPLING: acacia sapling
+  DARK_OAK_SAPLING: dark oak sapling
+  BEDROCK: bedrock
+  SAND: sand
+  RED_SAND: red sand
+  GRAVEL: gravel
+  GOLD_ORE: gold ore
+  IRON_ORE: iron ore
+  COAL_ORE: coal ore
+  NETHER_GOLD_ORE: nether gold ore
+  OAK_LOG: oak log
+  SPRUCE_LOG: spruce log
+  BIRCH_LOG: birch log
+  JUNGLE_LOG: jungle log
+  ACACIA_LOG: acacia log
+  DARK_OAK_LOG: dark oak log
+  CRIMSON_STEM: crimson stem
+  WARPED_STEM: warped stem
+  STRIPPED_OAK_LOG: stripped oak log
+  STRIPPED_SPRUCE_LOG: stripped spruce log
+  STRIPPED_BIRCH_LOG: stripped birch log
+  STRIPPED_JUNGLE_LOG: stripped jungle log
+  STRIPPED_ACACIA_LOG: stripped acacia log
+  STRIPPED_DARK_OAK_LOG: stripped dark oak log
+  STRIPPED_CRIMSON_STEM: stripped crimson stem
+  STRIPPED_WARPED_STEM: stripped warped stem
+  STRIPPED_OAK_WOOD: stripped oak wood
+  STRIPPED_SPRUCE_WOOD: stripped spruce wood
+  STRIPPED_BIRCH_WOOD: stripped birch wood
+  STRIPPED_JUNGLE_WOOD: stripped jungle wood
+  STRIPPED_ACACIA_WOOD: stripped acacia wood
+  STRIPPED_DARK_OAK_WOOD: stripped dark oak wood
+  STRIPPED_CRIMSON_HYPHAE: stripped crimson hyphae
+  STRIPPED_WARPED_HYPHAE: stripped warped hyphae
+  OAK_WOOD: oak wood
+  SPRUCE_WOOD: spruce wood
+  BIRCH_WOOD: birch wood
+  JUNGLE_WOOD: jungle wood
+  ACACIA_WOOD: acacia wood
+  DARK_OAK_WOOD: dark oak wood
+  CRIMSON_HYPHAE: crimson hyphae
+  WARPED_HYPHAE: warped hyphae
+  OAK_LEAVES: oak leaves
+  SPRUCE_LEAVES: spruce leaves
+  BIRCH_LEAVES: birch leaves
+  JUNGLE_LEAVES: jungle leaves
+  ACACIA_LEAVES: acacia leaves
+  DARK_OAK_LEAVES: dark oak leaves
+  SPONGE: sponge
+  WET_SPONGE: wet sponge
+  GLASS: glass
+  LAPIS_ORE: lapis ore
+  LAPIS_BLOCK: lapis block
+  DISPENSER: dispenser
+  SANDSTONE: sandstone
+  CHISELED_SANDSTONE: chiseled sandstone
+  CUT_SANDSTONE: cut sandstone
+  NOTE_BLOCK: note block
+  POWERED_RAIL: powered rail
+  DETECTOR_RAIL: detector rail
+  STICKY_PISTON: sticky piston
+  COBWEB: cobweb
+  GRASS: grass
+  FERN: fern
+  DEAD_BUSH: dead bush
+  SEAGRASS: seagrass
+  SEA_PICKLE: sea pickle
+  PISTON: piston
+  WHITE_WOOL: white wool
+  ORANGE_WOOL: orange wool
+  MAGENTA_WOOL: magenta wool
+  LIGHT_BLUE_WOOL: light blue wool
+  YELLOW_WOOL: yellow wool
+  LIME_WOOL: lime wool
+  PINK_WOOL: pink wool
+  GRAY_WOOL: gray wool
+  LIGHT_GRAY_WOOL: light gray wool
+  CYAN_WOOL: cyan wool
+  PURPLE_WOOL: purple wool
+  BLUE_WOOL: blue wool
+  BROWN_WOOL: brown wool
+  GREEN_WOOL: green wool
+  RED_WOOL: red wool
+  BLACK_WOOL: black wool
+  DANDELION: dandelion
+  POPPY: poppy
+  BLUE_ORCHID: blue orchid
+  ALLIUM: allium
+  AZURE_BLUET: azure bluet
+  RED_TULIP: red tulip
+  ORANGE_TULIP: orange tulip
+  WHITE_TULIP: white tulip
+  PINK_TULIP: pink tulip
+  OXEYE_DAISY: oxeye daisy
+  CORNFLOWER: cornflower
+  LILY_OF_THE_VALLEY: lily of the valley
+  WITHER_ROSE: wither rose
+  BROWN_MUSHROOM: brown mushroom
+  RED_MUSHROOM: red mushroom
+  CRIMSON_FUNGUS: crimson fungus
+  WARPED_FUNGUS: warped fungus
+  CRIMSON_ROOTS: crimson roots
+  WARPED_ROOTS: warped roots
+  NETHER_SPROUTS: nether sprouts
+  WEEPING_VINES: weeping vines
+  TWISTING_VINES: twisting vines
+  SUGAR_CANE: sugar cane
+  KELP: kelp
+  BAMBOO: bamboo
+  GOLD_BLOCK: gold block
+  IRON_BLOCK: iron block
+  OAK_SLAB: oak slab
+  SPRUCE_SLAB: spruce slab
+  BIRCH_SLAB: birch slab
+  JUNGLE_SLAB: jungle slab
+  ACACIA_SLAB: acacia slab
+  DARK_OAK_SLAB: dark oak slab
+  CRIMSON_SLAB: crimson slab
+  WARPED_SLAB: warped slab
+  STONE_SLAB: stone slab
+  SMOOTH_STONE_SLAB: smooth stone slab
+  SANDSTONE_SLAB: sandstone slab
+  CUT_SANDSTONE_SLAB: cut sandstone slab
+  PETRIFIED_OAK_SLAB: petrified oak slab
+  COBBLESTONE_SLAB: cobblestone slab
+  BRICK_SLAB: brick slab
+  STONE_BRICK_SLAB: stone brick slab
+  NETHER_BRICK_SLAB: nether brick slab
+  QUARTZ_SLAB: quartz slab
+  RED_SANDSTONE_SLAB: red sandstone slab
+  CUT_RED_SANDSTONE_SLAB: cut red sandstone slab
+  PURPUR_SLAB: purpur slab
+  PRISMARINE_SLAB: prismarine slab
+  PRISMARINE_BRICK_SLAB: prismarine brick slab
+  DARK_PRISMARINE_SLAB: dark prismarine slab
+  SMOOTH_QUARTZ: smooth quartz
+  SMOOTH_RED_SANDSTONE: smooth red sandstone
+  SMOOTH_SANDSTONE: smooth sandstone
+  SMOOTH_STONE: smooth stone
+  BRICKS: bricks
+  TNT: tnt
+  BOOKSHELF: bookshelf
+  MOSSY_COBBLESTONE: mossy cobblestone
+  OBSIDIAN: obsidian
+  TORCH: torch
+  END_ROD: end rod
+  CHORUS_PLANT: chorus plant
+  CHORUS_FLOWER: chorus flower
+  PURPUR_BLOCK: purpur block
+  PURPUR_PILLAR: purpur pillar
+  PURPUR_STAIRS: purpur stairs
+  SPAWNER: spawner
+  OAK_STAIRS: oak stairs
+  CHEST: chest
+  DIAMOND_ORE: diamond ore
+  DIAMOND_BLOCK: diamond block
+  CRAFTING_TABLE: crafting table
+  FARMLAND: farmland
+  FURNACE: furnace
+  LADDER: ladder
+  RAIL: rail
+  COBBLESTONE_STAIRS: cobblestone stairs
+  LEVER: lever
+  STONE_PRESSURE_PLATE: stone pressure plate
+  OAK_PRESSURE_PLATE: oak pressure plate
+  SPRUCE_PRESSURE_PLATE: spruce pressure plate
+  BIRCH_PRESSURE_PLATE: birch pressure plate
+  JUNGLE_PRESSURE_PLATE: jungle pressure plate
+  ACACIA_PRESSURE_PLATE: acacia pressure plate
+  DARK_OAK_PRESSURE_PLATE: dark oak pressure plate
+  CRIMSON_PRESSURE_PLATE: crimson pressure plate
+  WARPED_PRESSURE_PLATE: warped pressure plate
+  POLISHED_BLACKSTONE_PRESSURE_PLATE: polished blackstone pressure plate
+  REDSTONE_ORE: redstone ore
+  REDSTONE_TORCH: redstone torch
+  SNOW: snow
+  ICE: ice
+  SNOW_BLOCK: snow block
+  CACTUS: cactus
+  CLAY: clay
+  JUKEBOX: jukebox
+  OAK_FENCE: oak fence
+  SPRUCE_FENCE: spruce fence
+  BIRCH_FENCE: birch fence
+  JUNGLE_FENCE: jungle fence
+  ACACIA_FENCE: acacia fence
+  DARK_OAK_FENCE: dark oak fence
+  CRIMSON_FENCE: crimson fence
+  WARPED_FENCE: warped fence
+  PUMPKIN: pumpkin
+  CARVED_PUMPKIN: carved pumpkin
+  NETHERRACK: netherrack
+  SOUL_SAND: soul sand
+  SOUL_SOIL: soul soil
+  BASALT: basalt
+  POLISHED_BASALT: polished basalt
+  SOUL_TORCH: soul torch
+  GLOWSTONE: glowstone
+  JACK_O_LANTERN: jack o lantern
+  OAK_TRAPDOOR: oak trapdoor
+  SPRUCE_TRAPDOOR: spruce trapdoor
+  BIRCH_TRAPDOOR: birch trapdoor
+  JUNGLE_TRAPDOOR: jungle trapdoor
+  ACACIA_TRAPDOOR: acacia trapdoor
+  DARK_OAK_TRAPDOOR: dark oak trapdoor
+  CRIMSON_TRAPDOOR: crimson trapdoor
+  WARPED_TRAPDOOR: warped trapdoor
+  INFESTED_STONE: infested stone
+  INFESTED_COBBLESTONE: infested cobblestone
+  INFESTED_STONE_BRICKS: infested stone bricks
+  INFESTED_MOSSY_STONE_BRICKS: infested mossy stone bricks
+  INFESTED_CRACKED_STONE_BRICKS: infested cracked stone bricks
+  INFESTED_CHISELED_STONE_BRICKS: infested chiseled stone bricks
+  STONE_BRICKS: stone bricks
+  MOSSY_STONE_BRICKS: mossy stone bricks
+  CRACKED_STONE_BRICKS: cracked stone bricks
+  CHISELED_STONE_BRICKS: chiseled stone bricks
+  BROWN_MUSHROOM_BLOCK: brown mushroom block
+  RED_MUSHROOM_BLOCK: red mushroom block
+  MUSHROOM_STEM: mushroom stem
+  IRON_BARS: iron bars
+  CHAIN: chain
+  GLASS_PANE: glass pane
+  MELON: melon
+  VINE: vine
+  OAK_FENCE_GATE: oak fence gate
+  SPRUCE_FENCE_GATE: spruce fence gate
+  BIRCH_FENCE_GATE: birch fence gate
+  JUNGLE_FENCE_GATE: jungle fence gate
+  ACACIA_FENCE_GATE: acacia fence gate
+  DARK_OAK_FENCE_GATE: dark oak fence gate
+  CRIMSON_FENCE_GATE: crimson fence gate
+  WARPED_FENCE_GATE: warped fence gate
+  BRICK_STAIRS: brick stairs
+  STONE_BRICK_STAIRS: stone brick stairs
+  MYCELIUM: mycelium
+  LILY_PAD: lily pad
+  NETHER_BRICKS: nether bricks
+  CRACKED_NETHER_BRICKS: cracked nether bricks
+  CHISELED_NETHER_BRICKS: chiseled nether bricks
+  NETHER_BRICK_FENCE: nether brick fence
+  NETHER_BRICK_STAIRS: nether brick stairs
+  ENCHANTING_TABLE: enchanting table
+  END_PORTAL_FRAME: end portal frame
+  END_STONE: end stone
+  END_STONE_BRICKS: end stone bricks
+  DRAGON_EGG: dragon egg
+  REDSTONE_LAMP: redstone lamp
+  SANDSTONE_STAIRS: sandstone stairs
+  EMERALD_ORE: emerald ore
+  ENDER_CHEST: ender chest
+  TRIPWIRE_HOOK: tripwire hook
+  EMERALD_BLOCK: emerald block
+  SPRUCE_STAIRS: spruce stairs
+  BIRCH_STAIRS: birch stairs
+  JUNGLE_STAIRS: jungle stairs
+  CRIMSON_STAIRS: crimson stairs
+  WARPED_STAIRS: warped stairs
+  COMMAND_BLOCK: command block
+  BEACON: beacon
+  COBBLESTONE_WALL: cobblestone wall
+  MOSSY_COBBLESTONE_WALL: mossy cobblestone wall
+  BRICK_WALL: brick wall
+  PRISMARINE_WALL: prismarine wall
+  RED_SANDSTONE_WALL: red sandstone wall
+  MOSSY_STONE_BRICK_WALL: mossy stone brick wall
+  GRANITE_WALL: granite wall
+  STONE_BRICK_WALL: stone brick wall
+  NETHER_BRICK_WALL: nether brick wall
+  ANDESITE_WALL: andesite wall
+  RED_NETHER_BRICK_WALL: red nether brick wall
+  SANDSTONE_WALL: sandstone wall
+  END_STONE_BRICK_WALL: end stone brick wall
+  DIORITE_WALL: diorite wall
+  BLACKSTONE_WALL: blackstone wall
+  POLISHED_BLACKSTONE_WALL: polished blackstone wall
+  POLISHED_BLACKSTONE_BRICK_WALL: polished blackstone brick wall
+  STONE_BUTTON: stone button
+  OAK_BUTTON: oak button
+  SPRUCE_BUTTON: spruce button
+  BIRCH_BUTTON: birch button
+  JUNGLE_BUTTON: jungle button
+  ACACIA_BUTTON: acacia button
+  DARK_OAK_BUTTON: dark oak button
+  CRIMSON_BUTTON: crimson button
+  WARPED_BUTTON: warped button
+  POLISHED_BLACKSTONE_BUTTON: polished blackstone button
+  ANVIL: anvil
+  CHIPPED_ANVIL: chipped anvil
+  DAMAGED_ANVIL: damaged anvil
+  TRAPPED_CHEST: trapped chest
+  LIGHT_WEIGHTED_PRESSURE_PLATE: light weighted pressure plate
+  HEAVY_WEIGHTED_PRESSURE_PLATE: heavy weighted pressure plate
+  DAYLIGHT_DETECTOR: daylight detector
+  REDSTONE_BLOCK: redstone block
+  NETHER_QUARTZ_ORE: nether quartz ore
+  HOPPER: hopper
+  CHISELED_QUARTZ_BLOCK: chiseled quartz block
+  QUARTZ_BLOCK: quartz block
+  QUARTZ_BRICKS: quartz bricks
+  QUARTZ_PILLAR: quartz pillar
+  QUARTZ_STAIRS: quartz stairs
+  ACTIVATOR_RAIL: activator rail
+  DROPPER: dropper
+  WHITE_TERRACOTTA: white terracotta
+  ORANGE_TERRACOTTA: orange terracotta
+  MAGENTA_TERRACOTTA: magenta terracotta
+  LIGHT_BLUE_TERRACOTTA: light blue terracotta
+  YELLOW_TERRACOTTA: yellow terracotta
+  LIME_TERRACOTTA: lime terracotta
+  PINK_TERRACOTTA: pink terracotta
+  GRAY_TERRACOTTA: gray terracotta
+  LIGHT_GRAY_TERRACOTTA: light gray terracotta
+  CYAN_TERRACOTTA: cyan terracotta
+  PURPLE_TERRACOTTA: purple terracotta
+  BLUE_TERRACOTTA: blue terracotta
+  BROWN_TERRACOTTA: brown terracotta
+  GREEN_TERRACOTTA: green terracotta
+  RED_TERRACOTTA: red terracotta
+  BLACK_TERRACOTTA: black terracotta
+  BARRIER: barrier
+  IRON_TRAPDOOR: iron trapdoor
+  HAY_BLOCK: hay block
+  WHITE_CARPET: white carpet
+  ORANGE_CARPET: orange carpet
+  MAGENTA_CARPET: magenta carpet
+  LIGHT_BLUE_CARPET: light blue carpet
+  YELLOW_CARPET: yellow carpet
+  LIME_CARPET: lime carpet
+  PINK_CARPET: pink carpet
+  GRAY_CARPET: gray carpet
+  LIGHT_GRAY_CARPET: light gray carpet
+  CYAN_CARPET: cyan carpet
+  PURPLE_CARPET: purple carpet
+  BLUE_CARPET: blue carpet
+  BROWN_CARPET: brown carpet
+  GREEN_CARPET: green carpet
+  RED_CARPET: red carpet
+  BLACK_CARPET: black carpet
+  TERRACOTTA: terracotta
+  COAL_BLOCK: coal block
+  PACKED_ICE: packed ice
+  ACACIA_STAIRS: acacia stairs
+  DARK_OAK_STAIRS: dark oak stairs
+  SLIME_BLOCK: slime block
+  GRASS_PATH: grass path
+  SUNFLOWER: sunflower
+  LILAC: lilac
+  ROSE_BUSH: rose bush
+  PEONY: peony
+  TALL_GRASS: tall grass
+  LARGE_FERN: large fern
+  WHITE_STAINED_GLASS: white stained glass
+  ORANGE_STAINED_GLASS: orange stained glass
+  MAGENTA_STAINED_GLASS: magenta stained glass
+  LIGHT_BLUE_STAINED_GLASS: light blue stained glass
+  YELLOW_STAINED_GLASS: yellow stained glass
+  LIME_STAINED_GLASS: lime stained glass
+  PINK_STAINED_GLASS: pink stained glass
+  GRAY_STAINED_GLASS: gray stained glass
+  LIGHT_GRAY_STAINED_GLASS: light gray stained glass
+  CYAN_STAINED_GLASS: cyan stained glass
+  PURPLE_STAINED_GLASS: purple stained glass
+  BLUE_STAINED_GLASS: blue stained glass
+  BROWN_STAINED_GLASS: brown stained glass
+  GREEN_STAINED_GLASS: green stained glass
+  RED_STAINED_GLASS: red stained glass
+  BLACK_STAINED_GLASS: black stained glass
+  WHITE_STAINED_GLASS_PANE: white stained glass pane
+  ORANGE_STAINED_GLASS_PANE: orange stained glass pane
+  MAGENTA_STAINED_GLASS_PANE: magenta stained glass pane
+  LIGHT_BLUE_STAINED_GLASS_PANE: light blue stained glass pane
+  YELLOW_STAINED_GLASS_PANE: yellow stained glass pane
+  LIME_STAINED_GLASS_PANE: lime stained glass pane
+  PINK_STAINED_GLASS_PANE: pink stained glass pane
+  GRAY_STAINED_GLASS_PANE: gray stained glass pane
+  LIGHT_GRAY_STAINED_GLASS_PANE: light gray stained glass pane
+  CYAN_STAINED_GLASS_PANE: cyan stained glass pane
+  PURPLE_STAINED_GLASS_PANE: purple stained glass pane
+  BLUE_STAINED_GLASS_PANE: blue stained glass pane
+  BROWN_STAINED_GLASS_PANE: brown stained glass pane
+  GREEN_STAINED_GLASS_PANE: green stained glass pane
+  RED_STAINED_GLASS_PANE: red stained glass pane
+  BLACK_STAINED_GLASS_PANE: black stained glass pane
+  PRISMARINE: prismarine
+  PRISMARINE_BRICKS: prismarine bricks
+  DARK_PRISMARINE: dark prismarine
+  PRISMARINE_STAIRS: prismarine stairs
+  PRISMARINE_BRICK_STAIRS: prismarine brick stairs
+  DARK_PRISMARINE_STAIRS: dark prismarine stairs
+  SEA_LANTERN: sea lantern
+  RED_SANDSTONE: red sandstone
+  CHISELED_RED_SANDSTONE: chiseled red sandstone
+  CUT_RED_SANDSTONE: cut red sandstone
+  RED_SANDSTONE_STAIRS: red sandstone stairs
+  REPEATING_COMMAND_BLOCK: repeating command block
+  CHAIN_COMMAND_BLOCK: chain command block
+  MAGMA_BLOCK: magma block
+  NETHER_WART_BLOCK: nether wart block
+  WARPED_WART_BLOCK: warped wart block
+  RED_NETHER_BRICKS: red nether bricks
+  BONE_BLOCK: bone block
+  STRUCTURE_VOID: structure void
+  OBSERVER: observer
+  SHULKER_BOX: shulker box
+  WHITE_SHULKER_BOX: white shulker box
+  ORANGE_SHULKER_BOX: orange shulker box
+  MAGENTA_SHULKER_BOX: magenta shulker box
+  LIGHT_BLUE_SHULKER_BOX: light blue shulker box
+  YELLOW_SHULKER_BOX: yellow shulker box
+  LIME_SHULKER_BOX: lime shulker box
+  PINK_SHULKER_BOX: pink shulker box
+  GRAY_SHULKER_BOX: gray shulker box
+  LIGHT_GRAY_SHULKER_BOX: light gray shulker box
+  CYAN_SHULKER_BOX: cyan shulker box
+  PURPLE_SHULKER_BOX: purple shulker box
+  BLUE_SHULKER_BOX: blue shulker box
+  BROWN_SHULKER_BOX: brown shulker box
+  GREEN_SHULKER_BOX: green shulker box
+  RED_SHULKER_BOX: red shulker box
+  BLACK_SHULKER_BOX: black shulker box
+  WHITE_GLAZED_TERRACOTTA: white glazed terracotta
+  ORANGE_GLAZED_TERRACOTTA: orange glazed terracotta
+  MAGENTA_GLAZED_TERRACOTTA: magenta glazed terracotta
+  LIGHT_BLUE_GLAZED_TERRACOTTA: light blue glazed terracotta
+  YELLOW_GLAZED_TERRACOTTA: yellow glazed terracotta
+  LIME_GLAZED_TERRACOTTA: lime glazed terracotta
+  PINK_GLAZED_TERRACOTTA: pink glazed terracotta
+  GRAY_GLAZED_TERRACOTTA: gray glazed terracotta
+  LIGHT_GRAY_GLAZED_TERRACOTTA: light gray glazed terracotta
+  CYAN_GLAZED_TERRACOTTA: cyan glazed terracotta
+  PURPLE_GLAZED_TERRACOTTA: purple glazed terracotta
+  BLUE_GLAZED_TERRACOTTA: blue glazed terracotta
+  BROWN_GLAZED_TERRACOTTA: brown glazed terracotta
+  GREEN_GLAZED_TERRACOTTA: green glazed terracotta
+  RED_GLAZED_TERRACOTTA: red glazed terracotta
+  BLACK_GLAZED_TERRACOTTA: black glazed terracotta
+  WHITE_CONCRETE: white concrete
+  ORANGE_CONCRETE: orange concrete
+  MAGENTA_CONCRETE: magenta concrete
+  LIGHT_BLUE_CONCRETE: light blue concrete
+  YELLOW_CONCRETE: yellow concrete
+  LIME_CONCRETE: lime concrete
+  PINK_CONCRETE: pink concrete
+  GRAY_CONCRETE: gray concrete
+  LIGHT_GRAY_CONCRETE: light gray concrete
+  CYAN_CONCRETE: cyan concrete
+  PURPLE_CONCRETE: purple concrete
+  BLUE_CONCRETE: blue concrete
+  BROWN_CONCRETE: brown concrete
+  GREEN_CONCRETE: green concrete
+  RED_CONCRETE: red concrete
+  BLACK_CONCRETE: black concrete
+  WHITE_CONCRETE_POWDER: white concrete powder
+  ORANGE_CONCRETE_POWDER: orange concrete powder
+  MAGENTA_CONCRETE_POWDER: magenta concrete powder
+  LIGHT_BLUE_CONCRETE_POWDER: light blue concrete powder
+  YELLOW_CONCRETE_POWDER: yellow concrete powder
+  LIME_CONCRETE_POWDER: lime concrete powder
+  PINK_CONCRETE_POWDER: pink concrete powder
+  GRAY_CONCRETE_POWDER: gray concrete powder
+  LIGHT_GRAY_CONCRETE_POWDER: light gray concrete powder
+  CYAN_CONCRETE_POWDER: cyan concrete powder
+  PURPLE_CONCRETE_POWDER: purple concrete powder
+  BLUE_CONCRETE_POWDER: blue concrete powder
+  BROWN_CONCRETE_POWDER: brown concrete powder
+  GREEN_CONCRETE_POWDER: green concrete powder
+  RED_CONCRETE_POWDER: red concrete powder
+  BLACK_CONCRETE_POWDER: black concrete powder
+  TURTLE_EGG: turtle egg
+  DEAD_TUBE_CORAL_BLOCK: dead tube coral block
+  DEAD_BRAIN_CORAL_BLOCK: dead brain coral block
+  DEAD_BUBBLE_CORAL_BLOCK: dead bubble coral block
+  DEAD_FIRE_CORAL_BLOCK: dead fire coral block
+  DEAD_HORN_CORAL_BLOCK: dead horn coral block
+  TUBE_CORAL_BLOCK: tube coral block
+  BRAIN_CORAL_BLOCK: brain coral block
+  BUBBLE_CORAL_BLOCK: bubble coral block
+  FIRE_CORAL_BLOCK: fire coral block
+  HORN_CORAL_BLOCK: horn coral block
+  TUBE_CORAL: tube coral
+  BRAIN_CORAL: brain coral
+  BUBBLE_CORAL: bubble coral
+  FIRE_CORAL: fire coral
+  HORN_CORAL: horn coral
+  DEAD_BRAIN_CORAL: dead brain coral
+  DEAD_BUBBLE_CORAL: dead bubble coral
+  DEAD_FIRE_CORAL: dead fire coral
+  DEAD_HORN_CORAL: dead horn coral
+  DEAD_TUBE_CORAL: dead tube coral
+  TUBE_CORAL_FAN: tube coral fan
+  BRAIN_CORAL_FAN: brain coral fan
+  BUBBLE_CORAL_FAN: bubble coral fan
+  FIRE_CORAL_FAN: fire coral fan
+  HORN_CORAL_FAN: horn coral fan
+  DEAD_TUBE_CORAL_FAN: dead tube coral fan
+  DEAD_BRAIN_CORAL_FAN: dead brain coral fan
+  DEAD_BUBBLE_CORAL_FAN: dead bubble coral fan
+  DEAD_FIRE_CORAL_FAN: dead fire coral fan
+  DEAD_HORN_CORAL_FAN: dead horn coral fan
+  BLUE_ICE: blue ice
+  CONDUIT: conduit
+  POLISHED_GRANITE_STAIRS: polished granite stairs
+  SMOOTH_RED_SANDSTONE_STAIRS: smooth red sandstone stairs
+  MOSSY_STONE_BRICK_STAIRS: mossy stone brick stairs
+  POLISHED_DIORITE_STAIRS: polished diorite stairs
+  MOSSY_COBBLESTONE_STAIRS: mossy cobblestone stairs
+  END_STONE_BRICK_STAIRS: end stone brick stairs
+  STONE_STAIRS: stone stairs
+  SMOOTH_SANDSTONE_STAIRS: smooth sandstone stairs
+  SMOOTH_QUARTZ_STAIRS: smooth quartz stairs
+  GRANITE_STAIRS: granite stairs
+  ANDESITE_STAIRS: andesite stairs
+  RED_NETHER_BRICK_STAIRS: red nether brick stairs
+  POLISHED_ANDESITE_STAIRS: polished andesite stairs
+  DIORITE_STAIRS: diorite stairs
+  POLISHED_GRANITE_SLAB: polished granite slab
+  SMOOTH_RED_SANDSTONE_SLAB: smooth red sandstone slab
+  MOSSY_STONE_BRICK_SLAB: mossy stone brick slab
+  POLISHED_DIORITE_SLAB: polished diorite slab
+  MOSSY_COBBLESTONE_SLAB: mossy cobblestone slab
+  END_STONE_BRICK_SLAB: end stone brick slab
+  SMOOTH_SANDSTONE_SLAB: smooth sandstone slab
+  SMOOTH_QUARTZ_SLAB: smooth quartz slab
+  GRANITE_SLAB: granite slab
+  ANDESITE_SLAB: andesite slab
+  RED_NETHER_BRICK_SLAB: red nether brick slab
+  POLISHED_ANDESITE_SLAB: polished andesite slab
+  DIORITE_SLAB: diorite slab
+  SCAFFOLDING: scaffolding
+  IRON_DOOR: iron door
+  OAK_DOOR: oak door
+  SPRUCE_DOOR: spruce door
+  BIRCH_DOOR: birch door
+  JUNGLE_DOOR: jungle door
+  ACACIA_DOOR: acacia door
+  DARK_OAK_DOOR: dark oak door
+  CRIMSON_DOOR: crimson door
+  WARPED_DOOR: warped door
+  REPEATER: repeater
+  COMPARATOR: comparator
+  STRUCTURE_BLOCK: structure block
+  JIGSAW: jigsaw
+  TURTLE_HELMET: turtle helmet
+  SCUTE: scute
+  FLINT_AND_STEEL: flint and steel
+  APPLE: apple
+  BOW: bow
+  ARROW: arrow
+  COAL: coal
+  CHARCOAL: charcoal
+  DIAMOND: diamond
+  IRON_INGOT: iron ingot
+  GOLD_INGOT: gold ingot
+  NETHERITE_INGOT: netherite ingot
+  NETHERITE_SCRAP: netherite scrap
+  WOODEN_SWORD: wooden sword
+  WOODEN_SHOVEL: wooden shovel
+  WOODEN_PICKAXE: wooden pickaxe
+  WOODEN_AXE: wooden axe
+  WOODEN_HOE: wooden hoe
+  STONE_SWORD: stone sword
+  STONE_SHOVEL: stone shovel
+  STONE_PICKAXE: stone pickaxe
+  STONE_AXE: stone axe
+  STONE_HOE: stone hoe
+  GOLDEN_SWORD: golden sword
+  GOLDEN_SHOVEL: golden shovel
+  GOLDEN_PICKAXE: golden pickaxe
+  GOLDEN_AXE: golden axe
+  GOLDEN_HOE: golden hoe
+  IRON_SWORD: iron sword
+  IRON_SHOVEL: iron shovel
+  IRON_PICKAXE: iron pickaxe
+  IRON_AXE: iron axe
+  IRON_HOE: iron hoe
+  DIAMOND_SWORD: diamond sword
+  DIAMOND_SHOVEL: diamond shovel
+  DIAMOND_PICKAXE: diamond pickaxe
+  DIAMOND_AXE: diamond axe
+  DIAMOND_HOE: diamond hoe
+  NETHERITE_SWORD: netherite sword
+  NETHERITE_SHOVEL: netherite shovel
+  NETHERITE_PICKAXE: netherite pickaxe
+  NETHERITE_AXE: netherite axe
+  NETHERITE_HOE: netherite hoe
+  STICK: stick
+  BOWL: bowl
+  MUSHROOM_STEW: mushroom stew
+  STRING: string
+  FEATHER: feather
+  GUNPOWDER: gunpowder
+  WHEAT_SEEDS: wheat seeds
+  WHEAT: wheat
+  BREAD: bread
+  LEATHER_HELMET: leather helmet
+  LEATHER_CHESTPLATE: leather chestplate
+  LEATHER_LEGGINGS: leather leggings
+  LEATHER_BOOTS: leather boots
+  CHAINMAIL_HELMET: chainmail helmet
+  CHAINMAIL_CHESTPLATE: chainmail chestplate
+  CHAINMAIL_LEGGINGS: chainmail leggings
+  CHAINMAIL_BOOTS: chainmail boots
+  IRON_HELMET: iron helmet
+  IRON_CHESTPLATE: iron chestplate
+  IRON_LEGGINGS: iron leggings
+  IRON_BOOTS: iron boots
+  DIAMOND_HELMET: diamond helmet
+  DIAMOND_CHESTPLATE: diamond chestplate
+  DIAMOND_LEGGINGS: diamond leggings
+  DIAMOND_BOOTS: diamond boots
+  GOLDEN_HELMET: golden helmet
+  GOLDEN_CHESTPLATE: golden chestplate
+  GOLDEN_LEGGINGS: golden leggings
+  GOLDEN_BOOTS: golden boots
+  NETHERITE_HELMET: netherite helmet
+  NETHERITE_CHESTPLATE: netherite chestplate
+  NETHERITE_LEGGINGS: netherite leggings
+  NETHERITE_BOOTS: netherite boots
+  FLINT: flint
+  PORKCHOP: porkchop
+  COOKED_PORKCHOP: cooked porkchop
+  PAINTING: painting
+  GOLDEN_APPLE: golden apple
+  ENCHANTED_GOLDEN_APPLE: enchanted golden apple
+  OAK_SIGN: oak sign
+  SPRUCE_SIGN: spruce sign
+  BIRCH_SIGN: birch sign
+  JUNGLE_SIGN: jungle sign
+  ACACIA_SIGN: acacia sign
+  DARK_OAK_SIGN: dark oak sign
+  CRIMSON_SIGN: crimson sign
+  WARPED_SIGN: warped sign
+  BUCKET: bucket
+  WATER_BUCKET: water bucket
+  LAVA_BUCKET: lava bucket
+  MINECART: minecart
+  SADDLE: saddle
+  REDSTONE: redstone
+  SNOWBALL: snowball
+  OAK_BOAT: oak boat
+  LEATHER: leather
+  MILK_BUCKET: milk bucket
+  PUFFERFISH_BUCKET: pufferfish bucket
+  SALMON_BUCKET: salmon bucket
+  COD_BUCKET: cod bucket
+  TROPICAL_FISH_BUCKET: tropical fish bucket
+  BRICK: brick
+  CLAY_BALL: clay ball
+  DRIED_KELP_BLOCK: dried kelp block
+  PAPER: paper
+  BOOK: book
+  SLIME_BALL: slime ball
+  CHEST_MINECART: chest minecart
+  FURNACE_MINECART: furnace minecart
+  EGG: egg
+  COMPASS: compass
+  FISHING_ROD: fishing rod
+  CLOCK: clock
+  GLOWSTONE_DUST: glowstone dust
+  COD: cod
+  SALMON: salmon
+  TROPICAL_FISH: tropical fish
+  PUFFERFISH: pufferfish
+  COOKED_COD: cooked cod
+  COOKED_SALMON: cooked salmon
+  INK_SAC: ink sac
+  COCOA_BEANS: cocoa beans
+  LAPIS_LAZULI: lapis lazuli
+  WHITE_DYE: white dye
+  ORANGE_DYE: orange dye
+  MAGENTA_DYE: magenta dye
+  LIGHT_BLUE_DYE: light blue dye
+  YELLOW_DYE: yellow dye
+  LIME_DYE: lime dye
+  PINK_DYE: pink dye
+  GRAY_DYE: gray dye
+  LIGHT_GRAY_DYE: light gray dye
+  CYAN_DYE: cyan dye
+  PURPLE_DYE: purple dye
+  BLUE_DYE: blue dye
+  BROWN_DYE: brown dye
+  GREEN_DYE: green dye
+  RED_DYE: red dye
+  BLACK_DYE: black dye
+  BONE_MEAL: bone meal
+  BONE: bone
+  SUGAR: sugar
+  CAKE: cake
+  WHITE_BED: white bed
+  ORANGE_BED: orange bed
+  MAGENTA_BED: magenta bed
+  LIGHT_BLUE_BED: light blue bed
+  YELLOW_BED: yellow bed
+  LIME_BED: lime bed
+  PINK_BED: pink bed
+  GRAY_BED: gray bed
+  LIGHT_GRAY_BED: light gray bed
+  CYAN_BED: cyan bed
+  PURPLE_BED: purple bed
+  BLUE_BED: blue bed
+  BROWN_BED: brown bed
+  GREEN_BED: green bed
+  RED_BED: red bed
+  BLACK_BED: black bed
+  COOKIE: cookie
+  FILLED_MAP: filled map
+  SHEARS: shears
+  MELON_SLICE: melon slice
+  DRIED_KELP: dried kelp
+  PUMPKIN_SEEDS: pumpkin seeds
+  MELON_SEEDS: melon seeds
+  BEEF: beef
+  COOKED_BEEF: cooked beef
+  CHICKEN: chicken
+  COOKED_CHICKEN: cooked chicken
+  ROTTEN_FLESH: rotten flesh
+  ENDER_PEARL: ender pearl
+  BLAZE_ROD: blaze rod
+  GHAST_TEAR: ghast tear
+  GOLD_NUGGET: gold nugget
+  NETHER_WART: nether wart
+  POTION: potion
+  GLASS_BOTTLE: glass bottle
+  SPIDER_EYE: spider eye
+  FERMENTED_SPIDER_EYE: fermented spider eye
+  BLAZE_POWDER: blaze powder
+  MAGMA_CREAM: magma cream
+  BREWING_STAND: brewing stand
+  CAULDRON: cauldron
+  ENDER_EYE: ender eye
+  GLISTERING_MELON_SLICE: glistering melon slice
+  BAT_SPAWN_EGG: bat spawn egg
+  BEE_SPAWN_EGG: bee spawn egg
+  BLAZE_SPAWN_EGG: blaze spawn egg
+  CAT_SPAWN_EGG: cat spawn egg
+  CAVE_SPIDER_SPAWN_EGG: cave spider spawn egg
+  CHICKEN_SPAWN_EGG: chicken spawn egg
+  COD_SPAWN_EGG: cod spawn egg
+  COW_SPAWN_EGG: cow spawn egg
+  CREEPER_SPAWN_EGG: creeper spawn egg
+  DOLPHIN_SPAWN_EGG: dolphin spawn egg
+  DONKEY_SPAWN_EGG: donkey spawn egg
+  DROWNED_SPAWN_EGG: drowned spawn egg
+  ELDER_GUARDIAN_SPAWN_EGG: elder guardian spawn egg
+  ENDERMAN_SPAWN_EGG: enderman spawn egg
+  ENDERMITE_SPAWN_EGG: endermite spawn egg
+  EVOKER_SPAWN_EGG: evoker spawn egg
+  FOX_SPAWN_EGG: fox spawn egg
+  GHAST_SPAWN_EGG: ghast spawn egg
+  GUARDIAN_SPAWN_EGG: guardian spawn egg
+  HOGLIN_SPAWN_EGG: hoglin spawn egg
+  HORSE_SPAWN_EGG: horse spawn egg
+  HUSK_SPAWN_EGG: husk spawn egg
+  LLAMA_SPAWN_EGG: llama spawn egg
+  MAGMA_CUBE_SPAWN_EGG: magma cube spawn egg
+  MOOSHROOM_SPAWN_EGG: mooshroom spawn egg
+  MULE_SPAWN_EGG: mule spawn egg
+  OCELOT_SPAWN_EGG: ocelot spawn egg
+  PANDA_SPAWN_EGG: panda spawn egg
+  PARROT_SPAWN_EGG: parrot spawn egg
+  PHANTOM_SPAWN_EGG: phantom spawn egg
+  PIG_SPAWN_EGG: pig spawn egg
+  PIGLIN_SPAWN_EGG: piglin spawn egg
+  PIGLIN_BRUTE_SPAWN_EGG: piglin brute spawn egg
+  PILLAGER_SPAWN_EGG: pillager spawn egg
+  POLAR_BEAR_SPAWN_EGG: polar bear spawn egg
+  PUFFERFISH_SPAWN_EGG: pufferfish spawn egg
+  RABBIT_SPAWN_EGG: rabbit spawn egg
+  RAVAGER_SPAWN_EGG: ravager spawn egg
+  SALMON_SPAWN_EGG: salmon spawn egg
+  SHEEP_SPAWN_EGG: sheep spawn egg
+  SHULKER_SPAWN_EGG: shulker spawn egg
+  SILVERFISH_SPAWN_EGG: silverfish spawn egg
+  SKELETON_SPAWN_EGG: skeleton spawn egg
+  SKELETON_HORSE_SPAWN_EGG: skeleton horse spawn egg
+  SLIME_SPAWN_EGG: slime spawn egg
+  SPIDER_SPAWN_EGG: spider spawn egg
+  SQUID_SPAWN_EGG: squid spawn egg
+  STRAY_SPAWN_EGG: stray spawn egg
+  STRIDER_SPAWN_EGG: strider spawn egg
+  TRADER_LLAMA_SPAWN_EGG: trader llama spawn egg
+  TROPICAL_FISH_SPAWN_EGG: tropical fish spawn egg
+  TURTLE_SPAWN_EGG: turtle spawn egg
+  VEX_SPAWN_EGG: vex spawn egg
+  VILLAGER_SPAWN_EGG: villager spawn egg
+  VINDICATOR_SPAWN_EGG: vindicator spawn egg
+  WANDERING_TRADER_SPAWN_EGG: wandering trader spawn egg
+  WITCH_SPAWN_EGG: witch spawn egg
+  WITHER_SKELETON_SPAWN_EGG: wither skeleton spawn egg
+  WOLF_SPAWN_EGG: wolf spawn egg
+  ZOGLIN_SPAWN_EGG: zoglin spawn egg
+  ZOMBIE_SPAWN_EGG: zombie spawn egg
+  ZOMBIE_HORSE_SPAWN_EGG: zombie horse spawn egg
+  ZOMBIE_VILLAGER_SPAWN_EGG: zombie villager spawn egg
+  ZOMBIFIED_PIGLIN_SPAWN_EGG: zombified piglin spawn egg
+  EXPERIENCE_BOTTLE: experience bottle
+  FIRE_CHARGE: fire charge
+  WRITABLE_BOOK: writable book
+  WRITTEN_BOOK: written book
+  EMERALD: emerald
+  ITEM_FRAME: item frame
+  FLOWER_POT: flower pot
+  CARROT: carrot
+  POTATO: potato
+  BAKED_POTATO: baked potato
+  POISONOUS_POTATO: poisonous potato
+  MAP: map
+  GOLDEN_CARROT: golden carrot
+  SKELETON_SKULL: skeleton skull
+  WITHER_SKELETON_SKULL: wither skeleton skull
+  PLAYER_HEAD: player head
+  ZOMBIE_HEAD: zombie head
+  CREEPER_HEAD: creeper head
+  DRAGON_HEAD: dragon head
+  CARROT_ON_A_STICK: carrot on a stick
+  WARPED_FUNGUS_ON_A_STICK: warped fungus on a stick
+  NETHER_STAR: nether star
+  PUMPKIN_PIE: pumpkin pie
+  FIREWORK_ROCKET: firework rocket
+  FIREWORK_STAR: firework star
+  ENCHANTED_BOOK: enchanted book
+  NETHER_BRICK: nether brick
+  QUARTZ: quartz
+  TNT_MINECART: tnt minecart
+  HOPPER_MINECART: hopper minecart
+  PRISMARINE_SHARD: prismarine shard
+  PRISMARINE_CRYSTALS: prismarine crystals
+  RABBIT: rabbit
+  COOKED_RABBIT: cooked rabbit
+  RABBIT_STEW: rabbit stew
+  RABBIT_FOOT: rabbit foot
+  RABBIT_HIDE: rabbit hide
+  ARMOR_STAND: armor stand
+  IRON_HORSE_ARMOR: iron horse armor
+  GOLDEN_HORSE_ARMOR: golden horse armor
+  DIAMOND_HORSE_ARMOR: diamond horse armor
+  LEATHER_HORSE_ARMOR: leather horse armor
+  LEAD: lead
+  NAME_TAG: name tag
+  COMMAND_BLOCK_MINECART: command block minecart
+  MUTTON: mutton
+  COOKED_MUTTON: cooked mutton
+  WHITE_BANNER: white banner
+  ORANGE_BANNER: orange banner
+  MAGENTA_BANNER: magenta banner
+  LIGHT_BLUE_BANNER: light blue banner
+  YELLOW_BANNER: yellow banner
+  LIME_BANNER: lime banner
+  PINK_BANNER: pink banner
+  GRAY_BANNER: gray banner
+  LIGHT_GRAY_BANNER: light gray banner
+  CYAN_BANNER: cyan banner
+  PURPLE_BANNER: purple banner
+  BLUE_BANNER: blue banner
+  BROWN_BANNER: brown banner
+  GREEN_BANNER: green banner
+  RED_BANNER: red banner
+  BLACK_BANNER: black banner
+  END_CRYSTAL: end crystal
+  CHORUS_FRUIT: chorus fruit
+  POPPED_CHORUS_FRUIT: popped chorus fruit
+  BEETROOT: beetroot
+  BEETROOT_SEEDS: beetroot seeds
+  BEETROOT_SOUP: beetroot soup
+  DRAGON_BREATH: dragon breath
+  SPLASH_POTION: splash potion
+  SPECTRAL_ARROW: spectral arrow
+  TIPPED_ARROW: tipped arrow
+  LINGERING_POTION: lingering potion
+  SHIELD: shield
+  ELYTRA: elytra
+  SPRUCE_BOAT: spruce boat
+  BIRCH_BOAT: birch boat
+  JUNGLE_BOAT: jungle boat
+  ACACIA_BOAT: acacia boat
+  DARK_OAK_BOAT: dark oak boat
+  TOTEM_OF_UNDYING: totem of undying
+  SHULKER_SHELL: shulker shell
+  IRON_NUGGET: iron nugget
+  KNOWLEDGE_BOOK: knowledge book
+  DEBUG_STICK: debug stick
+  MUSIC_DISC_13: music disc 13
+  MUSIC_DISC_CAT: music disc cat
+  MUSIC_DISC_BLOCKS: music disc blocks
+  MUSIC_DISC_CHIRP: music disc chirp
+  MUSIC_DISC_FAR: music disc far
+  MUSIC_DISC_MALL: music disc mall
+  MUSIC_DISC_MELLOHI: music disc mellohi
+  MUSIC_DISC_STAL: music disc stal
+  MUSIC_DISC_STRAD: music disc strad
+  MUSIC_DISC_WARD: music disc ward
+  MUSIC_DISC_11: music disc 11
+  MUSIC_DISC_WAIT: music disc wait
+  MUSIC_DISC_PIGSTEP: music disc pigstep
+  TRIDENT: trident
+  PHANTOM_MEMBRANE: phantom membrane
+  NAUTILUS_SHELL: nautilus shell
+  HEART_OF_THE_SEA: heart of the sea
+  CROSSBOW: crossbow
+  SUSPICIOUS_STEW: suspicious stew
+  LOOM: loom
+  FLOWER_BANNER_PATTERN: flower banner pattern
+  CREEPER_BANNER_PATTERN: creeper banner pattern
+  SKULL_BANNER_PATTERN: skull banner pattern
+  MOJANG_BANNER_PATTERN: mojang banner pattern
+  GLOBE_BANNER_PATTERN: globe banner pattern
+  PIGLIN_BANNER_PATTERN: piglin banner pattern
+  COMPOSTER: composter
+  BARREL: barrel
+  SMOKER: smoker
+  BLAST_FURNACE: blast furnace
+  CARTOGRAPHY_TABLE: cartography table
+  FLETCHING_TABLE: fletching table
+  GRINDSTONE: grindstone
+  LECTERN: lectern
+  SMITHING_TABLE: smithing table
+  STONECUTTER: stonecutter
+  BELL: bell
+  LANTERN: lantern
+  SOUL_LANTERN: soul lantern
+  SWEET_BERRIES: sweet berries
+  CAMPFIRE: campfire
+  SOUL_CAMPFIRE: soul campfire
+  SHROOMLIGHT: shroomlight
+  HONEYCOMB: honeycomb
+  BEE_NEST: bee nest
+  BEEHIVE: beehive
+  HONEY_BOTTLE: honey bottle
+  HONEY_BLOCK: honey block
+  HONEYCOMB_BLOCK: honeycomb block
+  LODESTONE: lodestone
+  NETHERITE_BLOCK: netherite block
+  ANCIENT_DEBRIS: ancient debris
+  TARGET: target
+  CRYING_OBSIDIAN: crying obsidian
+  BLACKSTONE: blackstone
+  BLACKSTONE_SLAB: blackstone slab
+  BLACKSTONE_STAIRS: blackstone stairs
+  GILDED_BLACKSTONE: gilded blackstone
+  POLISHED_BLACKSTONE: polished blackstone
+  POLISHED_BLACKSTONE_SLAB: polished blackstone slab
+  POLISHED_BLACKSTONE_STAIRS: polished blackstone stairs
+  CHISELED_POLISHED_BLACKSTONE: chiseled polished blackstone
+  POLISHED_BLACKSTONE_BRICKS: polished blackstone bricks
+  POLISHED_BLACKSTONE_BRICK_SLAB: polished blackstone brick slab
+  POLISHED_BLACKSTONE_BRICK_STAIRS: polished blackstone brick stairs
+  CRACKED_POLISHED_BLACKSTONE_BRICKS: cracked polished blackstone bricks
+  RESPAWN_ANCHOR: respawn anchor
+  WATER: water
+  LAVA: lava
+  TALL_SEAGRASS: tall seagrass
+  PISTON_HEAD: piston head
+  MOVING_PISTON: moving piston
+  WALL_TORCH: wall torch
+  FIRE: fire
+  SOUL_FIRE: soul fire
+  REDSTONE_WIRE: redstone wire
+  OAK_WALL_SIGN: oak wall sign
+  SPRUCE_WALL_SIGN: spruce wall sign
+  BIRCH_WALL_SIGN: birch wall sign
+  ACACIA_WALL_SIGN: acacia wall sign
+  JUNGLE_WALL_SIGN: jungle wall sign
+  DARK_OAK_WALL_SIGN: dark oak wall sign
+  REDSTONE_WALL_TORCH: redstone wall torch
+  SOUL_WALL_TORCH: soul wall torch
+  NETHER_PORTAL: nether portal
+  ATTACHED_PUMPKIN_STEM: attached pumpkin stem
+  ATTACHED_MELON_STEM: attached melon stem
+  PUMPKIN_STEM: pumpkin stem
+  MELON_STEM: melon stem
+  END_PORTAL: end portal
+  COCOA: cocoa
+  TRIPWIRE: tripwire
+  POTTED_OAK_SAPLING: potted oak sapling
+  POTTED_SPRUCE_SAPLING: potted spruce sapling
+  POTTED_BIRCH_SAPLING: potted birch sapling
+  POTTED_JUNGLE_SAPLING: potted jungle sapling
+  POTTED_ACACIA_SAPLING: potted acacia sapling
+  POTTED_DARK_OAK_SAPLING: potted dark oak sapling
+  POTTED_FERN: potted fern
+  POTTED_DANDELION: potted dandelion
+  POTTED_POPPY: potted poppy
+  POTTED_BLUE_ORCHID: potted blue orchid
+  POTTED_ALLIUM: potted allium
+  POTTED_AZURE_BLUET: potted azure bluet
+  POTTED_RED_TULIP: potted red tulip
+  POTTED_ORANGE_TULIP: potted orange tulip
+  POTTED_WHITE_TULIP: potted white tulip
+  POTTED_PINK_TULIP: potted pink tulip
+  POTTED_OXEYE_DAISY: potted oxeye daisy
+  POTTED_CORNFLOWER: potted cornflower
+  POTTED_LILY_OF_THE_VALLEY: potted lily of the valley
+  POTTED_WITHER_ROSE: potted wither rose
+  POTTED_RED_MUSHROOM: potted red mushroom
+  POTTED_BROWN_MUSHROOM: potted brown mushroom
+  POTTED_DEAD_BUSH: potted dead bush
+  POTTED_CACTUS: potted cactus
+  CARROTS: carrots
+  POTATOES: potatoes
+  SKELETON_WALL_SKULL: skeleton wall skull
+  WITHER_SKELETON_WALL_SKULL: wither skeleton wall skull
+  ZOMBIE_WALL_HEAD: zombie wall head
+  PLAYER_WALL_HEAD: player wall head
+  CREEPER_WALL_HEAD: creeper wall head
+  DRAGON_WALL_HEAD: dragon wall head
+  WHITE_WALL_BANNER: white wall banner
+  ORANGE_WALL_BANNER: orange wall banner
+  MAGENTA_WALL_BANNER: magenta wall banner
+  LIGHT_BLUE_WALL_BANNER: light blue wall banner
+  YELLOW_WALL_BANNER: yellow wall banner
+  LIME_WALL_BANNER: lime wall banner
+  PINK_WALL_BANNER: pink wall banner
+  GRAY_WALL_BANNER: gray wall banner
+  LIGHT_GRAY_WALL_BANNER: light gray wall banner
+  CYAN_WALL_BANNER: cyan wall banner
+  PURPLE_WALL_BANNER: purple wall banner
+  BLUE_WALL_BANNER: blue wall banner
+  BROWN_WALL_BANNER: brown wall banner
+  GREEN_WALL_BANNER: green wall banner
+  RED_WALL_BANNER: red wall banner
+  BLACK_WALL_BANNER: black wall banner
+  BEETROOTS: beetroots
+  END_GATEWAY: end gateway
+  FROSTED_ICE: frosted ice
+  KELP_PLANT: kelp plant
+  DEAD_TUBE_CORAL_WALL_FAN: dead tube coral wall fan
+  DEAD_BRAIN_CORAL_WALL_FAN: dead brain coral wall fan
+  DEAD_BUBBLE_CORAL_WALL_FAN: dead bubble coral wall fan
+  DEAD_FIRE_CORAL_WALL_FAN: dead fire coral wall fan
+  DEAD_HORN_CORAL_WALL_FAN: dead horn coral wall fan
+  TUBE_CORAL_WALL_FAN: tube coral wall fan
+  BRAIN_CORAL_WALL_FAN: brain coral wall fan
+  BUBBLE_CORAL_WALL_FAN: bubble coral wall fan
+  FIRE_CORAL_WALL_FAN: fire coral wall fan
+  HORN_CORAL_WALL_FAN: horn coral wall fan
+  BAMBOO_SAPLING: bamboo sapling
+  POTTED_BAMBOO: potted bamboo
+  VOID_AIR: void air
+  CAVE_AIR: cave air
+  BUBBLE_COLUMN: bubble column
+  SWEET_BERRY_BUSH: sweet berry bush
+  WEEPING_VINES_PLANT: weeping vines plant
+  TWISTING_VINES_PLANT: twisting vines plant
+  CRIMSON_WALL_SIGN: crimson wall sign
+  WARPED_WALL_SIGN: warped wall sign
+  POTTED_CRIMSON_FUNGUS: potted crimson fungus
+  POTTED_WARPED_FUNGUS: potted warped fungus
+  POTTED_CRIMSON_ROOTS: potted crimson roots
+  POTTED_WARPED_ROOTS: potted warped roots
+
+Sound:
+  AMBIENT_BASALT_DELTAS_ADDITIONS: ambient basalt deltas additions
+  AMBIENT_BASALT_DELTAS_LOOP: ambient basalt deltas loop
+  AMBIENT_BASALT_DELTAS_MOOD: ambient basalt deltas mood
+  AMBIENT_CAVE: ambient cave
+  AMBIENT_CRIMSON_FOREST_ADDITIONS: ambient crimson forest additions
+  AMBIENT_CRIMSON_FOREST_LOOP: ambient crimson forest loop
+  AMBIENT_CRIMSON_FOREST_MOOD: ambient crimson forest mood
+  AMBIENT_NETHER_WASTES_ADDITIONS: ambient nether wastes additions
+  AMBIENT_NETHER_WASTES_LOOP: ambient nether wastes loop
+  AMBIENT_NETHER_WASTES_MOOD: ambient nether wastes mood
+  AMBIENT_SOUL_SAND_VALLEY_ADDITIONS: ambient soul sand valley additions
+  AMBIENT_SOUL_SAND_VALLEY_LOOP: ambient soul sand valley loop
+  AMBIENT_SOUL_SAND_VALLEY_MOOD: ambient soul sand valley mood
+  AMBIENT_UNDERWATER_ENTER: ambient underwater enter
+  AMBIENT_UNDERWATER_EXIT: ambient underwater exit
+  AMBIENT_UNDERWATER_LOOP: ambient underwater loop
+  AMBIENT_UNDERWATER_LOOP_ADDITIONS: ambient underwater loop additions
+  AMBIENT_UNDERWATER_LOOP_ADDITIONS_RARE: ambient underwater loop additions rare
+  AMBIENT_UNDERWATER_LOOP_ADDITIONS_ULTRA_RARE: ambient underwater loop additions ultra rare
+  AMBIENT_WARPED_FOREST_ADDITIONS: ambient warped forest additions
+  AMBIENT_WARPED_FOREST_LOOP: ambient warped forest loop
+  AMBIENT_WARPED_FOREST_MOOD: ambient warped forest mood
+  BLOCK_ANCIENT_DEBRIS_BREAK: block ancient debris break
+  BLOCK_ANCIENT_DEBRIS_FALL: block ancient debris fall
+  BLOCK_ANCIENT_DEBRIS_HIT: block ancient debris hit
+  BLOCK_ANCIENT_DEBRIS_PLACE: block ancient debris place
+  BLOCK_ANCIENT_DEBRIS_STEP: block ancient debris step
+  BLOCK_ANVIL_BREAK: block anvil break
+  BLOCK_ANVIL_DESTROY: block anvil destroy
+  BLOCK_ANVIL_FALL: block anvil fall
+  BLOCK_ANVIL_HIT: block anvil hit
+  BLOCK_ANVIL_LAND: block anvil land
+  BLOCK_ANVIL_PLACE: block anvil place
+  BLOCK_ANVIL_STEP: block anvil step
+  BLOCK_ANVIL_USE: block anvil use
+  BLOCK_BAMBOO_BREAK: block bamboo break
+  BLOCK_BAMBOO_FALL: block bamboo fall
+  BLOCK_BAMBOO_HIT: block bamboo hit
+  BLOCK_BAMBOO_PLACE: block bamboo place
+  BLOCK_BAMBOO_SAPLING_BREAK: block bamboo sapling break
+  BLOCK_BAMBOO_SAPLING_HIT: block bamboo sapling hit
+  BLOCK_BAMBOO_SAPLING_PLACE: block bamboo sapling place
+  BLOCK_BAMBOO_STEP: block bamboo step
+  BLOCK_BARREL_CLOSE: block barrel close
+  BLOCK_BARREL_OPEN: block barrel open
+  BLOCK_BASALT_BREAK: block basalt break
+  BLOCK_BASALT_FALL: block basalt fall
+  BLOCK_BASALT_HIT: block basalt hit
+  BLOCK_BASALT_PLACE: block basalt place
+  BLOCK_BASALT_STEP: block basalt step
+  BLOCK_BEACON_ACTIVATE: block beacon activate
+  BLOCK_BEACON_AMBIENT: block beacon ambient
+  BLOCK_BEACON_DEACTIVATE: block beacon deactivate
+  BLOCK_BEACON_POWER_SELECT: block beacon power select
+  BLOCK_BEEHIVE_DRIP: block beehive drip
+  BLOCK_BEEHIVE_ENTER: block beehive enter
+  BLOCK_BEEHIVE_EXIT: block beehive exit
+  BLOCK_BEEHIVE_SHEAR: block beehive shear
+  BLOCK_BEEHIVE_WORK: block beehive work
+  BLOCK_BELL_RESONATE: block bell resonate
+  BLOCK_BELL_USE: block bell use
+  BLOCK_BLASTFURNACE_FIRE_CRACKLE: block blastfurnace fire crackle
+  BLOCK_BONE_BLOCK_BREAK: block bone block break
+  BLOCK_BONE_BLOCK_FALL: block bone block fall
+  BLOCK_BONE_BLOCK_HIT: block bone block hit
+  BLOCK_BONE_BLOCK_PLACE: block bone block place
+  BLOCK_BONE_BLOCK_STEP: block bone block step
+  BLOCK_BREWING_STAND_BREW: block brewing stand brew
+  BLOCK_BUBBLE_COLUMN_BUBBLE_POP: block bubble column bubble pop
+  BLOCK_BUBBLE_COLUMN_UPWARDS_AMBIENT: block bubble column upwards ambient
+  BLOCK_BUBBLE_COLUMN_UPWARDS_INSIDE: block bubble column upwards inside
+  BLOCK_BUBBLE_COLUMN_WHIRLPOOL_AMBIENT: block bubble column whirlpool ambient
+  BLOCK_BUBBLE_COLUMN_WHIRLPOOL_INSIDE: block bubble column whirlpool inside
+  BLOCK_CAMPFIRE_CRACKLE: block campfire crackle
+  BLOCK_CHAIN_BREAK: block chain break
+  BLOCK_CHAIN_FALL: block chain fall
+  BLOCK_CHAIN_HIT: block chain hit
+  BLOCK_CHAIN_PLACE: block chain place
+  BLOCK_CHAIN_STEP: block chain step
+  BLOCK_CHEST_CLOSE: block chest close
+  BLOCK_CHEST_LOCKED: block chest locked
+  BLOCK_CHEST_OPEN: block chest open
+  BLOCK_CHORUS_FLOWER_DEATH: block chorus flower death
+  BLOCK_CHORUS_FLOWER_GROW: block chorus flower grow
+  BLOCK_COMPARATOR_CLICK: block comparator click
+  BLOCK_COMPOSTER_EMPTY: block composter empty
+  BLOCK_COMPOSTER_FILL: block composter fill
+  BLOCK_COMPOSTER_FILL_SUCCESS: block composter fill success
+  BLOCK_COMPOSTER_READY: block composter ready
+  BLOCK_CONDUIT_ACTIVATE: block conduit activate
+  BLOCK_CONDUIT_AMBIENT: block conduit ambient
+  BLOCK_CONDUIT_AMBIENT_SHORT: block conduit ambient short
+  BLOCK_CONDUIT_ATTACK_TARGET: block conduit attack target
+  BLOCK_CONDUIT_DEACTIVATE: block conduit deactivate
+  BLOCK_CORAL_BLOCK_BREAK: block coral block break
+  BLOCK_CORAL_BLOCK_FALL: block coral block fall
+  BLOCK_CORAL_BLOCK_HIT: block coral block hit
+  BLOCK_CORAL_BLOCK_PLACE: block coral block place
+  BLOCK_CORAL_BLOCK_STEP: block coral block step
+  BLOCK_CROP_BREAK: block crop break
+  BLOCK_DISPENSER_DISPENSE: block dispenser dispense
+  BLOCK_DISPENSER_FAIL: block dispenser fail
+  BLOCK_DISPENSER_LAUNCH: block dispenser launch
+  BLOCK_ENCHANTMENT_TABLE_USE: block enchantment table use
+  BLOCK_ENDER_CHEST_CLOSE: block ender chest close
+  BLOCK_ENDER_CHEST_OPEN: block ender chest open
+  BLOCK_END_GATEWAY_SPAWN: block end gateway spawn
+  BLOCK_END_PORTAL_FRAME_FILL: block end portal frame fill
+  BLOCK_END_PORTAL_SPAWN: block end portal spawn
+  BLOCK_FENCE_GATE_CLOSE: block fence gate close
+  BLOCK_FENCE_GATE_OPEN: block fence gate open
+  BLOCK_FIRE_AMBIENT: block fire ambient
+  BLOCK_FIRE_EXTINGUISH: block fire extinguish
+  BLOCK_FUNGUS_BREAK: block fungus break
+  BLOCK_FUNGUS_FALL: block fungus fall
+  BLOCK_FUNGUS_HIT: block fungus hit
+  BLOCK_FUNGUS_PLACE: block fungus place
+  BLOCK_FUNGUS_STEP: block fungus step
+  BLOCK_FURNACE_FIRE_CRACKLE: block furnace fire crackle
+  BLOCK_GILDED_BLACKSTONE_BREAK: block gilded blackstone break
+  BLOCK_GILDED_BLACKSTONE_FALL: block gilded blackstone fall
+  BLOCK_GILDED_BLACKSTONE_HIT: block gilded blackstone hit
+  BLOCK_GILDED_BLACKSTONE_PLACE: block gilded blackstone place
+  BLOCK_GILDED_BLACKSTONE_STEP: block gilded blackstone step
+  BLOCK_GLASS_BREAK: block glass break
+  BLOCK_GLASS_FALL: block glass fall
+  BLOCK_GLASS_HIT: block glass hit
+  BLOCK_GLASS_PLACE: block glass place
+  BLOCK_GLASS_STEP: block glass step
+  BLOCK_GRASS_BREAK: block grass break
+  BLOCK_GRASS_FALL: block grass fall
+  BLOCK_GRASS_HIT: block grass hit
+  BLOCK_GRASS_PLACE: block grass place
+  BLOCK_GRASS_STEP: block grass step
+  BLOCK_GRAVEL_BREAK: block gravel break
+  BLOCK_GRAVEL_FALL: block gravel fall
+  BLOCK_GRAVEL_HIT: block gravel hit
+  BLOCK_GRAVEL_PLACE: block gravel place
+  BLOCK_GRAVEL_STEP: block gravel step
+  BLOCK_GRINDSTONE_USE: block grindstone use
+  BLOCK_HONEY_BLOCK_BREAK: block honey block break
+  BLOCK_HONEY_BLOCK_FALL: block honey block fall
+  BLOCK_HONEY_BLOCK_HIT: block honey block hit
+  BLOCK_HONEY_BLOCK_PLACE: block honey block place
+  BLOCK_HONEY_BLOCK_SLIDE: block honey block slide
+  BLOCK_HONEY_BLOCK_STEP: block honey block step
+  BLOCK_IRON_DOOR_CLOSE: block iron door close
+  BLOCK_IRON_DOOR_OPEN: block iron door open
+  BLOCK_IRON_TRAPDOOR_CLOSE: block iron trapdoor close
+  BLOCK_IRON_TRAPDOOR_OPEN: block iron trapdoor open
+  BLOCK_LADDER_BREAK: block ladder break
+  BLOCK_LADDER_FALL: block ladder fall
+  BLOCK_LADDER_HIT: block ladder hit
+  BLOCK_LADDER_PLACE: block ladder place
+  BLOCK_LADDER_STEP: block ladder step
+  BLOCK_LANTERN_BREAK: block lantern break
+  BLOCK_LANTERN_FALL: block lantern fall
+  BLOCK_LANTERN_HIT: block lantern hit
+  BLOCK_LANTERN_PLACE: block lantern place
+  BLOCK_LANTERN_STEP: block lantern step
+  BLOCK_LAVA_AMBIENT: block lava ambient
+  BLOCK_LAVA_EXTINGUISH: block lava extinguish
+  BLOCK_LAVA_POP: block lava pop
+  BLOCK_LEVER_CLICK: block lever click
+  BLOCK_LILY_PAD_PLACE: block lily pad place
+  BLOCK_LODESTONE_BREAK: block lodestone break
+  BLOCK_LODESTONE_FALL: block lodestone fall
+  BLOCK_LODESTONE_HIT: block lodestone hit
+  BLOCK_LODESTONE_PLACE: block lodestone place
+  BLOCK_LODESTONE_STEP: block lodestone step
+  BLOCK_METAL_BREAK: block metal break
+  BLOCK_METAL_FALL: block metal fall
+  BLOCK_METAL_HIT: block metal hit
+  BLOCK_METAL_PLACE: block metal place
+  BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF: block metal pressure plate click off
+  BLOCK_METAL_PRESSURE_PLATE_CLICK_ON: block metal pressure plate click on
+  BLOCK_METAL_STEP: block metal step
+  BLOCK_NETHERITE_BLOCK_BREAK: block netherite block break
+  BLOCK_NETHERITE_BLOCK_FALL: block netherite block fall
+  BLOCK_NETHERITE_BLOCK_HIT: block netherite block hit
+  BLOCK_NETHERITE_BLOCK_PLACE: block netherite block place
+  BLOCK_NETHERITE_BLOCK_STEP: block netherite block step
+  BLOCK_NETHERRACK_BREAK: block netherrack break
+  BLOCK_NETHERRACK_FALL: block netherrack fall
+  BLOCK_NETHERRACK_HIT: block netherrack hit
+  BLOCK_NETHERRACK_PLACE: block netherrack place
+  BLOCK_NETHERRACK_STEP: block netherrack step
+  BLOCK_NETHER_BRICKS_BREAK: block nether bricks break
+  BLOCK_NETHER_BRICKS_FALL: block nether bricks fall
+  BLOCK_NETHER_BRICKS_HIT: block nether bricks hit
+  BLOCK_NETHER_BRICKS_PLACE: block nether bricks place
+  BLOCK_NETHER_BRICKS_STEP: block nether bricks step
+  BLOCK_NETHER_GOLD_ORE_BREAK: block nether gold ore break
+  BLOCK_NETHER_GOLD_ORE_FALL: block nether gold ore fall
+  BLOCK_NETHER_GOLD_ORE_HIT: block nether gold ore hit
+  BLOCK_NETHER_GOLD_ORE_PLACE: block nether gold ore place
+  BLOCK_NETHER_GOLD_ORE_STEP: block nether gold ore step
+  BLOCK_NETHER_ORE_BREAK: block nether ore break
+  BLOCK_NETHER_ORE_FALL: block nether ore fall
+  BLOCK_NETHER_ORE_HIT: block nether ore hit
+  BLOCK_NETHER_ORE_PLACE: block nether ore place
+  BLOCK_NETHER_ORE_STEP: block nether ore step
+  BLOCK_NETHER_SPROUTS_BREAK: block nether sprouts break
+  BLOCK_NETHER_SPROUTS_FALL: block nether sprouts fall
+  BLOCK_NETHER_SPROUTS_HIT: block nether sprouts hit
+  BLOCK_NETHER_SPROUTS_PLACE: block nether sprouts place
+  BLOCK_NETHER_SPROUTS_STEP: block nether sprouts step
+  BLOCK_NETHER_WART_BREAK: block nether wart break
+  BLOCK_NOTE_BLOCK_BANJO: block note block banjo
+  BLOCK_NOTE_BLOCK_BASEDRUM: block note block basedrum
+  BLOCK_NOTE_BLOCK_BASS: block note block bass
+  BLOCK_NOTE_BLOCK_BELL: block note block bell
+  BLOCK_NOTE_BLOCK_BIT: block note block bit
+  BLOCK_NOTE_BLOCK_CHIME: block note block chime
+  BLOCK_NOTE_BLOCK_COW_BELL: block note block cow bell
+  BLOCK_NOTE_BLOCK_DIDGERIDOO: block note block didgeridoo
+  BLOCK_NOTE_BLOCK_FLUTE: block note block flute
+  BLOCK_NOTE_BLOCK_GUITAR: block note block guitar
+  BLOCK_NOTE_BLOCK_HARP: block note block harp
+  BLOCK_NOTE_BLOCK_HAT: block note block hat
+  BLOCK_NOTE_BLOCK_IRON_XYLOPHONE: block note block iron xylophone
+  BLOCK_NOTE_BLOCK_PLING: block note block pling
+  BLOCK_NOTE_BLOCK_SNARE: block note block snare
+  BLOCK_NOTE_BLOCK_XYLOPHONE: block note block xylophone
+  BLOCK_NYLIUM_BREAK: block nylium break
+  BLOCK_NYLIUM_FALL: block nylium fall
+  BLOCK_NYLIUM_HIT: block nylium hit
+  BLOCK_NYLIUM_PLACE: block nylium place
+  BLOCK_NYLIUM_STEP: block nylium step
+  BLOCK_PISTON_CONTRACT: block piston contract
+  BLOCK_PISTON_EXTEND: block piston extend
+  BLOCK_PORTAL_AMBIENT: block portal ambient
+  BLOCK_PORTAL_TRAVEL: block portal travel
+  BLOCK_PORTAL_TRIGGER: block portal trigger
+  BLOCK_PUMPKIN_CARVE: block pumpkin carve
+  BLOCK_REDSTONE_TORCH_BURNOUT: block redstone torch burnout
+  BLOCK_RESPAWN_ANCHOR_AMBIENT: block respawn anchor ambient
+  BLOCK_RESPAWN_ANCHOR_CHARGE: block respawn anchor charge
+  BLOCK_RESPAWN_ANCHOR_DEPLETE: block respawn anchor deplete
+  BLOCK_RESPAWN_ANCHOR_SET_SPAWN: block respawn anchor set spawn
+  BLOCK_ROOTS_BREAK: block roots break
+  BLOCK_ROOTS_FALL: block roots fall
+  BLOCK_ROOTS_HIT: block roots hit
+  BLOCK_ROOTS_PLACE: block roots place
+  BLOCK_ROOTS_STEP: block roots step
+  BLOCK_SAND_BREAK: block sand break
+  BLOCK_SAND_FALL: block sand fall
+  BLOCK_SAND_HIT: block sand hit
+  BLOCK_SAND_PLACE: block sand place
+  BLOCK_SAND_STEP: block sand step
+  BLOCK_SCAFFOLDING_BREAK: block scaffolding break
+  BLOCK_SCAFFOLDING_FALL: block scaffolding fall
+  BLOCK_SCAFFOLDING_HIT: block scaffolding hit
+  BLOCK_SCAFFOLDING_PLACE: block scaffolding place
+  BLOCK_SCAFFOLDING_STEP: block scaffolding step
+  BLOCK_SHROOMLIGHT_BREAK: block shroomlight break
+  BLOCK_SHROOMLIGHT_FALL: block shroomlight fall
+  BLOCK_SHROOMLIGHT_HIT: block shroomlight hit
+  BLOCK_SHROOMLIGHT_PLACE: block shroomlight place
+  BLOCK_SHROOMLIGHT_STEP: block shroomlight step
+  BLOCK_SHULKER_BOX_CLOSE: block shulker box close
+  BLOCK_SHULKER_BOX_OPEN: block shulker box open
+  BLOCK_SLIME_BLOCK_BREAK: block slime block break
+  BLOCK_SLIME_BLOCK_FALL: block slime block fall
+  BLOCK_SLIME_BLOCK_HIT: block slime block hit
+  BLOCK_SLIME_BLOCK_PLACE: block slime block place
+  BLOCK_SLIME_BLOCK_STEP: block slime block step
+  BLOCK_SMITHING_TABLE_USE: block smithing table use
+  BLOCK_SMOKER_SMOKE: block smoker smoke
+  BLOCK_SNOW_BREAK: block snow break
+  BLOCK_SNOW_FALL: block snow fall
+  BLOCK_SNOW_HIT: block snow hit
+  BLOCK_SNOW_PLACE: block snow place
+  BLOCK_SNOW_STEP: block snow step
+  BLOCK_SOUL_SAND_BREAK: block soul sand break
+  BLOCK_SOUL_SAND_FALL: block soul sand fall
+  BLOCK_SOUL_SAND_HIT: block soul sand hit
+  BLOCK_SOUL_SAND_PLACE: block soul sand place
+  BLOCK_SOUL_SAND_STEP: block soul sand step
+  BLOCK_SOUL_SOIL_BREAK: block soul soil break
+  BLOCK_SOUL_SOIL_FALL: block soul soil fall
+  BLOCK_SOUL_SOIL_HIT: block soul soil hit
+  BLOCK_SOUL_SOIL_PLACE: block soul soil place
+  BLOCK_SOUL_SOIL_STEP: block soul soil step
+  BLOCK_STEM_BREAK: block stem break
+  BLOCK_STEM_FALL: block stem fall
+  BLOCK_STEM_HIT: block stem hit
+  BLOCK_STEM_PLACE: block stem place
+  BLOCK_STEM_STEP: block stem step
+  BLOCK_STONE_BREAK: block stone break
+  BLOCK_STONE_BUTTON_CLICK_OFF: block stone button click off
+  BLOCK_STONE_BUTTON_CLICK_ON: block stone button click on
+  BLOCK_STONE_FALL: block stone fall
+  BLOCK_STONE_HIT: block stone hit
+  BLOCK_STONE_PLACE: block stone place
+  BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF: block stone pressure plate click off
+  BLOCK_STONE_PRESSURE_PLATE_CLICK_ON: block stone pressure plate click on
+  BLOCK_STONE_STEP: block stone step
+  BLOCK_SWEET_BERRY_BUSH_BREAK: block sweet berry bush break
+  BLOCK_SWEET_BERRY_BUSH_PLACE: block sweet berry bush place
+  BLOCK_TRIPWIRE_ATTACH: block tripwire attach
+  BLOCK_TRIPWIRE_CLICK_OFF: block tripwire click off
+  BLOCK_TRIPWIRE_CLICK_ON: block tripwire click on
+  BLOCK_TRIPWIRE_DETACH: block tripwire detach
+  BLOCK_VINE_STEP: block vine step
+  BLOCK_WART_BLOCK_BREAK: block wart block break
+  BLOCK_WART_BLOCK_FALL: block wart block fall
+  BLOCK_WART_BLOCK_HIT: block wart block hit
+  BLOCK_WART_BLOCK_PLACE: block wart block place
+  BLOCK_WART_BLOCK_STEP: block wart block step
+  BLOCK_WATER_AMBIENT: block water ambient
+  BLOCK_WEEPING_VINES_BREAK: block weeping vines break
+  BLOCK_WEEPING_VINES_FALL: block weeping vines fall
+  BLOCK_WEEPING_VINES_HIT: block weeping vines hit
+  BLOCK_WEEPING_VINES_PLACE: block weeping vines place
+  BLOCK_WEEPING_VINES_STEP: block weeping vines step
+  BLOCK_WET_GRASS_BREAK: block wet grass break
+  BLOCK_WET_GRASS_FALL: block wet grass fall
+  BLOCK_WET_GRASS_HIT: block wet grass hit
+  BLOCK_WET_GRASS_PLACE: block wet grass place
+  BLOCK_WET_GRASS_STEP: block wet grass step
+  BLOCK_WOODEN_BUTTON_CLICK_OFF: block wooden button click off
+  BLOCK_WOODEN_BUTTON_CLICK_ON: block wooden button click on
+  BLOCK_WOODEN_DOOR_CLOSE: block wooden door close
+  BLOCK_WOODEN_DOOR_OPEN: block wooden door open
+  BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF: block wooden pressure plate click off
+  BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON: block wooden pressure plate click on
+  BLOCK_WOODEN_TRAPDOOR_CLOSE: block wooden trapdoor close
+  BLOCK_WOODEN_TRAPDOOR_OPEN: block wooden trapdoor open
+  BLOCK_WOOD_BREAK: block wood break
+  BLOCK_WOOD_FALL: block wood fall
+  BLOCK_WOOD_HIT: block wood hit
+  BLOCK_WOOD_PLACE: block wood place
+  BLOCK_WOOD_STEP: block wood step
+  BLOCK_WOOL_BREAK: block wool break
+  BLOCK_WOOL_FALL: block wool fall
+  BLOCK_WOOL_HIT: block wool hit
+  BLOCK_WOOL_PLACE: block wool place
+  BLOCK_WOOL_STEP: block wool step
+  ENCHANT_THORNS_HIT: enchant thorns hit
+  ENTITY_ARMOR_STAND_BREAK: entity armor stand break
+  ENTITY_ARMOR_STAND_FALL: entity armor stand fall
+  ENTITY_ARMOR_STAND_HIT: entity armor stand hit
+  ENTITY_ARMOR_STAND_PLACE: entity armor stand place
+  ENTITY_ARROW_HIT: entity arrow hit
+  ENTITY_ARROW_HIT_PLAYER: entity arrow hit player
+  ENTITY_ARROW_SHOOT: entity arrow shoot
+  ENTITY_BAT_AMBIENT: entity bat ambient
+  ENTITY_BAT_DEATH: entity bat death
+  ENTITY_BAT_HURT: entity bat hurt
+  ENTITY_BAT_LOOP: entity bat loop
+  ENTITY_BAT_TAKEOFF: entity bat takeoff
+  ENTITY_BEE_DEATH: entity bee death
+  ENTITY_BEE_HURT: entity bee hurt
+  ENTITY_BEE_LOOP: entity bee loop
+  ENTITY_BEE_LOOP_AGGRESSIVE: entity bee loop aggressive
+  ENTITY_BEE_POLLINATE: entity bee pollinate
+  ENTITY_BEE_STING: entity bee sting
+  ENTITY_BLAZE_AMBIENT: entity blaze ambient
+  ENTITY_BLAZE_BURN: entity blaze burn
+  ENTITY_BLAZE_DEATH: entity blaze death
+  ENTITY_BLAZE_HURT: entity blaze hurt
+  ENTITY_BLAZE_SHOOT: entity blaze shoot
+  ENTITY_BOAT_PADDLE_LAND: entity boat paddle land
+  ENTITY_BOAT_PADDLE_WATER: entity boat paddle water
+  ENTITY_CAT_AMBIENT: entity cat ambient
+  ENTITY_CAT_BEG_FOR_FOOD: entity cat beg for food
+  ENTITY_CAT_DEATH: entity cat death
+  ENTITY_CAT_EAT: entity cat eat
+  ENTITY_CAT_HISS: entity cat hiss
+  ENTITY_CAT_HURT: entity cat hurt
+  ENTITY_CAT_PURR: entity cat purr
+  ENTITY_CAT_PURREOW: entity cat purreow
+  ENTITY_CAT_STRAY_AMBIENT: entity cat stray ambient
+  ENTITY_CHICKEN_AMBIENT: entity chicken ambient
+  ENTITY_CHICKEN_DEATH: entity chicken death
+  ENTITY_CHICKEN_EGG: entity chicken egg
+  ENTITY_CHICKEN_HURT: entity chicken hurt
+  ENTITY_CHICKEN_STEP: entity chicken step
+  ENTITY_COD_AMBIENT: entity cod ambient
+  ENTITY_COD_DEATH: entity cod death
+  ENTITY_COD_FLOP: entity cod flop
+  ENTITY_COD_HURT: entity cod hurt
+  ENTITY_COW_AMBIENT: entity cow ambient
+  ENTITY_COW_DEATH: entity cow death
+  ENTITY_COW_HURT: entity cow hurt
+  ENTITY_COW_MILK: entity cow milk
+  ENTITY_COW_STEP: entity cow step
+  ENTITY_CREEPER_DEATH: entity creeper death
+  ENTITY_CREEPER_HURT: entity creeper hurt
+  ENTITY_CREEPER_PRIMED: entity creeper primed
+  ENTITY_DOLPHIN_AMBIENT: entity dolphin ambient
+  ENTITY_DOLPHIN_AMBIENT_WATER: entity dolphin ambient water
+  ENTITY_DOLPHIN_ATTACK: entity dolphin attack
+  ENTITY_DOLPHIN_DEATH: entity dolphin death
+  ENTITY_DOLPHIN_EAT: entity dolphin eat
+  ENTITY_DOLPHIN_HURT: entity dolphin hurt
+  ENTITY_DOLPHIN_JUMP: entity dolphin jump
+  ENTITY_DOLPHIN_PLAY: entity dolphin play
+  ENTITY_DOLPHIN_SPLASH: entity dolphin splash
+  ENTITY_DOLPHIN_SWIM: entity dolphin swim
+  ENTITY_DONKEY_AMBIENT: entity donkey ambient
+  ENTITY_DONKEY_ANGRY: entity donkey angry
+  ENTITY_DONKEY_CHEST: entity donkey chest
+  ENTITY_DONKEY_DEATH: entity donkey death
+  ENTITY_DONKEY_EAT: entity donkey eat
+  ENTITY_DONKEY_HURT: entity donkey hurt
+  ENTITY_DRAGON_FIREBALL_EXPLODE: entity dragon fireball explode
+  ENTITY_DROWNED_AMBIENT: entity drowned ambient
+  ENTITY_DROWNED_AMBIENT_WATER: entity drowned ambient water
+  ENTITY_DROWNED_DEATH: entity drowned death
+  ENTITY_DROWNED_DEATH_WATER: entity drowned death water
+  ENTITY_DROWNED_HURT: entity drowned hurt
+  ENTITY_DROWNED_HURT_WATER: entity drowned hurt water
+  ENTITY_DROWNED_SHOOT: entity drowned shoot
+  ENTITY_DROWNED_STEP: entity drowned step
+  ENTITY_DROWNED_SWIM: entity drowned swim
+  ENTITY_EGG_THROW: entity egg throw
+  ENTITY_ELDER_GUARDIAN_AMBIENT: entity elder guardian ambient
+  ENTITY_ELDER_GUARDIAN_AMBIENT_LAND: entity elder guardian ambient land
+  ENTITY_ELDER_GUARDIAN_CURSE: entity elder guardian curse
+  ENTITY_ELDER_GUARDIAN_DEATH: entity elder guardian death
+  ENTITY_ELDER_GUARDIAN_DEATH_LAND: entity elder guardian death land
+  ENTITY_ELDER_GUARDIAN_FLOP: entity elder guardian flop
+  ENTITY_ELDER_GUARDIAN_HURT: entity elder guardian hurt
+  ENTITY_ELDER_GUARDIAN_HURT_LAND: entity elder guardian hurt land
+  ENTITY_ENDERMAN_AMBIENT: entity enderman ambient
+  ENTITY_ENDERMAN_DEATH: entity enderman death
+  ENTITY_ENDERMAN_HURT: entity enderman hurt
+  ENTITY_ENDERMAN_SCREAM: entity enderman scream
+  ENTITY_ENDERMAN_STARE: entity enderman stare
+  ENTITY_ENDERMAN_TELEPORT: entity enderman teleport
+  ENTITY_ENDERMITE_AMBIENT: entity endermite ambient
+  ENTITY_ENDERMITE_DEATH: entity endermite death
+  ENTITY_ENDERMITE_HURT: entity endermite hurt
+  ENTITY_ENDERMITE_STEP: entity endermite step
+  ENTITY_ENDER_DRAGON_AMBIENT: entity ender dragon ambient
+  ENTITY_ENDER_DRAGON_DEATH: entity ender dragon death
+  ENTITY_ENDER_DRAGON_FLAP: entity ender dragon flap
+  ENTITY_ENDER_DRAGON_GROWL: entity ender dragon growl
+  ENTITY_ENDER_DRAGON_HURT: entity ender dragon hurt
+  ENTITY_ENDER_DRAGON_SHOOT: entity ender dragon shoot
+  ENTITY_ENDER_EYE_DEATH: entity ender eye death
+  ENTITY_ENDER_EYE_LAUNCH: entity ender eye launch
+  ENTITY_ENDER_PEARL_THROW: entity ender pearl throw
+  ENTITY_EVOKER_AMBIENT: entity evoker ambient
+  ENTITY_EVOKER_CAST_SPELL: entity evoker cast spell
+  ENTITY_EVOKER_CELEBRATE: entity evoker celebrate
+  ENTITY_EVOKER_DEATH: entity evoker death
+  ENTITY_EVOKER_FANGS_ATTACK: entity evoker fangs attack
+  ENTITY_EVOKER_HURT: entity evoker hurt
+  ENTITY_EVOKER_PREPARE_ATTACK: entity evoker prepare attack
+  ENTITY_EVOKER_PREPARE_SUMMON: entity evoker prepare summon
+  ENTITY_EVOKER_PREPARE_WOLOLO: entity evoker prepare wololo
+  ENTITY_EXPERIENCE_BOTTLE_THROW: entity experience bottle throw
+  ENTITY_EXPERIENCE_ORB_PICKUP: entity experience orb pickup
+  ENTITY_FIREWORK_ROCKET_BLAST: entity firework rocket blast
+  ENTITY_FIREWORK_ROCKET_BLAST_FAR: entity firework rocket blast far
+  ENTITY_FIREWORK_ROCKET_LARGE_BLAST: entity firework rocket large blast
+  ENTITY_FIREWORK_ROCKET_LARGE_BLAST_FAR: entity firework rocket large blast far
+  ENTITY_FIREWORK_ROCKET_LAUNCH: entity firework rocket launch
+  ENTITY_FIREWORK_ROCKET_SHOOT: entity firework rocket shoot
+  ENTITY_FIREWORK_ROCKET_TWINKLE: entity firework rocket twinkle
+  ENTITY_FIREWORK_ROCKET_TWINKLE_FAR: entity firework rocket twinkle far
+  ENTITY_FISHING_BOBBER_RETRIEVE: entity fishing bobber retrieve
+  ENTITY_FISHING_BOBBER_SPLASH: entity fishing bobber splash
+  ENTITY_FISHING_BOBBER_THROW: entity fishing bobber throw
+  ENTITY_FISH_SWIM: entity fish swim
+  ENTITY_FOX_AGGRO: entity fox aggro
+  ENTITY_FOX_AMBIENT: entity fox ambient
+  ENTITY_FOX_BITE: entity fox bite
+  ENTITY_FOX_DEATH: entity fox death
+  ENTITY_FOX_EAT: entity fox eat
+  ENTITY_FOX_HURT: entity fox hurt
+  ENTITY_FOX_SCREECH: entity fox screech
+  ENTITY_FOX_SLEEP: entity fox sleep
+  ENTITY_FOX_SNIFF: entity fox sniff
+  ENTITY_FOX_SPIT: entity fox spit
+  ENTITY_FOX_TELEPORT: entity fox teleport
+  ENTITY_GENERIC_BIG_FALL: entity generic big fall
+  ENTITY_GENERIC_BURN: entity generic burn
+  ENTITY_GENERIC_DEATH: entity generic death
+  ENTITY_GENERIC_DRINK: entity generic drink
+  ENTITY_GENERIC_EAT: entity generic eat
+  ENTITY_GENERIC_EXPLODE: entity generic explode
+  ENTITY_GENERIC_EXTINGUISH_FIRE: entity generic extinguish fire
+  ENTITY_GENERIC_HURT: entity generic hurt
+  ENTITY_GENERIC_SMALL_FALL: entity generic small fall
+  ENTITY_GENERIC_SPLASH: entity generic splash
+  ENTITY_GENERIC_SWIM: entity generic swim
+  ENTITY_GHAST_AMBIENT: entity ghast ambient
+  ENTITY_GHAST_DEATH: entity ghast death
+  ENTITY_GHAST_HURT: entity ghast hurt
+  ENTITY_GHAST_SCREAM: entity ghast scream
+  ENTITY_GHAST_SHOOT: entity ghast shoot
+  ENTITY_GHAST_WARN: entity ghast warn
+  ENTITY_GUARDIAN_AMBIENT: entity guardian ambient
+  ENTITY_GUARDIAN_AMBIENT_LAND: entity guardian ambient land
+  ENTITY_GUARDIAN_ATTACK: entity guardian attack
+  ENTITY_GUARDIAN_DEATH: entity guardian death
+  ENTITY_GUARDIAN_DEATH_LAND: entity guardian death land
+  ENTITY_GUARDIAN_FLOP: entity guardian flop
+  ENTITY_GUARDIAN_HURT: entity guardian hurt
+  ENTITY_GUARDIAN_HURT_LAND: entity guardian hurt land
+  ENTITY_HOGLIN_AMBIENT: entity hoglin ambient
+  ENTITY_HOGLIN_ANGRY: entity hoglin angry
+  ENTITY_HOGLIN_ATTACK: entity hoglin attack
+  ENTITY_HOGLIN_CONVERTED_TO_ZOMBIFIED: entity hoglin converted to zombified
+  ENTITY_HOGLIN_DEATH: entity hoglin death
+  ENTITY_HOGLIN_HURT: entity hoglin hurt
+  ENTITY_HOGLIN_RETREAT: entity hoglin retreat
+  ENTITY_HOGLIN_STEP: entity hoglin step
+  ENTITY_HORSE_AMBIENT: entity horse ambient
+  ENTITY_HORSE_ANGRY: entity horse angry
+  ENTITY_HORSE_ARMOR: entity horse armor
+  ENTITY_HORSE_BREATHE: entity horse breathe
+  ENTITY_HORSE_DEATH: entity horse death
+  ENTITY_HORSE_EAT: entity horse eat
+  ENTITY_HORSE_GALLOP: entity horse gallop
+  ENTITY_HORSE_HURT: entity horse hurt
+  ENTITY_HORSE_JUMP: entity horse jump
+  ENTITY_HORSE_LAND: entity horse land
+  ENTITY_HORSE_SADDLE: entity horse saddle
+  ENTITY_HORSE_STEP: entity horse step
+  ENTITY_HORSE_STEP_WOOD: entity horse step wood
+  ENTITY_HOSTILE_BIG_FALL: entity hostile big fall
+  ENTITY_HOSTILE_DEATH: entity hostile death
+  ENTITY_HOSTILE_HURT: entity hostile hurt
+  ENTITY_HOSTILE_SMALL_FALL: entity hostile small fall
+  ENTITY_HOSTILE_SPLASH: entity hostile splash
+  ENTITY_HOSTILE_SWIM: entity hostile swim
+  ENTITY_HUSK_AMBIENT: entity husk ambient
+  ENTITY_HUSK_CONVERTED_TO_ZOMBIE: entity husk converted to zombie
+  ENTITY_HUSK_DEATH: entity husk death
+  ENTITY_HUSK_HURT: entity husk hurt
+  ENTITY_HUSK_STEP: entity husk step
+  ENTITY_ILLUSIONER_AMBIENT: entity illusioner ambient
+  ENTITY_ILLUSIONER_CAST_SPELL: entity illusioner cast spell
+  ENTITY_ILLUSIONER_DEATH: entity illusioner death
+  ENTITY_ILLUSIONER_HURT: entity illusioner hurt
+  ENTITY_ILLUSIONER_MIRROR_MOVE: entity illusioner mirror move
+  ENTITY_ILLUSIONER_PREPARE_BLINDNESS: entity illusioner prepare blindness
+  ENTITY_ILLUSIONER_PREPARE_MIRROR: entity illusioner prepare mirror
+  ENTITY_IRON_GOLEM_ATTACK: entity iron golem attack
+  ENTITY_IRON_GOLEM_DAMAGE: entity iron golem damage
+  ENTITY_IRON_GOLEM_DEATH: entity iron golem death
+  ENTITY_IRON_GOLEM_HURT: entity iron golem hurt
+  ENTITY_IRON_GOLEM_REPAIR: entity iron golem repair
+  ENTITY_IRON_GOLEM_STEP: entity iron golem step
+  ENTITY_ITEM_BREAK: entity item break
+  ENTITY_ITEM_FRAME_ADD_ITEM: entity item frame add item
+  ENTITY_ITEM_FRAME_BREAK: entity item frame break
+  ENTITY_ITEM_FRAME_PLACE: entity item frame place
+  ENTITY_ITEM_FRAME_REMOVE_ITEM: entity item frame remove item
+  ENTITY_ITEM_FRAME_ROTATE_ITEM: entity item frame rotate item
+  ENTITY_ITEM_PICKUP: entity item pickup
+  ENTITY_LEASH_KNOT_BREAK: entity leash knot break
+  ENTITY_LEASH_KNOT_PLACE: entity leash knot place
+  ENTITY_LIGHTNING_BOLT_IMPACT: entity lightning bolt impact
+  ENTITY_LIGHTNING_BOLT_THUNDER: entity lightning bolt thunder
+  ENTITY_LINGERING_POTION_THROW: entity lingering potion throw
+  ENTITY_LLAMA_AMBIENT: entity llama ambient
+  ENTITY_LLAMA_ANGRY: entity llama angry
+  ENTITY_LLAMA_CHEST: entity llama chest
+  ENTITY_LLAMA_DEATH: entity llama death
+  ENTITY_LLAMA_EAT: entity llama eat
+  ENTITY_LLAMA_HURT: entity llama hurt
+  ENTITY_LLAMA_SPIT: entity llama spit
+  ENTITY_LLAMA_STEP: entity llama step
+  ENTITY_LLAMA_SWAG: entity llama swag
+  ENTITY_MAGMA_CUBE_DEATH: entity magma cube death
+  ENTITY_MAGMA_CUBE_DEATH_SMALL: entity magma cube death small
+  ENTITY_MAGMA_CUBE_HURT: entity magma cube hurt
+  ENTITY_MAGMA_CUBE_HURT_SMALL: entity magma cube hurt small
+  ENTITY_MAGMA_CUBE_JUMP: entity magma cube jump
+  ENTITY_MAGMA_CUBE_SQUISH: entity magma cube squish
+  ENTITY_MAGMA_CUBE_SQUISH_SMALL: entity magma cube squish small
+  ENTITY_MINECART_INSIDE: entity minecart inside
+  ENTITY_MINECART_RIDING: entity minecart riding
+  ENTITY_MOOSHROOM_CONVERT: entity mooshroom convert
+  ENTITY_MOOSHROOM_EAT: entity mooshroom eat
+  ENTITY_MOOSHROOM_MILK: entity mooshroom milk
+  ENTITY_MOOSHROOM_SHEAR: entity mooshroom shear
+  ENTITY_MOOSHROOM_SUSPICIOUS_MILK: entity mooshroom suspicious milk
+  ENTITY_MULE_AMBIENT: entity mule ambient
+  ENTITY_MULE_ANGRY: entity mule angry
+  ENTITY_MULE_CHEST: entity mule chest
+  ENTITY_MULE_DEATH: entity mule death
+  ENTITY_MULE_EAT: entity mule eat
+  ENTITY_MULE_HURT: entity mule hurt
+  ENTITY_OCELOT_AMBIENT: entity ocelot ambient
+  ENTITY_OCELOT_DEATH: entity ocelot death
+  ENTITY_OCELOT_HURT: entity ocelot hurt
+  ENTITY_PAINTING_BREAK: entity painting break
+  ENTITY_PAINTING_PLACE: entity painting place
+  ENTITY_PANDA_AGGRESSIVE_AMBIENT: entity panda aggressive ambient
+  ENTITY_PANDA_AMBIENT: entity panda ambient
+  ENTITY_PANDA_BITE: entity panda bite
+  ENTITY_PANDA_CANT_BREED: entity panda cant breed
+  ENTITY_PANDA_DEATH: entity panda death
+  ENTITY_PANDA_EAT: entity panda eat
+  ENTITY_PANDA_HURT: entity panda hurt
+  ENTITY_PANDA_PRE_SNEEZE: entity panda pre sneeze
+  ENTITY_PANDA_SNEEZE: entity panda sneeze
+  ENTITY_PANDA_STEP: entity panda step
+  ENTITY_PANDA_WORRIED_AMBIENT: entity panda worried ambient
+  ENTITY_PARROT_AMBIENT: entity parrot ambient
+  ENTITY_PARROT_DEATH: entity parrot death
+  ENTITY_PARROT_EAT: entity parrot eat
+  ENTITY_PARROT_FLY: entity parrot fly
+  ENTITY_PARROT_HURT: entity parrot hurt
+  ENTITY_PARROT_IMITATE_BLAZE: entity parrot imitate blaze
+  ENTITY_PARROT_IMITATE_CREEPER: entity parrot imitate creeper
+  ENTITY_PARROT_IMITATE_DROWNED: entity parrot imitate drowned
+  ENTITY_PARROT_IMITATE_ELDER_GUARDIAN: entity parrot imitate elder guardian
+  ENTITY_PARROT_IMITATE_ENDERMITE: entity parrot imitate endermite
+  ENTITY_PARROT_IMITATE_ENDER_DRAGON: entity parrot imitate ender dragon
+  ENTITY_PARROT_IMITATE_EVOKER: entity parrot imitate evoker
+  ENTITY_PARROT_IMITATE_GHAST: entity parrot imitate ghast
+  ENTITY_PARROT_IMITATE_GUARDIAN: entity parrot imitate guardian
+  ENTITY_PARROT_IMITATE_HOGLIN: entity parrot imitate hoglin
+  ENTITY_PARROT_IMITATE_HUSK: entity parrot imitate husk
+  ENTITY_PARROT_IMITATE_ILLUSIONER: entity parrot imitate illusioner
+  ENTITY_PARROT_IMITATE_MAGMA_CUBE: entity parrot imitate magma cube
+  ENTITY_PARROT_IMITATE_PHANTOM: entity parrot imitate phantom
+  ENTITY_PARROT_IMITATE_PIGLIN: entity parrot imitate piglin
+  ENTITY_PARROT_IMITATE_PIGLIN_BRUTE: entity parrot imitate piglin brute
+  ENTITY_PARROT_IMITATE_PILLAGER: entity parrot imitate pillager
+  ENTITY_PARROT_IMITATE_RAVAGER: entity parrot imitate ravager
+  ENTITY_PARROT_IMITATE_SHULKER: entity parrot imitate shulker
+  ENTITY_PARROT_IMITATE_SILVERFISH: entity parrot imitate silverfish
+  ENTITY_PARROT_IMITATE_SKELETON: entity parrot imitate skeleton
+  ENTITY_PARROT_IMITATE_SLIME: entity parrot imitate slime
+  ENTITY_PARROT_IMITATE_SPIDER: entity parrot imitate spider
+  ENTITY_PARROT_IMITATE_STRAY: entity parrot imitate stray
+  ENTITY_PARROT_IMITATE_VEX: entity parrot imitate vex
+  ENTITY_PARROT_IMITATE_VINDICATOR: entity parrot imitate vindicator
+  ENTITY_PARROT_IMITATE_WITCH: entity parrot imitate witch
+  ENTITY_PARROT_IMITATE_WITHER: entity parrot imitate wither
+  ENTITY_PARROT_IMITATE_WITHER_SKELETON: entity parrot imitate wither skeleton
+  ENTITY_PARROT_IMITATE_ZOGLIN: entity parrot imitate zoglin
+  ENTITY_PARROT_IMITATE_ZOMBIE: entity parrot imitate zombie
+  ENTITY_PARROT_IMITATE_ZOMBIE_VILLAGER: entity parrot imitate zombie villager
+  ENTITY_PARROT_STEP: entity parrot step
+  ENTITY_PHANTOM_AMBIENT: entity phantom ambient
+  ENTITY_PHANTOM_BITE: entity phantom bite
+  ENTITY_PHANTOM_DEATH: entity phantom death
+  ENTITY_PHANTOM_FLAP: entity phantom flap
+  ENTITY_PHANTOM_HURT: entity phantom hurt
+  ENTITY_PHANTOM_SWOOP: entity phantom swoop
+  ENTITY_PIGLIN_ADMIRING_ITEM: entity piglin admiring item
+  ENTITY_PIGLIN_AMBIENT: entity piglin ambient
+  ENTITY_PIGLIN_ANGRY: entity piglin angry
+  ENTITY_PIGLIN_BRUTE_AMBIENT: entity piglin brute ambient
+  ENTITY_PIGLIN_BRUTE_ANGRY: entity piglin brute angry
+  ENTITY_PIGLIN_BRUTE_CONVERTED_TO_ZOMBIFIED: entity piglin brute converted to zombified
+  ENTITY_PIGLIN_BRUTE_DEATH: entity piglin brute death
+  ENTITY_PIGLIN_BRUTE_HURT: entity piglin brute hurt
+  ENTITY_PIGLIN_BRUTE_STEP: entity piglin brute step
+  ENTITY_PIGLIN_CELEBRATE: entity piglin celebrate
+  ENTITY_PIGLIN_CONVERTED_TO_ZOMBIFIED: entity piglin converted to zombified
+  ENTITY_PIGLIN_DEATH: entity piglin death
+  ENTITY_PIGLIN_HURT: entity piglin hurt
+  ENTITY_PIGLIN_JEALOUS: entity piglin jealous
+  ENTITY_PIGLIN_RETREAT: entity piglin retreat
+  ENTITY_PIGLIN_STEP: entity piglin step
+  ENTITY_PIG_AMBIENT: entity pig ambient
+  ENTITY_PIG_DEATH: entity pig death
+  ENTITY_PIG_HURT: entity pig hurt
+  ENTITY_PIG_SADDLE: entity pig saddle
+  ENTITY_PIG_STEP: entity pig step
+  ENTITY_PILLAGER_AMBIENT: entity pillager ambient
+  ENTITY_PILLAGER_CELEBRATE: entity pillager celebrate
+  ENTITY_PILLAGER_DEATH: entity pillager death
+  ENTITY_PILLAGER_HURT: entity pillager hurt
+  ENTITY_PLAYER_ATTACK_CRIT: entity player attack crit
+  ENTITY_PLAYER_ATTACK_KNOCKBACK: entity player attack knockback
+  ENTITY_PLAYER_ATTACK_NODAMAGE: entity player attack nodamage
+  ENTITY_PLAYER_ATTACK_STRONG: entity player attack strong
+  ENTITY_PLAYER_ATTACK_SWEEP: entity player attack sweep
+  ENTITY_PLAYER_ATTACK_WEAK: entity player attack weak
+  ENTITY_PLAYER_BIG_FALL: entity player big fall
+  ENTITY_PLAYER_BREATH: entity player breath
+  ENTITY_PLAYER_BURP: entity player burp
+  ENTITY_PLAYER_DEATH: entity player death
+  ENTITY_PLAYER_HURT: entity player hurt
+  ENTITY_PLAYER_HURT_DROWN: entity player hurt drown
+  ENTITY_PLAYER_HURT_ON_FIRE: entity player hurt on fire
+  ENTITY_PLAYER_HURT_SWEET_BERRY_BUSH: entity player hurt sweet berry bush
+  ENTITY_PLAYER_LEVELUP: entity player levelup
+  ENTITY_PLAYER_SMALL_FALL: entity player small fall
+  ENTITY_PLAYER_SPLASH: entity player splash
+  ENTITY_PLAYER_SPLASH_HIGH_SPEED: entity player splash high speed
+  ENTITY_PLAYER_SWIM: entity player swim
+  ENTITY_POLAR_BEAR_AMBIENT: entity polar bear ambient
+  ENTITY_POLAR_BEAR_AMBIENT_BABY: entity polar bear ambient baby
+  ENTITY_POLAR_BEAR_DEATH: entity polar bear death
+  ENTITY_POLAR_BEAR_HURT: entity polar bear hurt
+  ENTITY_POLAR_BEAR_STEP: entity polar bear step
+  ENTITY_POLAR_BEAR_WARNING: entity polar bear warning
+  ENTITY_PUFFER_FISH_AMBIENT: entity puffer fish ambient
+  ENTITY_PUFFER_FISH_BLOW_OUT: entity puffer fish blow out
+  ENTITY_PUFFER_FISH_BLOW_UP: entity puffer fish blow up
+  ENTITY_PUFFER_FISH_DEATH: entity puffer fish death
+  ENTITY_PUFFER_FISH_FLOP: entity puffer fish flop
+  ENTITY_PUFFER_FISH_HURT: entity puffer fish hurt
+  ENTITY_PUFFER_FISH_STING: entity puffer fish sting
+  ENTITY_RABBIT_AMBIENT: entity rabbit ambient
+  ENTITY_RABBIT_ATTACK: entity rabbit attack
+  ENTITY_RABBIT_DEATH: entity rabbit death
+  ENTITY_RABBIT_HURT: entity rabbit hurt
+  ENTITY_RABBIT_JUMP: entity rabbit jump
+  ENTITY_RAVAGER_AMBIENT: entity ravager ambient
+  ENTITY_RAVAGER_ATTACK: entity ravager attack
+  ENTITY_RAVAGER_CELEBRATE: entity ravager celebrate
+  ENTITY_RAVAGER_DEATH: entity ravager death
+  ENTITY_RAVAGER_HURT: entity ravager hurt
+  ENTITY_RAVAGER_ROAR: entity ravager roar
+  ENTITY_RAVAGER_STEP: entity ravager step
+  ENTITY_RAVAGER_STUNNED: entity ravager stunned
+  ENTITY_SALMON_AMBIENT: entity salmon ambient
+  ENTITY_SALMON_DEATH: entity salmon death
+  ENTITY_SALMON_FLOP: entity salmon flop
+  ENTITY_SALMON_HURT: entity salmon hurt
+  ENTITY_SHEEP_AMBIENT: entity sheep ambient
+  ENTITY_SHEEP_DEATH: entity sheep death
+  ENTITY_SHEEP_HURT: entity sheep hurt
+  ENTITY_SHEEP_SHEAR: entity sheep shear
+  ENTITY_SHEEP_STEP: entity sheep step
+  ENTITY_SHULKER_AMBIENT: entity shulker ambient
+  ENTITY_SHULKER_BULLET_HIT: entity shulker bullet hit
+  ENTITY_SHULKER_BULLET_HURT: entity shulker bullet hurt
+  ENTITY_SHULKER_CLOSE: entity shulker close
+  ENTITY_SHULKER_DEATH: entity shulker death
+  ENTITY_SHULKER_HURT: entity shulker hurt
+  ENTITY_SHULKER_HURT_CLOSED: entity shulker hurt closed
+  ENTITY_SHULKER_OPEN: entity shulker open
+  ENTITY_SHULKER_SHOOT: entity shulker shoot
+  ENTITY_SHULKER_TELEPORT: entity shulker teleport
+  ENTITY_SILVERFISH_AMBIENT: entity silverfish ambient
+  ENTITY_SILVERFISH_DEATH: entity silverfish death
+  ENTITY_SILVERFISH_HURT: entity silverfish hurt
+  ENTITY_SILVERFISH_STEP: entity silverfish step
+  ENTITY_SKELETON_AMBIENT: entity skeleton ambient
+  ENTITY_SKELETON_DEATH: entity skeleton death
+  ENTITY_SKELETON_HORSE_AMBIENT: entity skeleton horse ambient
+  ENTITY_SKELETON_HORSE_AMBIENT_WATER: entity skeleton horse ambient water
+  ENTITY_SKELETON_HORSE_DEATH: entity skeleton horse death
+  ENTITY_SKELETON_HORSE_GALLOP_WATER: entity skeleton horse gallop water
+  ENTITY_SKELETON_HORSE_HURT: entity skeleton horse hurt
+  ENTITY_SKELETON_HORSE_JUMP_WATER: entity skeleton horse jump water
+  ENTITY_SKELETON_HORSE_STEP_WATER: entity skeleton horse step water
+  ENTITY_SKELETON_HORSE_SWIM: entity skeleton horse swim
+  ENTITY_SKELETON_HURT: entity skeleton hurt
+  ENTITY_SKELETON_SHOOT: entity skeleton shoot
+  ENTITY_SKELETON_STEP: entity skeleton step
+  ENTITY_SLIME_ATTACK: entity slime attack
+  ENTITY_SLIME_DEATH: entity slime death
+  ENTITY_SLIME_DEATH_SMALL: entity slime death small
+  ENTITY_SLIME_HURT: entity slime hurt
+  ENTITY_SLIME_HURT_SMALL: entity slime hurt small
+  ENTITY_SLIME_JUMP: entity slime jump
+  ENTITY_SLIME_JUMP_SMALL: entity slime jump small
+  ENTITY_SLIME_SQUISH: entity slime squish
+  ENTITY_SLIME_SQUISH_SMALL: entity slime squish small
+  ENTITY_SNOWBALL_THROW: entity snowball throw
+  ENTITY_SNOW_GOLEM_AMBIENT: entity snow golem ambient
+  ENTITY_SNOW_GOLEM_DEATH: entity snow golem death
+  ENTITY_SNOW_GOLEM_HURT: entity snow golem hurt
+  ENTITY_SNOW_GOLEM_SHEAR: entity snow golem shear
+  ENTITY_SNOW_GOLEM_SHOOT: entity snow golem shoot
+  ENTITY_SPIDER_AMBIENT: entity spider ambient
+  ENTITY_SPIDER_DEATH: entity spider death
+  ENTITY_SPIDER_HURT: entity spider hurt
+  ENTITY_SPIDER_STEP: entity spider step
+  ENTITY_SPLASH_POTION_BREAK: entity splash potion break
+  ENTITY_SPLASH_POTION_THROW: entity splash potion throw
+  ENTITY_SQUID_AMBIENT: entity squid ambient
+  ENTITY_SQUID_DEATH: entity squid death
+  ENTITY_SQUID_HURT: entity squid hurt
+  ENTITY_SQUID_SQUIRT: entity squid squirt
+  ENTITY_STRAY_AMBIENT: entity stray ambient
+  ENTITY_STRAY_DEATH: entity stray death
+  ENTITY_STRAY_HURT: entity stray hurt
+  ENTITY_STRAY_STEP: entity stray step
+  ENTITY_STRIDER_AMBIENT: entity strider ambient
+  ENTITY_STRIDER_DEATH: entity strider death
+  ENTITY_STRIDER_EAT: entity strider eat
+  ENTITY_STRIDER_HAPPY: entity strider happy
+  ENTITY_STRIDER_HURT: entity strider hurt
+  ENTITY_STRIDER_RETREAT: entity strider retreat
+  ENTITY_STRIDER_SADDLE: entity strider saddle
+  ENTITY_STRIDER_STEP: entity strider step
+  ENTITY_STRIDER_STEP_LAVA: entity strider step lava
+  ENTITY_TNT_PRIMED: entity tnt primed
+  ENTITY_TROPICAL_FISH_AMBIENT: entity tropical fish ambient
+  ENTITY_TROPICAL_FISH_DEATH: entity tropical fish death
+  ENTITY_TROPICAL_FISH_FLOP: entity tropical fish flop
+  ENTITY_TROPICAL_FISH_HURT: entity tropical fish hurt
+  ENTITY_TURTLE_AMBIENT_LAND: entity turtle ambient land
+  ENTITY_TURTLE_DEATH: entity turtle death
+  ENTITY_TURTLE_DEATH_BABY: entity turtle death baby
+  ENTITY_TURTLE_EGG_BREAK: entity turtle egg break
+  ENTITY_TURTLE_EGG_CRACK: entity turtle egg crack
+  ENTITY_TURTLE_EGG_HATCH: entity turtle egg hatch
+  ENTITY_TURTLE_HURT: entity turtle hurt
+  ENTITY_TURTLE_HURT_BABY: entity turtle hurt baby
+  ENTITY_TURTLE_LAY_EGG: entity turtle lay egg
+  ENTITY_TURTLE_SHAMBLE: entity turtle shamble
+  ENTITY_TURTLE_SHAMBLE_BABY: entity turtle shamble baby
+  ENTITY_TURTLE_SWIM: entity turtle swim
+  ENTITY_VEX_AMBIENT: entity vex ambient
+  ENTITY_VEX_CHARGE: entity vex charge
+  ENTITY_VEX_DEATH: entity vex death
+  ENTITY_VEX_HURT: entity vex hurt
+  ENTITY_VILLAGER_AMBIENT: entity villager ambient
+  ENTITY_VILLAGER_CELEBRATE: entity villager celebrate
+  ENTITY_VILLAGER_DEATH: entity villager death
+  ENTITY_VILLAGER_HURT: entity villager hurt
+  ENTITY_VILLAGER_NO: entity villager no
+  ENTITY_VILLAGER_TRADE: entity villager trade
+  ENTITY_VILLAGER_WORK_ARMORER: entity villager work armorer
+  ENTITY_VILLAGER_WORK_BUTCHER: entity villager work butcher
+  ENTITY_VILLAGER_WORK_CARTOGRAPHER: entity villager work cartographer
+  ENTITY_VILLAGER_WORK_CLERIC: entity villager work cleric
+  ENTITY_VILLAGER_WORK_FARMER: entity villager work farmer
+  ENTITY_VILLAGER_WORK_FISHERMAN: entity villager work fisherman
+  ENTITY_VILLAGER_WORK_FLETCHER: entity villager work fletcher
+  ENTITY_VILLAGER_WORK_LEATHERWORKER: entity villager work leatherworker
+  ENTITY_VILLAGER_WORK_LIBRARIAN: entity villager work librarian
+  ENTITY_VILLAGER_WORK_MASON: entity villager work mason
+  ENTITY_VILLAGER_WORK_SHEPHERD: entity villager work shepherd
+  ENTITY_VILLAGER_WORK_TOOLSMITH: entity villager work toolsmith
+  ENTITY_VILLAGER_WORK_WEAPONSMITH: entity villager work weaponsmith
+  ENTITY_VILLAGER_YES: entity villager yes
+  ENTITY_VINDICATOR_AMBIENT: entity vindicator ambient
+  ENTITY_VINDICATOR_CELEBRATE: entity vindicator celebrate
+  ENTITY_VINDICATOR_DEATH: entity vindicator death
+  ENTITY_VINDICATOR_HURT: entity vindicator hurt
+  ENTITY_WANDERING_TRADER_AMBIENT: entity wandering trader ambient
+  ENTITY_WANDERING_TRADER_DEATH: entity wandering trader death
+  ENTITY_WANDERING_TRADER_DISAPPEARED: entity wandering trader disappeared
+  ENTITY_WANDERING_TRADER_DRINK_MILK: entity wandering trader drink milk
+  ENTITY_WANDERING_TRADER_DRINK_POTION: entity wandering trader drink potion
+  ENTITY_WANDERING_TRADER_HURT: entity wandering trader hurt
+  ENTITY_WANDERING_TRADER_NO: entity wandering trader no
+  ENTITY_WANDERING_TRADER_REAPPEARED: entity wandering trader reappeared
+  ENTITY_WANDERING_TRADER_TRADE: entity wandering trader trade
+  ENTITY_WANDERING_TRADER_YES: entity wandering trader yes
+  ENTITY_WITCH_AMBIENT: entity witch ambient
+  ENTITY_WITCH_CELEBRATE: entity witch celebrate
+  ENTITY_WITCH_DEATH: entity witch death
+  ENTITY_WITCH_DRINK: entity witch drink
+  ENTITY_WITCH_HURT: entity witch hurt
+  ENTITY_WITCH_THROW: entity witch throw
+  ENTITY_WITHER_AMBIENT: entity wither ambient
+  ENTITY_WITHER_BREAK_BLOCK: entity wither break block
+  ENTITY_WITHER_DEATH: entity wither death
+  ENTITY_WITHER_HURT: entity wither hurt
+  ENTITY_WITHER_SHOOT: entity wither shoot
+  ENTITY_WITHER_SKELETON_AMBIENT: entity wither skeleton ambient
+  ENTITY_WITHER_SKELETON_DEATH: entity wither skeleton death
+  ENTITY_WITHER_SKELETON_HURT: entity wither skeleton hurt
+  ENTITY_WITHER_SKELETON_STEP: entity wither skeleton step
+  ENTITY_WITHER_SPAWN: entity wither spawn
+  ENTITY_WOLF_AMBIENT: entity wolf ambient
+  ENTITY_WOLF_DEATH: entity wolf death
+  ENTITY_WOLF_GROWL: entity wolf growl
+  ENTITY_WOLF_HOWL: entity wolf howl
+  ENTITY_WOLF_HURT: entity wolf hurt
+  ENTITY_WOLF_PANT: entity wolf pant
+  ENTITY_WOLF_SHAKE: entity wolf shake
+  ENTITY_WOLF_STEP: entity wolf step
+  ENTITY_WOLF_WHINE: entity wolf whine
+  ENTITY_ZOGLIN_AMBIENT: entity zoglin ambient
+  ENTITY_ZOGLIN_ANGRY: entity zoglin angry
+  ENTITY_ZOGLIN_ATTACK: entity zoglin attack
+  ENTITY_ZOGLIN_DEATH: entity zoglin death
+  ENTITY_ZOGLIN_HURT: entity zoglin hurt
+  ENTITY_ZOGLIN_STEP: entity zoglin step
+  ENTITY_ZOMBIE_AMBIENT: entity zombie ambient
+  ENTITY_ZOMBIE_ATTACK_IRON_DOOR: entity zombie attack iron door
+  ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR: entity zombie attack wooden door
+  ENTITY_ZOMBIE_BREAK_WOODEN_DOOR: entity zombie break wooden door
+  ENTITY_ZOMBIE_CONVERTED_TO_DROWNED: entity zombie converted to drowned
+  ENTITY_ZOMBIE_DEATH: entity zombie death
+  ENTITY_ZOMBIE_DESTROY_EGG: entity zombie destroy egg
+  ENTITY_ZOMBIE_HORSE_AMBIENT: entity zombie horse ambient
+  ENTITY_ZOMBIE_HORSE_DEATH: entity zombie horse death
+  ENTITY_ZOMBIE_HORSE_HURT: entity zombie horse hurt
+  ENTITY_ZOMBIE_HURT: entity zombie hurt
+  ENTITY_ZOMBIE_INFECT: entity zombie infect
+  ENTITY_ZOMBIE_STEP: entity zombie step
+  ENTITY_ZOMBIE_VILLAGER_AMBIENT: entity zombie villager ambient
+  ENTITY_ZOMBIE_VILLAGER_CONVERTED: entity zombie villager converted
+  ENTITY_ZOMBIE_VILLAGER_CURE: entity zombie villager cure
+  ENTITY_ZOMBIE_VILLAGER_DEATH: entity zombie villager death
+  ENTITY_ZOMBIE_VILLAGER_HURT: entity zombie villager hurt
+  ENTITY_ZOMBIE_VILLAGER_STEP: entity zombie villager step
+  ENTITY_ZOMBIFIED_PIGLIN_AMBIENT: entity zombified piglin ambient
+  ENTITY_ZOMBIFIED_PIGLIN_ANGRY: entity zombified piglin angry
+  ENTITY_ZOMBIFIED_PIGLIN_DEATH: entity zombified piglin death
+  ENTITY_ZOMBIFIED_PIGLIN_HURT: entity zombified piglin hurt
+  EVENT_RAID_HORN: event raid horn
+  ITEM_ARMOR_EQUIP_CHAIN: item armor equip chain
+  ITEM_ARMOR_EQUIP_DIAMOND: item armor equip diamond
+  ITEM_ARMOR_EQUIP_ELYTRA: item armor equip elytra
+  ITEM_ARMOR_EQUIP_GENERIC: item armor equip generic
+  ITEM_ARMOR_EQUIP_GOLD: item armor equip gold
+  ITEM_ARMOR_EQUIP_IRON: item armor equip iron
+  ITEM_ARMOR_EQUIP_LEATHER: item armor equip leather
+  ITEM_ARMOR_EQUIP_NETHERITE: item armor equip netherite
+  ITEM_ARMOR_EQUIP_TURTLE: item armor equip turtle
+  ITEM_AXE_STRIP: item axe strip
+  ITEM_BOOK_PAGE_TURN: item book page turn
+  ITEM_BOOK_PUT: item book put
+  ITEM_BOTTLE_EMPTY: item bottle empty
+  ITEM_BOTTLE_FILL: item bottle fill
+  ITEM_BOTTLE_FILL_DRAGONBREATH: item bottle fill dragonbreath
+  ITEM_BUCKET_EMPTY: item bucket empty
+  ITEM_BUCKET_EMPTY_FISH: item bucket empty fish
+  ITEM_BUCKET_EMPTY_LAVA: item bucket empty lava
+  ITEM_BUCKET_FILL: item bucket fill
+  ITEM_BUCKET_FILL_FISH: item bucket fill fish
+  ITEM_BUCKET_FILL_LAVA: item bucket fill lava
+  ITEM_CHORUS_FRUIT_TELEPORT: item chorus fruit teleport
+  ITEM_CROP_PLANT: item crop plant
+  ITEM_CROSSBOW_HIT: item crossbow hit
+  ITEM_CROSSBOW_LOADING_END: item crossbow loading end
+  ITEM_CROSSBOW_LOADING_MIDDLE: item crossbow loading middle
+  ITEM_CROSSBOW_LOADING_START: item crossbow loading start
+  ITEM_CROSSBOW_QUICK_CHARGE_1: item crossbow quick charge 1
+  ITEM_CROSSBOW_QUICK_CHARGE_2: item crossbow quick charge 2
+  ITEM_CROSSBOW_QUICK_CHARGE_3: item crossbow quick charge 3
+  ITEM_CROSSBOW_SHOOT: item crossbow shoot
+  ITEM_ELYTRA_FLYING: item elytra flying
+  ITEM_FIRECHARGE_USE: item firecharge use
+  ITEM_FLINTANDSTEEL_USE: item flintandsteel use
+  ITEM_HOE_TILL: item hoe till
+  ITEM_HONEY_BOTTLE_DRINK: item honey bottle drink
+  ITEM_LODESTONE_COMPASS_LOCK: item lodestone compass lock
+  ITEM_NETHER_WART_PLANT: item nether wart plant
+  ITEM_SHIELD_BLOCK: item shield block
+  ITEM_SHIELD_BREAK: item shield break
+  ITEM_SHOVEL_FLATTEN: item shovel flatten
+  ITEM_SWEET_BERRIES_PICK_FROM_BUSH: item sweet berries pick from bush
+  ITEM_TOTEM_USE: item totem use
+  ITEM_TRIDENT_HIT: item trident hit
+  ITEM_TRIDENT_HIT_GROUND: item trident hit ground
+  ITEM_TRIDENT_RETURN: item trident return
+  ITEM_TRIDENT_RIPTIDE_1: item trident riptide 1
+  ITEM_TRIDENT_RIPTIDE_2: item trident riptide 2
+  ITEM_TRIDENT_RIPTIDE_3: item trident riptide 3
+  ITEM_TRIDENT_THROW: item trident throw
+  ITEM_TRIDENT_THUNDER: item trident thunder
+  MUSIC_CREATIVE: music creative
+  MUSIC_CREDITS: music credits
+  MUSIC_DISC_11: music disc 11
+  MUSIC_DISC_13: music disc 13
+  MUSIC_DISC_BLOCKS: music disc blocks
+  MUSIC_DISC_CAT: music disc cat
+  MUSIC_DISC_CHIRP: music disc chirp
+  MUSIC_DISC_FAR: music disc far
+  MUSIC_DISC_MALL: music disc mall
+  MUSIC_DISC_MELLOHI: music disc mellohi
+  MUSIC_DISC_PIGSTEP: music disc pigstep
+  MUSIC_DISC_STAL: music disc stal
+  MUSIC_DISC_STRAD: music disc strad
+  MUSIC_DISC_WAIT: music disc wait
+  MUSIC_DISC_WARD: music disc ward
+  MUSIC_DRAGON: music dragon
+  MUSIC_END: music end
+  MUSIC_GAME: music game
+  MUSIC_MENU: music menu
+  MUSIC_NETHER_BASALT_DELTAS: music nether basalt deltas
+  MUSIC_NETHER_CRIMSON_FOREST: music nether crimson forest
+  MUSIC_NETHER_NETHER_WASTES: music nether nether wastes
+  MUSIC_NETHER_SOUL_SAND_VALLEY: music nether soul sand valley
+  MUSIC_NETHER_WARPED_FOREST: music nether warped forest
+  MUSIC_UNDER_WATER: music under water
+  PARTICLE_SOUL_ESCAPE: particle soul escape
+  UI_BUTTON_CLICK: ui button click
+  UI_CARTOGRAPHY_TABLE_TAKE_RESULT: ui cartography table take result
+  UI_LOOM_SELECT_PATTERN: ui loom select pattern
+  UI_LOOM_TAKE_RESULT: ui loom take result
+  UI_STONECUTTER_SELECT_RECIPE: ui stonecutter select recipe
+  UI_STONECUTTER_TAKE_RESULT: ui stonecutter take result
+  UI_TOAST_CHALLENGE_COMPLETE: ui toast challenge complete
+  UI_TOAST_IN: ui toast in
+  UI_TOAST_OUT: ui toast out
+  WEATHER_RAIN: weather rain
+  WEATHER_RAIN_ABOVE: weather rain above
+
+SoundCategory:
+  AMBIENT: ''
+  BLOCKS: ''
+  HOSTILE: ''
+  MASTER: ''
+  MUSIC: ''
+  NEUTRAL: ''
+  PLAYERS: ''
+  RECORDS: ''
+  VOICE: ''
+  WEATHER: ''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

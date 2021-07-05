@@ -1,6 +1,7 @@
 package com.daxton.page.main;
 
 import com.daxton.Main;
+import com.daxton.api.Discord;
 import com.daxton.api.FxmlLoader;
 import com.daxton.controller.main.ServerMenu;
 import com.daxton.function.Manager;
@@ -32,10 +33,41 @@ public class ServerMenuPage {
 
     public static void print(String message){
         ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
+
         if(serverMenu != null){
             serverMenu.message.appendText(message+"\n");
         }
         Manager.message_Map.appendText(message+"\n");
+        //mm(message);
+    }
+
+    public static void mm(String message){
+        if(message.contains("INFO]: Done")){
+            CmdMain.serverStart = true;
+            Discord.send(":white_check_mark:伺服器已開啟!");
+        }
+        if(message.contains("INFO]: Closing Server")){
+            CmdMain.serverStart = false;
+            Discord.send(":octagonal_sign:伺服器已停止!");
+        }
+        if(message.endsWith(" joined the game")){
+            String name = message.substring(message.indexOf("INFO]: ")+7, message.indexOf(" joined"));
+            Discord.send(":arrow_forward: "+name+" 已加入");
+        }
+        if(message.endsWith(" left the game")){
+            String name = message.substring(message.indexOf("INFO]: ")+7, message.indexOf(" left"));
+            Discord.send(":stop_button: "+name+" 已離開");
+        }
+        if(message.contains("INFO]: <") && message.contains("> ")){
+            String name = message.substring(message.indexOf("INFO]: <")+8, message.indexOf("> "));
+            String say = message.substring(message.indexOf("> ")+2);
+            Discord.send(":speech_balloon: "+name+":"+say);
+        }
+
+        if(message.contains("INFO]: There are") && message.contains(" players online: ")){
+            String number = message.substring(message.indexOf("There are ")+10,message.indexOf(" of a max of"));
+            //Discord.setChannelName("message"+number);
+        }
 
     }
 

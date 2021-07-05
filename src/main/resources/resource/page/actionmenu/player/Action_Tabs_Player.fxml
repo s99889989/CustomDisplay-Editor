@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" visible="false" fx:controller="com.daxton.controller.actionmenu.player.Action_Tabs_Player">
+   <children>
+      <fx:include fx:id="ActionBar" managed="false" source="Action_ActionBar.fxml" visible="false" />
+      <fx:include fx:id="BossBar" managed="false" source="Action_BossBar.fxml" visible="false" />
+      <fx:include fx:id="Command" managed="false" source="Action_Command.fxml" visible="false" />
+      <fx:include fx:id="Exp" managed="false" source="Action_Exp.fxml" visible="false" />
+      <fx:include fx:id="Item" managed="false" source="Action_Item.fxml" visible="false" />
+      <fx:include fx:id="Inventory" managed="false" source="Action_Inventory.fxml" visible="false" />
+      <fx:include fx:id="Level" managed="false" source="Action_Level.fxml" visible="false" />
+      <fx:include fx:id="Mana" managed="false" source="Action_Mana.fxml" visible="false" />
+      <fx:include fx:id="Money" managed="false" source="Action_Money.fxml" visible="false" />
+      <fx:include fx:id="Title" managed="false" source="Action_Title.fxml" visible="false" />
+   </children>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.player.Action_ActionBar">
+   <padding>
+      <Insets right="5.0" />
+   </padding>
+   <children>
+      <Label text="ActionBar">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+   </children>
+   <opaqueInsets>
+      <Insets right="10.0" />
+   </opaqueInsets>
+</VBox>

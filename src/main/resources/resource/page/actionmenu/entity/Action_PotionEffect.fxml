@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.entity.Action_PotionEffect">
+   <padding>
+      <Insets right="5.0" />
+   </padding>
+   <children>
+      <Label text="藥水效果">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label text="效果選擇">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="potionList" onMouseClicked="#changeContent" prefHeight="221.0" prefWidth="520.0" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="等級">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="level" onKeyReleased="#changeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="持續時間">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="duration" onKeyReleased="#changeContent" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="ambient" mnemonicParsing="false" onMouseClicked="#changeContent" text="範圍">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="particles" mnemonicParsing="false" onMouseClicked="#changeContent" text="粒子">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+   </children>
+   <opaqueInsets>
+      <Insets right="10.0" />
+   </opaqueInsets>
+</VBox>

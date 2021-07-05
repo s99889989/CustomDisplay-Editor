@@ -47,11 +47,26 @@ public class StringConversion {
     public static String getActionKey(Map<String ,String> stringStringMap, String[] findKey){
         String output = "";
         for(String key : findKey){
-            if(stringStringMap.get(key) != null){
-                output = stringStringMap.get(key);
+            if(stringStringMap.get(key.toLowerCase()) != null){
+                output = stringStringMap.get(key.toLowerCase());
             }
         }
         return output;
+    }
+
+    public static String getActionKeyToLow(Map<String ,String> stringStringMap, String[] findKey, boolean toLow){
+
+        String output = "";
+        for(String key : findKey){
+            if(stringStringMap.get(key.toLowerCase()) != null){
+                output = stringStringMap.get(key.toLowerCase());
+                if(toLow){
+                    output = output.toLowerCase();
+                }
+            }
+        }
+        return output;
+
     }
 
 }

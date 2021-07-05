@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" visible="false" fx:controller="com.daxton.controller.actionmenu.meta.Action_Tabs_Meta">
+   <children>
+      <fx:include fx:id="Action" managed="false" source="Action_Action.fxml" visible="false" />
+      <fx:include fx:id="Break" managed="false" source="Action_Break.fxml" visible="false" />
+      <fx:include fx:id="Delay" managed="false" source="Action_Delay.fxml" visible="false" />
+      <fx:include fx:id="FixedPoint" managed="false" source="Action_FixedPoint.fxml" visible="false" />
+      <fx:include fx:id="Loop" managed="false" source="Action_Loop.fxml" visible="false" />
+      <fx:include fx:id="LocPng" managed="false" source="Action_LocPng.fxml" visible="false" />
+      <fx:include fx:id="Orbital" managed="false" source="Action_Orbital.fxml" visible="false" />
+      <fx:include fx:id="SwitchAction" managed="false" source="Action_SwitchAction.fxml" visible="false" />
+   </children>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</VBox>

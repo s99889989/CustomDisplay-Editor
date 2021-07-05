@@ -1,6 +1,8 @@
 package com.daxton.terminal;
 
 import com.daxton.Main;
+import com.daxton.api.Discord;
+import com.daxton.function.CopyBackup;
 import com.daxton.function.Task;
 import com.daxton.page.main.ServerMenuPage;
 import javafx.application.Platform;
@@ -13,6 +15,9 @@ public class CmdMain {
     public static Process process;
 
     public static String message;
+
+    public static boolean serverStart = false;
+
     //開啟伺服器
     public static void startServer(){
         String path = Main.config.getString("Server-Settings.Startup-Parameters");
@@ -39,23 +44,30 @@ public class CmdMain {
                     }
                 }).start();
 
+
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
+
         }
 
     }
+
+
     //停止伺服器
     public static void stopServer(){
+        //CopyBackup.start();
         if(process != null && process.isAlive()){
             ServerMenuPage.print("==========================================================================================");
             try {
                 BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
                 br.write("stop"+"\n");
                 br.flush();
+
             }catch (IOException exception){
                 exception.printStackTrace();
             }
+
         }
 
 
@@ -81,6 +93,7 @@ public class CmdMain {
             process.destroy();
             //ServerMenuPage.print("強制結束伺服器");
             ServerMenuPage.print("==========================================================================================");
+            serverStart = false;
         }
     }
     //重啟伺服器

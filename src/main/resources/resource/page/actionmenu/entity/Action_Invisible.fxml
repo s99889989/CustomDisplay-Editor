@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.entity.Action_Invisible">
+   <padding>
+      <Insets right="5.0" />
+   </padding>
+   <children>
+      <Label text="隱形">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="entity" mnemonicParsing="false" onMouseClicked="#onCheckEntity" selected="true" text="實體消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="mainHand" mnemonicParsing="false" onMouseClicked="#onCheckMainHand" selected="true" text="主手消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="offHand" mnemonicParsing="false" onMouseClicked="#onCheckOffHand" selected="true" text="副手消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="head" mnemonicParsing="false" onMouseClicked="#onCheckHead" selected="true" text="頭盔消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chest" mnemonicParsing="false" onMouseClicked="#onCheckChest" selected="true" text="胸甲消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="legs" mnemonicParsing="false" onMouseClicked="#onCheckLegs" selected="true" text="護腿消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="feet" mnemonicParsing="false" onMouseClicked="#onCheckFeet" selected="true" text="靴子消失">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="持續時間">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="duration" onKeyReleased="#onDurationReleased" />
+         </children>
+      </HBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+   </children>
+   <opaqueInsets>
+      <Insets right="10.0" />
+   </opaqueInsets>
+</VBox>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" visible="false" fx:controller="com.daxton.controller.actionmenu.location.Action_Tabs_Location">
+   <children>
+       <fx:include fx:id="Block" managed="false" source="Action_Block.fxml" visible="false" />
+       <fx:include fx:id="Guise" managed="false" source="Action_Guise.fxml" visible="false" />
+       <fx:include fx:id="Hologram" managed="false" source="Action_Hologram.fxml" visible="false" />
+       <fx:include fx:id="Light" managed="false" source="Action_Light.fxml" visible="false" />
+       <fx:include fx:id="Model" managed="false" source="Action_Model.fxml" visible="false" />
+       <fx:include fx:id="Particle" managed="false" source="Action_Particle.fxml" visible="false" />
+       <fx:include fx:id="Sound" managed="false" source="Action_Sound.fxml" visible="false" />
+   </children>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</VBox>

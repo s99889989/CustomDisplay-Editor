@@ -2,14 +2,65 @@
 #Language (English,Chinese_TW,Chinese_CN,Portuguese_BR,Korean_KR)
 Language: English
 
-
 Server-Settings:
   #伺服器啟動參數
   #Server startup parameters.
   Startup-Parameters: '-jar ./paper-1.16.5-778.jar'
 
-
 CustomDisplay:
   #預設資料夾路徑
   #Default folder path
   Folder-Path: './plugins/CustomDisplay'
+
+MythicMobs:
+  #MythicMobs的資料夾路徑
+  #Folder path of MythicMobs
+  Folder-Path: './plugins/MythicMobs'
+
+Backups:
+  # 是否啟用套用備份程序
+  BackUpCopyEnable: false
+
+  #延遲幾秒後開始執行
+  BackUpDelay: 20
+
+  # world路徑
+  #./world代表會刪除，與備份程序同資料夾內的world資料夾，和裡面的內容
+  # 並在複製備份前，在建立空的world資料夾。
+  #C:/Users/Gary/Desktop/TestJAVA/world2
+  WorldPatch: ./world
+
+  # 備份檔案路徑
+  #./backups代表會搜尋，與備份程序同資料夾內的backups資料夾內的.zip備份檔案
+  #只要是.zip就會使用，所以不要放入其他.zip的不相關檔案。
+  #如果備份位置在其他曹可以用以下格式。
+  #C:/Users/Gary/Desktop/TestJAVA/backup
+  BackUpFilePatch: ./backups
+
+  # 備份檔案要複製到的位置
+  # ./代表跟自動備份程序同目錄
+  BackUpCopyPatch: ./
+
+  #Disord相關設定
+  Discord:
+    enable: false
+    #Discord的機器人代碼，到這網站
+    #https://discord.com/developers/applications/
+    #建立或直使用舊有的機器人
+    token: 'IJIIOJIOJIODJJSDOFIJSOJIKLDJFLKJSDLK5151153'
+    #你的Discord頻道ID，對著頻道滑鼠右鍵最下面
+    channelID: 123456
+
+  #備份觸發條件
+  Condition:
+    Size:
+      #是否啟用備份檔案大小條件
+      Enable: true
+      #("B", "KB", "MB", "GB", "TB")
+      #大小會以目前檔案最大單為來算
+      Amount: 1 GB
+    Crash:
+      #是否啟用備份檔案崩潰報告條件(以崩潰報告時間)
+      Enable: true
+      #只要?秒內有崩潰報告條件就成立(以秒為單位)
+      Amount: 120

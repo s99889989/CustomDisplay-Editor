@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      prefHeight="400.0" prefWidth="600.0">
+    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+        <!-- add fx:id to this button! -->
+        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Options" fx:id="btnOptions">
+            <font>
+                <Font name="Century Gothic" size="20.0"/>
+            </font>
+        </Button>
+    </HBox>
+    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Re-Play?">
+            <font>
+                <Font name="Century Gothic" size="20.0"/>
+            </font>
+        </Button>
+    </HBox>
+</VBox>

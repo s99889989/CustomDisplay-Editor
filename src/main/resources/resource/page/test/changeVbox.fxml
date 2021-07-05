@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="370.0" prefWidth="270.0">
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Log out?">
+            <font>
+                <Font name="Century Gothic" size="20.0"/>
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0"
+                text="Back..." HBox.hgrow="ALWAYS" fx:id="btnChange">
+            <HBox.margin>
+                <Insets left="5.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Century Gothic" size="20.0"/>
+            </font>
+        </Button>
+    </HBox>
+</VBox>

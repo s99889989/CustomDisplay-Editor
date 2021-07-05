@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.entity.Action_Teleport">
+   <padding>
+      <Insets right="5.0" />
+   </padding>
+   <children>
+      <Label text="傳送位置">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label text="座標">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="X">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="locX" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+            <Label text="Y">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="locY" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+            <Label text="Z">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="locZ" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <Label text="向量座標">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="向量基準">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="vecTarget" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="vecPitch" mnemonicParsing="false" onMouseClicked="#changeContent" text="加上基準仰角">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="vecYaw" mnemonicParsing="false" onMouseClicked="#changeContent" text="加入基準偏行">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="仰角">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vecAddPitch" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="偏行">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vecAddYaw" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="距離">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vecDistance" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="onBlock" mnemonicParsing="false" onMouseClicked="#changeContent" text="在方塊上">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+   </children>
+   <opaqueInsets>
+      <Insets right="10.0" />
+   </opaqueInsets>
+</VBox>

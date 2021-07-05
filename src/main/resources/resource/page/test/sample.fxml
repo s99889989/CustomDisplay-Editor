@@ -1,0 +1,14 @@
+<?import javafx.scene.layout.VBox?>
+<VBox fx:id="optionsVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="515.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.daxton.controller.test.Controller">
+    <!-- controller set in top level VBox-->
+
+    <!-- both vboxes added as children, removed fx:controller from their definition -->
+    <fx:include source="optionsVbox.fxml" fx:id="options"/>
+
+    <!-- visible and managed is set to FALSE in the beginning -->
+    <!-- visible - whether user could see the control -->
+    <!-- managed - whether control occupies space in the layout -->
+    <fx:include source="changeVbox.fxml" fx:id="change" visible="false" managed="false"/>
+</VBox>

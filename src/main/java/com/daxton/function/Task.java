@@ -15,6 +15,10 @@ public class Task extends TimerTask {
             ServerMenuPage.setServerState(true);
         }else {
             ServerMenuPage.setServerState(false);
+            if(CmdMain.serverStart){
+                CmdMain.serverStart = false;
+                CopyBackup.start();
+            }
             if(restart){
                 restart = false;
                 CmdMain.startServer();

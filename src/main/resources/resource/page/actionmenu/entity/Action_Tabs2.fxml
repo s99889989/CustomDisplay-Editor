@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" visible="false" fx:controller="com.daxton.controller.actionmenu.entity.Action_Tabs_Entity">
+   <children>
+       <fx:include fx:id="Attribute" managed="false" source="Action_Attribute.fxml" visible="false" />
+       <fx:include fx:id="Damage" managed="false" source="Action_Damage.fxml" visible="false" />
+       <fx:include fx:id="DCMessage" managed="false" source="Action_DCMessage.fxml" visible="false" />
+       <fx:include fx:id="Glow" managed="false" source="Action_Glow.fxml" visible="false" />
+       <fx:include fx:id="Heal" managed="false" source="Action_Heal.fxml" visible="false" />
+       <fx:include fx:id="Invisible" managed="false" source="Action_Invisible.fxml" visible="false" />
+       <fx:include fx:id="LoggerInfo" managed="false" source="Action_LoggerInfo.fxml" visible="false" />
+       <fx:include fx:id="Message" managed="false" source="Action_Message.fxml" visible="false" />
+       <fx:include fx:id="Move" managed="false" source="Action_Move.fxml" visible="false" />
+       <fx:include fx:id="MythicSkill" managed="false" source="Action_MythicSkill.fxml" visible="false" />
+       <fx:include fx:id="Name" managed="false" source="Action_Name.fxml" visible="false" />
+       <fx:include fx:id="PotionEffect" managed="false" source="Action_PotionEffect.fxml" visible="false" />
+       <fx:include fx:id="Teleport" managed="false" source="Action_Teleport.fxml" visible="false" />
+   </children>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</VBox>
