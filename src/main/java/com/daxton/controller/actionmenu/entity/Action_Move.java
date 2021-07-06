@@ -56,7 +56,7 @@ public class Action_Move {
             ActionMenuPage.keyValue.put("AwayHight", hightString);
         }
 
-        ActionMenuPage.changeActionContnet("Move", ActionMenuPage.keyValue);
+        ActionMenuPage.changeActionContnet("Move");
     }
 
     //獲取初始值

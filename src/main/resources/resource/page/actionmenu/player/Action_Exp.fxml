@@ -16,6 +16,18 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label text="量">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amount" onKeyReleased="#onChangeContent" />
+      <Label text="類型">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="type" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

@@ -1,141 +1,119 @@
-com/daxton/page/TopMenu.java
- com.daxton.page.TopMenu
+com/daxton/page/main/CharacterMenuPage.java
+ com.daxton.page.main.CharacterMenuPage
 com/daxton/controller/test/Controller.java
  com.daxton.controller.test.Controller
-com/daxton/config/FileSearch.java
- com.daxton.config.FileSearch
+com/daxton/controller/actionmenu/mod/Action_Tabs_Mod.java
+ com.daxton.controller.actionmenu.mod.Action_Tabs_Mod
 com/daxton/api/backup/Size.java
  com.daxton.api.backup.Size
 com/daxton/api/backup/DeleteFile.java
  com.daxton.api.backup.DeleteFile
-com/daxton/page/main/ItemsMenuPage.java
- com.daxton.page.main.ItemsMenuPage
-com/daxton/api/StringConversion.java
- com.daxton.api.StringConversion
-com/daxton/controller/main/CharacterMenu.java
- com.daxton.controller.main.CharacterMenu
+com/daxton/controller/actionmenu/classs/Action_Tabs_Class.java
+ com.daxton.controller.actionmenu.classs.Action_Tabs_Class
+com/daxton/controller/actionmenu/location/Action_Tabs_Location.java
+ com.daxton.controller.actionmenu.location.Action_Tabs_Location
+com/daxton/controller/actionmenu/entity/Action_Tabs_Entity.java
+ com.daxton.controller.actionmenu.entity.Action_Tabs_Entity
 com/daxton/function/Manager.java
  com.daxton.function.Manager
-com/daxton/Main.java
- com.daxton.Main
+com/daxton/controller/actionmenu/meta/Action_Tabs_Meta.java
+ com.daxton.controller.actionmenu.meta.Action_Tabs_Meta
 com/daxton/api/backup/zip3.java
  com.daxton.api.backup.zip3
 com/daxton/function/Task.java
  com.daxton.function.Task
-com/daxton/page/main/SkillMenuPage.java
- com.daxton.page.main.SkillMenuPage
-com/daxton/page/main/ClassMenuPage.java
- com.daxton.page.main.ClassMenuPage
-com/daxton/controller/main/GUIMenu.java
- com.daxton.controller.main.GUIMenu
-com/daxton/controller/main/ClassMenu.java
- com.daxton.controller.main.ClassMenu
-com/daxton/api/Discord.java
- com.daxton.api.Discord
-com/daxton/controller/main/SkillMenu.java
- com.daxton.controller.main.SkillMenu
-com/daxton/controller/main/ItemsMenu.java
- com.daxton.controller.main.ItemsMenu
-com/daxton/page/main/CharacterMenuPage.java
- com.daxton.page.main.CharacterMenuPage
-com/daxton/controller/main/MobsMenu.java
- com.daxton.controller.main.MobsMenu
-com/daxton/controller/classmenu/ClassEdit.java
- com.daxton.controller.classmenu.ClassEdit
-com/daxton/controller/actionmenu/location/Action_Tabs_Location.java
- com.daxton.controller.actionmenu.location.Action_Tabs_Location
+com/daxton/controller/actionmenu/player/Action_Tabs_Player.java
+ com.daxton.controller.actionmenu.player.Action_Tabs_Player
+com/daxton/page/main/MobsMenuPage.java
+ com.daxton.page.main.MobsMenuPage
+com/daxton/api/StringConversion.java
+ com.daxton.api.StringConversion
+com/daxton/terminal/CmdMain.java
+ com.daxton.terminal.CmdMain
+com/daxton/controller/classmenu/PointAdd.java
+ com.daxton.controller.classmenu.PointAdd
 com/daxton/controller/classmenu/AttrStatusAdd.java
  com.daxton.controller.classmenu.AttrStatusAdd
+com/daxton/controller/actionmenu/entity/Action_Teleport.java
+ com.daxton.controller.actionmenu.entity.Action_Teleport
 com/daxton/controller/skillmenu/SkillActionEdit.java
  com.daxton.controller.skillmenu.SkillActionEdit
 com/daxton/page/main/GUIMenuPage.java
  com.daxton.page.main.GUIMenuPage
-com/daxton/page/classmenu/LevelOption.java
- com.daxton.page.classmenu.LevelOption
-com/daxton/config/FileConfig.java
- com.daxton.config.FileConfig
-com/daxton/controller/classmenu/ClassAdd.java
- com.daxton.controller.classmenu.ClassAdd
+com/daxton/controller/actionmenu/meta/Action_Delay.java
+ com.daxton.controller.actionmenu.meta.Action_Delay
+com/daxton/controller/actionmenu/player/Action_Mana.java
+ com.daxton.controller.actionmenu.player.Action_Mana
+com/daxton/function/CopyBackup.java
+ com.daxton.function.CopyBackup
+com/daxton/controller/actionmenu/location/Action_Sound.java
+ com.daxton.controller.actionmenu.location.Action_Sound
+com/daxton/page/classmenu/ClassOption.java
+ com.daxton.page.classmenu.ClassOption
+com/daxton/controller/actionmenu/player/Action_Title.java
+ com.daxton.controller.actionmenu.player.Action_Title
 com/daxton/controller/classmenu/ActionAdd.java
  com.daxton.controller.classmenu.ActionAdd
 com/daxton/controller/classmenu/AttrPointAdd.java
  com.daxton.controller.classmenu.AttrPointAdd
-com/daxton/page/main/ServerMenuPage.java
- com.daxton.page.main.ServerMenuPage
-com/daxton/page/classmenu/SkillOption.java
- com.daxton.page.classmenu.SkillOption
-com/daxton/page/main/TextureMenuPage.java
- com.daxton.page.main.TextureMenuPage
-com/daxton/page/topmenu/SettingsPage.java
- com.daxton.page.topmenu.SettingsPage
-com/daxton/page/classmenu/EqmStatusOption.java
- com.daxton.page.classmenu.EqmStatusOption
-com/daxton/page/classmenu/AttrStatusOption.java
- com.daxton.page.classmenu.AttrStatusOption
-com/daxton/controller/classmenu/EqmStatusAdd.java
- com.daxton.controller.classmenu.EqmStatusAdd
-com/daxton/page/test/ControllerPage.java
- com.daxton.page.test.ControllerPage
-com/daxton/page/classmenu/ActionOption.java
- com.daxton.page.classmenu.ActionOption
-com/daxton/function/CopyBackup2.java
- com.daxton.function.CopyBackup2
-com/daxton/page/classmenu/ClassOption.java
- com.daxton.page.classmenu.ClassOption
-com/daxton/controller/classmenu/SkillAdd.java
- com.daxton.controller.classmenu.SkillAdd
-com/daxton/api/backup/Time.java
- com.daxton.api.backup.Time
-com/daxton/controller/classmenu/PointAdd.java
- com.daxton.controller.classmenu.PointAdd
-com/daxton/page/classmenu/PointOption.java
- com.daxton.page.classmenu.PointOption
-com/daxton/api/FxmlLoader.java
- com.daxton.api.FxmlLoader
+com/daxton/api/StringControl.java
+ com.daxton.api.StringControl
+com/daxton/controller/actionmenu/location/Action_Model.java
+ com.daxton.controller.actionmenu.location.Action_Model
+com/daxton/controller/actionmenu/meta/Action_Break.java
+ com.daxton.controller.actionmenu.meta.Action_Break
 com/daxton/controller/topmenu/Settings.java
  com.daxton.controller.topmenu.Settings
-com/daxton/controller/main/ServerMenu.java
- com.daxton.controller.main.ServerMenu
-com/daxton/function/CopyBackup.java
- com.daxton.function.CopyBackup
-com/daxton/terminal/CmdMain.java
- com.daxton.terminal.CmdMain
+com/daxton/page/main/ServerMenuPage.java
+ com.daxton.page.main.ServerMenuPage
 com/daxton/api/backup/CrashTime.java
  com.daxton.api.backup.CrashTime
-com/daxton/config/FileControl.java
- com.daxton.config.FileControl
-com/daxton/page/main/MobsMenuPage.java
- com.daxton.page.main.MobsMenuPage
+com/daxton/page/classmenu/AttrStatusOption.java
+ com.daxton.page.classmenu.AttrStatusOption
+com/daxton/page/main/ClassMenuPage.java
+ com.daxton.page.main.ClassMenuPage
+com/daxton/controller/actionmenu/entity/Action_Damage.java
+ com.daxton.controller.actionmenu.entity.Action_Damage
+com/daxton/page/topmenu/SettingsPage.java
+ com.daxton.page.topmenu.SettingsPage
+com/daxton/controller/classmenu/EqmStatusAdd.java
+ com.daxton.controller.classmenu.EqmStatusAdd
+com/daxton/controller/actionmenu/player/Action_BossBar.java
+ com.daxton.controller.actionmenu.player.Action_BossBar
+com/daxton/page/main/TextureMenuPage.java
+ com.daxton.page.main.TextureMenuPage
+com/daxton/page/test/ControllerPage.java
+ com.daxton.page.test.ControllerPage
+com/daxton/page/main/ItemsMenuPage.java
+ com.daxton.page.main.ItemsMenuPage
+com/daxton/function/CopyBackup2.java
+ com.daxton.function.CopyBackup2
+com/daxton/controller/classmenu/ClassEdit.java
+ com.daxton.controller.classmenu.ClassEdit
+com/daxton/api/FxmlLoader.java
+ com.daxton.api.FxmlLoader
+com/daxton/api/Discord.java
+ com.daxton.api.Discord
+com/daxton/controller/classmenu/SkillAdd.java
+ com.daxton.controller.classmenu.SkillAdd
+com/daxton/controller/actionmenu/entity/Action_Attribute.java
+ com.daxton.controller.actionmenu.entity.Action_Attribute
 com/daxton/controller/classmenu/LevelAdd.java
  com.daxton.controller.classmenu.LevelAdd
-com/daxton/page/classmenu/AttrPointOption.java
- com.daxton.page.classmenu.AttrPointOption
-com/daxton/controller/main/TextureMenu.java
- com.daxton.controller.main.TextureMenu
-com/daxton/controller/actionmenu/entity/Action_Tabs_Entity.java
- com.daxton.controller.actionmenu.entity.Action_Tabs_Entity
-com/daxton/controller/actionmenu/player/Action_Tabs_Player.java
- com.daxton.controller.actionmenu.player.Action_Tabs_Player
+com/daxton/api/backup/Time.java
+ com.daxton.api.backup.Time
 com/daxton/controller/actionmenu/classs/Action_CustomPoint.java
  com.daxton.controller.actionmenu.classs.Action_CustomPoint
-com/daxton/controller/actionmenu/entity/Action_Heal.java
- com.daxton.controller.actionmenu.entity.Action_Heal
-com/daxton/controller/actionmenu/meta/Action_Orbital.java
- com.daxton.controller.actionmenu.meta.Action_Orbital
-com/daxton/controller/actionmenu/classs/Action_Tabs_Class.java
- com.daxton.controller.actionmenu.classs.Action_Tabs_Class
-com/daxton/controller/actionmenu/location/Action_Block.java
- com.daxton.controller.actionmenu.location.Action_Block
 com/daxton/controller/actionmenu/entity/Action_LoggerInfo.java
  com.daxton.controller.actionmenu.entity.Action_LoggerInfo
+com/daxton/page/classmenu/LevelOption.java
+ com.daxton.page.classmenu.LevelOption
 com/daxton/controller/actionmenu/meta/Action_Action.java
  com.daxton.controller.actionmenu.meta.Action_Action
+com/daxton/controller/actionmenu/meta/Action_Loop.java
+ com.daxton.controller.actionmenu.meta.Action_Loop
 com/daxton/controller/actionmenu/entity/Action_Glow.java
  com.daxton.controller.actionmenu.entity.Action_Glow
-com/daxton/controller/actionmenu/entity/Action_Invisible.java
- com.daxton.controller.actionmenu.entity.Action_Invisible
-com/daxton/controller/actionmenu/meta/Action_SwitchAction.java
- com.daxton.controller.actionmenu.meta.Action_SwitchAction
 com/daxton/controller/actionmenu/player/Action_Money.java
  com.daxton.controller.actionmenu.player.Action_Money
 com/daxton/controller/actionmenu/entity/Action_Name.java
@@ -146,69 +124,93 @@ com/daxton/controller/actionmenu/classs/Action_ClassAttr.java
  com.daxton.controller.actionmenu.classs.Action_ClassAttr
 com/daxton/controller/actionmenu/classs/Action_SetSkillLevel.java
  com.daxton.controller.actionmenu.classs.Action_SetSkillLevel
-com/daxton/controller/actionmenu/entity/Action_Attribute.java
- com.daxton.controller.actionmenu.entity.Action_Attribute
 com/daxton/controller/actionmenu/mod/Action_ModMessage.java
  com.daxton.controller.actionmenu.mod.Action_ModMessage
 com/daxton/controller/actionmenu/meta/Action_FixedPoint.java
  com.daxton.controller.actionmenu.meta.Action_FixedPoint
+com/daxton/page/classmenu/SkillOption.java
+ com.daxton.page.classmenu.SkillOption
 com/daxton/controller/actionmenu/entity/Action_MythicSkill.java
  com.daxton.controller.actionmenu.entity.Action_MythicSkill
-com/daxton/controller/actionmenu/entity/Action_Teleport.java
- com.daxton.controller.actionmenu.entity.Action_Teleport
-com/daxton/controller/main/ActionMenu.java
- com.daxton.controller.main.ActionMenu
-com/daxton/controller/actionmenu/meta/Action_Delay.java
- com.daxton.controller.actionmenu.meta.Action_Delay
-com/daxton/controller/actionmenu/player/Action_Mana.java
- com.daxton.controller.actionmenu.player.Action_Mana
+com/daxton/page/classmenu/EqmStatusOption.java
+ com.daxton.page.classmenu.EqmStatusOption
+com/daxton/controller/actionmenu/entity/Action_Move.java
+ com.daxton.controller.actionmenu.entity.Action_Move
+com/daxton/page/classmenu/ActionOption.java
+ com.daxton.page.classmenu.ActionOption
 com/daxton/controller/actionmenu/entity/Action_Message.java
  com.daxton.controller.actionmenu.entity.Action_Message
 com/daxton/controller/actionmenu/location/Action_Hologram.java
  com.daxton.controller.actionmenu.location.Action_Hologram
-com/daxton/controller/actionmenu/location/Action_Model.java
- com.daxton.controller.actionmenu.location.Action_Model
-com/daxton/controller/actionmenu/location/Action_Sound.java
- com.daxton.controller.actionmenu.location.Action_Sound
-com/daxton/controller/actionmenu/player/Action_BossBar.java
- com.daxton.controller.actionmenu.player.Action_BossBar
 com/daxton/controller/actionmenu/entity/Action_PotionEffect.java
  com.daxton.controller.actionmenu.entity.Action_PotionEffect
 com/daxton/controller/actionmenu/player/Action_Item.java
  com.daxton.controller.actionmenu.player.Action_Item
 com/daxton/page/main/ActionMenuPage.java
  com.daxton.page.main.ActionMenuPage
-com/daxton/controller/actionmenu/player/Action_Title.java
- com.daxton.controller.actionmenu.player.Action_Title
 com/daxton/controller/actionmenu/player/Action_Level.java
  com.daxton.controller.actionmenu.player.Action_Level
-com/daxton/controller/actionmenu/entity/Action_Damage.java
- com.daxton.controller.actionmenu.entity.Action_Damage
 com/daxton/controller/actionmenu/location/Action_Particle.java
  com.daxton.controller.actionmenu.location.Action_Particle
-com/daxton/controller/actionmenu/meta/Action_Loop.java
- com.daxton.controller.actionmenu.meta.Action_Loop
+com/daxton/page/classmenu/PointOption.java
+ com.daxton.page.classmenu.PointOption
 com/daxton/controller/actionmenu/player/Action_Inventory.java
  com.daxton.controller.actionmenu.player.Action_Inventory
-com/daxton/controller/actionmenu/meta/Action_Break.java
- com.daxton.controller.actionmenu.meta.Action_Break
 com/daxton/controller/actionmenu/player/Action_ActionBar.java
  com.daxton.controller.actionmenu.player.Action_ActionBar
 com/daxton/controller/actionmenu/classs/Action_AttributePoint.java
  com.daxton.controller.actionmenu.classs.Action_AttributePoint
 com/daxton/controller/actionmenu/entity/Action_DCMessage.java
  com.daxton.controller.actionmenu.entity.Action_DCMessage
-com/daxton/controller/actionmenu/location/Action_Guise.java
- com.daxton.controller.actionmenu.location.Action_Guise
-com/daxton/controller/actionmenu/entity/Action_Move.java
- com.daxton.controller.actionmenu.entity.Action_Move
+com/daxton/config/FileControl.java
+ com.daxton.config.FileControl
+com/daxton/page/main/SkillMenuPage.java
+ com.daxton.page.main.SkillMenuPage
+com/daxton/config/FileSearch.java
+ com.daxton.config.FileSearch
 com/daxton/controller/actionmenu/meta/Action_LocPng.java
  com.daxton.controller.actionmenu.meta.Action_LocPng
-com/daxton/controller/actionmenu/mod/Action_Tabs_Mod.java
- com.daxton.controller.actionmenu.mod.Action_Tabs_Mod
-com/daxton/controller/actionmenu/meta/Action_Tabs_Meta.java
- com.daxton.controller.actionmenu.meta.Action_Tabs_Meta
 com/daxton/controller/actionmenu/player/Action_Command.java
  com.daxton.controller.actionmenu.player.Action_Command
 com/daxton/controller/actionmenu/location/Action_Light.java
  com.daxton.controller.actionmenu.location.Action_Light
+com/daxton/controller/actionmenu/entity/Action_Heal.java
+ com.daxton.controller.actionmenu.entity.Action_Heal
+com/daxton/controller/actionmenu/meta/Action_Orbital.java
+ com.daxton.controller.actionmenu.meta.Action_Orbital
+com/daxton/page/classmenu/AttrPointOption.java
+ com.daxton.page.classmenu.AttrPointOption
+com/daxton/controller/actionmenu/meta/Action_SwitchAction.java
+ com.daxton.controller.actionmenu.meta.Action_SwitchAction
+com/daxton/controller/actionmenu/entity/Action_Invisible.java
+ com.daxton.controller.actionmenu.entity.Action_Invisible
+com/daxton/controller/main/ItemsMenu.java
+ com.daxton.controller.main.ItemsMenu
+com/daxton/controller/main/SkillMenu.java
+ com.daxton.controller.main.SkillMenu
+com/daxton/controller/actionmenu/location/Action_Block.java
+ com.daxton.controller.actionmenu.location.Action_Block
+com/daxton/controller/main/ActionMenu.java
+ com.daxton.controller.main.ActionMenu
+com/daxton/controller/main/ServerMenu.java
+ com.daxton.controller.main.ServerMenu
+com/daxton/config/FileConfig.java
+ com.daxton.config.FileConfig
+com/daxton/Main.java
+ com.daxton.Main
+com/daxton/controller/main/ClassMenu.java
+ com.daxton.controller.main.ClassMenu
+com/daxton/controller/classmenu/ClassAdd.java
+ com.daxton.controller.classmenu.ClassAdd
+com/daxton/controller/main/CharacterMenu.java
+ com.daxton.controller.main.CharacterMenu
+com/daxton/controller/main/MobsMenu.java
+ com.daxton.controller.main.MobsMenu
+com/daxton/controller/main/GUIMenu.java
+ com.daxton.controller.main.GUIMenu
+com/daxton/controller/main/TextureMenu.java
+ com.daxton.controller.main.TextureMenu
+com/daxton/page/TopMenu.java
+ com.daxton.page.TopMenu
+com/daxton/controller/actionmenu/location/Action_Guise.java
+ com.daxton.controller.actionmenu.location.Action_Guise

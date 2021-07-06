@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.player.Action_ActionBar">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.daxton.controller.actionmenu.player.Action_ActionBar">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -16,6 +17,12 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <TextField fx:id="message" onKeyReleased="#onChangeContent" />
+      <CheckBox fx:id="remove" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="是否移除其他的ActionBar">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

@@ -39,7 +39,7 @@ public class Action_PotionEffect {
             ActionMenuPage.keyValue.put("Ambient", String.valueOf(ambient.isSelected()));
             ActionMenuPage.keyValue.put("Particles", String.valueOf(particles.isSelected()));
 
-            ActionMenuPage.changeActionContnet("PotionEffect", ActionMenuPage.keyValue);
+            ActionMenuPage.changeActionContnet("PotionEffect");
         }
 
     }

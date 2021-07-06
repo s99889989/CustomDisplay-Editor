@@ -16,6 +16,42 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="功能">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="function" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="標題">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="message" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="格數">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="amount" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <Label text="介面ID">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="guiID" onMouseClicked="#onChangeContent" prefHeight="285.0" prefWidth="520.0" />
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

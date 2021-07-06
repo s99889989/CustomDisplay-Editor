@@ -96,7 +96,7 @@ public class FileControl {
     //把FileConfiguration儲存至Map
     public static void inputMap(String fileName, FileConfiguration fileConfiguration){
         if(fileName != null && fileConfiguration != null){
-            System.out.println(fileName);
+            //System.out.println(fileName);
             Manager.file_Name_Map.put(fileName+".yml", fileName+".yml");
             Manager.file_Config_Map.put(fileName+".yml", fileConfiguration);
         }
@@ -122,8 +122,11 @@ public class FileControl {
 
             //System.out.println(filePath+" : "+fileName);
             Manager.file_Name_Map.put(filePath, fileName);
-            FileConfiguration fileConfiguration = YamlConfiguration.loadConfiguration(f);
-            Manager.file_Config_Map.put(filePath, fileConfiguration);
+            //ServerMenuPage.print(filePath);
+            if(f.getPath().endsWith(".yml")){
+                FileConfiguration fileConfiguration = YamlConfiguration.loadConfiguration(f);
+                Manager.file_Config_Map.put(filePath, fileConfiguration);
+            }
 
         }
     }

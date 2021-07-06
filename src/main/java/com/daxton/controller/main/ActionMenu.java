@@ -1,6 +1,7 @@
 package com.daxton.controller.main;
 
 import com.daxton.Main;
+import com.daxton.api.StringControl;
 import com.daxton.api.StringConversion;
 import com.daxton.config.FileControl;
 import com.daxton.config.FileSearch;
@@ -18,6 +19,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ActionMenu {
@@ -233,33 +235,45 @@ public class ActionMenu {
     public void selectActionContent(){
         String selectContent = actionContentList.getSelectionModel().getSelectedItem();
 
+        Map<String ,String> actionMap = FileSearch.setClassAction(selectContent);
+
+        String targetType = StringConversion.getActionKey(actionMap, new String[]{"targetkey"});
+
         if(selectContent.contains(" @"))
         selectContent = selectContent.substring(0, selectContent.indexOf(" @"));
+        ActionMenuPage.targetContent = targetType;
         ActionMenuPage.actionContent = selectContent;
         ActionMenuPage.setSelectActionContent();
 
-        String actionType = StringConversion.getActionKey(FileSearch.setClassAction(selectContent), new String[]{"actiontype"});
+        String actionType = StringConversion.getActionKey(actionMap, new String[]{"actiontype"});
 
-        //actionMenuList.getSelectionModel().select("Loop");
         actionMenuList.getSelectionModel().select(actionType);
         actionMenuList.scrollTo(actionMenuList.getSelectionModel().getSelectedIndex());
 
 
-        if(!actionType.isEmpty()){
-            description.setText(Main.languageConfig.getString("Actions."+actionType));
 
-            for(String actionKey : actionArrayEntity){
-                VBox vBox = (VBox) action_tab_entity.lookup("#"+actionKey);
-                vBox.setVisible(false);
-                vBox.setManaged(false);
-            }
-            VBox vBox2 = (VBox) action_tab_entity.lookup("#"+actionType);
-            vBox2.setVisible(true);
-            vBox2.setManaged(true);
+        //更改目標選項
+        setTargetContent(targetType);
+        //輸入動作類型來更改顯示
+        actionMenuControl(actionType);
 
-        }
+
 
     }
+    //更改目標選項
+    public void setTargetContent(String inputString){
+        if(inputString.isEmpty()){
+            return;
+        }
+        Map<String ,String> actionMap = FileSearch.setTargetAction(inputString);
+
+        StringControl.setValue(targetEntiytList, actionMap, new String[]{"targettype"});
+        StringControl.setValue(targetEntityFilter, actionMap, new String[]{"Filters","f"});
+        StringControl.setValue(targetEntityDistance, actionMap, new String[]{"Distance","d"});
+        StringControl.setValue(targetEntityRadius, actionMap, new String[]{"Radius","r"});
+
+    }
+
     //新增內容動作
     public void addActionContent(){
         String editString = selectActionContnet.getText();
@@ -291,6 +305,7 @@ public class ActionMenu {
 
         description.setText(Main.languageConfig.getString("Actions."+selectString));
 
+        //輸入動作類型來更改顯示
         actionMenuControl(selectString);
 
         ActionMenuPage.targetContent = "";
@@ -299,7 +314,10 @@ public class ActionMenu {
     }
     //輸入動作類型來更改顯示
     public void actionMenuControl(String actionInputString){
-
+        if(actionInputString == null && actionInputString.isEmpty()){
+            return;
+        }
+        description.setText(Main.languageConfig.getString("Actions."+actionInputString));
         //目標為實體
         if(Arrays.asList(actionArrayEntity).contains(actionInputString)){
             action_tab_entity.setVisible(true);
@@ -317,13 +335,33 @@ public class ActionMenu {
                 vBox.setVisible(false);
                 vBox.setManaged(false);
             }
-            try {
-                VBox vBox2 = (VBox) action_tab_entity.lookup("#"+actionInputString);
-                vBox2.setVisible(true);
-                vBox2.setManaged(true);
-            }catch (Exception exception){
-                exception.printStackTrace();
+
+            VBox vBox2 = (VBox) action_tab_entity.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
+
+        }
+        //目標為玩家
+        if(Arrays.asList(actionArrayPlayer).contains(actionInputString)){
+            action_tab_entity.setVisible(false);
+            action_tab_player.setVisible(true);
+            action_tab_location.setVisible(false);
+            action_tab_meta.setVisible(false);
+            action_tab_class.setVisible(false);
+            action_tab_mod.setVisible(false);
+
+            targetEntity.setVisible(true);
+            targetLocation.setVisible(false);
+
+            for(String actionKey : actionArrayPlayer){
+                VBox vBox = (VBox) action_tab_player.lookup("#"+actionKey);
+                vBox.setVisible(false);
+                vBox.setManaged(false);
             }
+
+            VBox vBox2 = (VBox) action_tab_player.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
 
         }
         //目標為座標
@@ -343,16 +381,82 @@ public class ActionMenu {
                 vBox.setVisible(false);
                 vBox.setManaged(false);
             }
-            try {
-                VBox vBox2 = (VBox) action_tab_location.lookup("#"+actionInputString);
-                vBox2.setVisible(true);
-                vBox2.setManaged(true);
-            }catch (Exception exception){
-                exception.printStackTrace();
+
+            VBox vBox2 = (VBox) action_tab_location.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
+
+        }
+        //元動作
+        if(Arrays.asList(actionArrayMeta).contains(actionInputString)){
+            action_tab_entity.setVisible(false);
+            action_tab_player.setVisible(false);
+            action_tab_location.setVisible(false);
+            action_tab_meta.setVisible(true);
+            action_tab_class.setVisible(false);
+            action_tab_mod.setVisible(false);
+
+            targetEntity.setVisible(true);
+            targetLocation.setVisible(false);
+
+            for(String actionKey : actionArrayMeta){
+                VBox vBox = (VBox) action_tab_meta.lookup("#"+actionKey);
+                vBox.setVisible(false);
+                vBox.setManaged(false);
             }
+
+            VBox vBox2 = (VBox) action_tab_meta.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
+
+        }
+        //Class專用
+        if(Arrays.asList(actionArrayClass).contains(actionInputString)){
+            action_tab_entity.setVisible(false);
+            action_tab_player.setVisible(false);
+            action_tab_location.setVisible(false);
+            action_tab_meta.setVisible(false);
+            action_tab_class.setVisible(true);
+            action_tab_mod.setVisible(false);
+
+            targetEntity.setVisible(true);
+            targetLocation.setVisible(false);
+
+            for(String actionKey : actionArrayClass){
+                VBox vBox = (VBox) action_tab_class.lookup("#"+actionKey);
+                vBox.setVisible(false);
+                vBox.setManaged(false);
+            }
+
+            VBox vBox2 = (VBox) action_tab_class.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
 
         }
 
+        //Mod相關動作
+        if(Arrays.asList(actionArrayMod).contains(actionInputString)){
+            action_tab_entity.setVisible(false);
+            action_tab_player.setVisible(false);
+            action_tab_location.setVisible(false);
+            action_tab_meta.setVisible(false);
+            action_tab_class.setVisible(false);
+            action_tab_mod.setVisible(true);
+
+            targetEntity.setVisible(true);
+            targetLocation.setVisible(false);
+
+            for(String actionKey : actionArrayMod){
+                VBox vBox = (VBox) action_tab_mod.lookup("#"+actionKey);
+                vBox.setVisible(false);
+                vBox.setManaged(false);
+            }
+
+            VBox vBox2 = (VBox) action_tab_mod.lookup("#"+actionInputString);
+            vBox2.setVisible(true);
+            vBox2.setManaged(true);
+
+        }
 
     }
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.entity.Action_Message">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.player.Action_BossBar">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -16,6 +16,67 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label text="顯示內容">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="message" onKeyReleased="#onChangeContent" />
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="60.0" text="樣式">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="style" onMouseClicked="#onChangeContent" prefHeight="67.0" prefWidth="428.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="60.0" text="顏色">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="color" onMouseClicked="#onChangeContent" prefHeight="80.0" prefWidth="430.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="35.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label minWidth="60.0" text="進度">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="progress" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="60.0" text="類型">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="flag" onMouseClicked="#onChangeContent" prefHeight="92.0" prefWidth="432.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="標記">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mark" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="刪除">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

@@ -56,7 +56,7 @@ public class FileSearch {
         File root = new File(path);
         List<File> files = new ArrayList<>();
         if(!root.isDirectory()){
-            if(root.getAbsolutePath().endsWith(".yml")){
+            if(root.getAbsolutePath().endsWith(".yml") || root.getAbsolutePath().endsWith(".png")){
                 files.add(root);
             }
         }else{
@@ -94,7 +94,38 @@ public class FileSearch {
         zin.closeEntry();
         return stringList;
     }
+    //把一條動作目標轉成Map
+    public static Map<String, String> setTargetAction(String inputString){
+        Map<String, String> actionMap = new HashMap<>();
+        if(inputString.contains("@")){
 
+            if (inputString.contains("{") && inputString.contains("}")) {
+                int num1 = appearNumber(inputString, "\\{");
+                int num2 = appearNumber(inputString, "\\}");
+                if (num1 == 1 && num2 == 1) {
+                    String actionType = inputString.substring(inputString.indexOf("@")+1, inputString.indexOf("{")).trim();
+                    actionMap.put("targettype",actionType);
+
+                    String midSet = inputString.substring(inputString.indexOf("{")+1, inputString.indexOf("}"));
+
+                    List<String> midSetList = getBlockList(midSet,";");
+                    midSetList.forEach(midKey -> {
+                        String[] midArray = midKey.split("=");
+                        if(midArray.length == 2){
+                            //cd.getLogger().info(midArray[0]+" : "+midArray[1]);
+                            actionMap.put(midArray[0].toLowerCase(),midArray[1]);
+                        }
+                    });
+
+                }
+            }else {
+                String actionType = inputString.substring(inputString.indexOf("@")+1).trim();
+                actionMap.put("targettype",actionType);
+            }
+        }
+
+        return actionMap;
+    }
     //把一條動作轉成Map
     public static Map<String, String> setClassAction(String inputString){
         Map<String, String> actionMap = new HashMap<>();

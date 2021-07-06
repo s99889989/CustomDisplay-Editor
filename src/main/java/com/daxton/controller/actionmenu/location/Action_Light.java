@@ -15,6 +15,11 @@ public class Action_Light {
 
     }
 
+    //改變設定時
+    public void onChangeContent(){
+
+    }
+
     //獲取初始值
     public void getFirstContent(){
         ActionMenu actionMenu = (ActionMenu) Manager.controller_Map.get("ActionMenu");

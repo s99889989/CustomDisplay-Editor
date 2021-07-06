@@ -16,6 +16,41 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <HBox prefHeight="123.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="物品類別">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="itmeType" onMouseClicked="#onChangeContentType" prefHeight="100.0" prefWidth="403.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="248.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label text="物品名稱">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="itemID" onMouseClicked="#onChangeContent" prefHeight="100.0" prefWidth="405.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="數量">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amount" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="remove" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="移除物品">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

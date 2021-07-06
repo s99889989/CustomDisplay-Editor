@@ -1,5 +1,8 @@
 package com.daxton.api;
 
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+
 import java.util.Map;
 
 public class StringConversion {
@@ -43,7 +46,7 @@ public class StringConversion {
         }
         return output;
     }
-
+    //從動作Map獲取內容
     public static String getActionKey(Map<String ,String> stringStringMap, String[] findKey){
         String output = "";
         for(String key : findKey){
@@ -53,7 +56,7 @@ public class StringConversion {
         }
         return output;
     }
-
+    //從動作Map獲取內容並設定是否轉成小寫
     public static String getActionKeyToLow(Map<String ,String> stringStringMap, String[] findKey, boolean toLow){
 
         String output = "";
@@ -68,5 +71,8 @@ public class StringConversion {
         return output;
 
     }
+
+
+
 
 }

@@ -57,7 +57,7 @@ public class Action_Teleport {
         }
 
         ActionMenuPage.keyValue.put("OnBlock", String.valueOf(onBlock.isSelected()));
-        ActionMenuPage.changeActionContnet("Teleport", ActionMenuPage.keyValue);
+        ActionMenuPage.changeActionContnet("Teleport");
     }
     //獲取初始值
     public void getFirstContent(){

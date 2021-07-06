@@ -16,6 +16,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Map;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Timer;
@@ -46,10 +47,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-//        String message = "Attribute[Attribute=GENERIC_ARMOR_TOUGHNESS];Label=4;Amount=4;Duration=4]";
-//        String actionType = StringConversion.getActionKey(FileSearch.setClassAction(message), new String[]{"actiontype"});
-//        System.out.println(message);
-//        System.out.println(actionType);
+//        String message = "@Target"; // {Filters=1;Distance=2;Radius=3}
+//        Map<String ,String> actionMap = FileSearch.setTargetAction(message);
+//        String messageString = StringConversion.getActionKey(actionMap, new String[]{"targettype"});
+//        String FiltersString = StringConversion.getActionKey(actionMap, new String[]{"Filters","f"});
+//        String Distance = StringConversion.getActionKey(actionMap, new String[]{"Distance","d"});
+//        String Radius = StringConversion.getActionKey(actionMap, new String[]{"Radius","r"});
+//        System.out.println("P: "+messageString+" : "+FiltersString+" : "+Distance+" : "+Radius);
     }
 
     @Override

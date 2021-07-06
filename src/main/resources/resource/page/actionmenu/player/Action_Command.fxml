@@ -16,6 +16,17 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label text="指令內容">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="message" onKeyReleased="#onChangeContent" />
+      <CheckBox fx:id="console" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="由控制台發出">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

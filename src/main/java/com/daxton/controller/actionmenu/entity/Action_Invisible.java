@@ -140,7 +140,7 @@ public class Action_Invisible {
         ActionMenuPage.keyValue.put("Duration", duration.getText());
 
 
-        ActionMenuPage.changeActionContnet("Invisible", ActionMenuPage.keyValue);
+        ActionMenuPage.changeActionContnet("Invisible");
     }
 
 

@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Guise">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Guise">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,6 +16,142 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="100.0" text="實體類性">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="entityType" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
+            <VBox prefHeight="100.0" prefWidth="220.0">
+               <children>
+                  <HBox prefHeight="55.0" prefWidth="218.0">
+                     <children>
+                        <Label minWidth="100.0" text="裝備部位">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="eqmParts" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="218.0">
+                     <children>
+                        <Label minWidth="100.0" text="顯示時間">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="duration" onKeyReleased="#onChangeContent" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="實體名稱">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="name" onKeyReleased="#onChangeContent" />
+            <CheckBox fx:id="canLook" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="實體可見">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="100.0" text="物品類別">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="itmeType" onMouseClicked="#onChangeContentFind" prefHeight="200.0" prefWidth="200.0" />
+            <Label minWidth="50.0" text="物品">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="item" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <Label text="盔甲架設定">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="頭">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="headX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="headY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="headZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <CheckBox fx:id="headPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上座標仰角" />
+            <CheckBox fx:id="headYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上座標偏行" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="身體">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bodyX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="bodyY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="bodyZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="左手">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="leftArmX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="leftArmY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="leftArmZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <Label text="右手">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="rightArmX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="rightArmY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="rightArmZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="左腳">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="leftLegX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="leftLegY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="leftLegZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <Label text="右腳">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="rightLegX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="rightLegY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+            <TextField fx:id="rightLegZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>

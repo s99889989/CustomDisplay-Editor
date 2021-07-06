@@ -1,19 +1,32 @@
 package com.daxton.controller.actionmenu.player;
 
+import com.daxton.api.StringControl;
 import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
+import com.daxton.page.main.ActionMenuPage;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 import java.util.Map;
 
 public class Action_Title {
 
-    @FXML
-//初始設定
-    void initialize() {
+    @FXML TextField title;
+    @FXML TextField subtitle;
+    @FXML TextField fadeIn;
+    @FXML TextField duration;
+    @FXML TextField fadeOut;
 
+    public void onChangeContent(){
+        ActionMenuPage.keyValue.clear();
+        ActionMenuPage.keyValue.put("Title", StringControl.getValue(title));
+        ActionMenuPage.keyValue.put("Subtitle", StringControl.getValue(subtitle));
+        ActionMenuPage.keyValue.put("FadeIn", StringControl.getValue(fadeIn));
+        ActionMenuPage.keyValue.put("Duration", StringControl.getValue(duration));
+        ActionMenuPage.keyValue.put("FadeOut", StringControl.getValue(fadeOut));
+        ActionMenuPage.changeActionContnet("Title");
     }
 
     //獲取初始值
@@ -22,10 +35,11 @@ public class Action_Title {
         if(actionMenu != null){
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
-            String message = StringConversion.getActionKey(inputMap, new String[]{"m","message"});
-            if(!message.isEmpty()){
-
-            }
+            StringControl.setValue(title, inputMap, new String[]{"title","t"});
+            StringControl.setValue(subtitle, inputMap, new String[]{"subtitle","s"});
+            StringControl.setValue(fadeIn, inputMap, new String[]{"fadeIn","fi"});
+            StringControl.setValue(duration, inputMap, new String[]{"duration","d"});
+            StringControl.setValue(fadeOut, inputMap, new String[]{"fadeOut","fo"});
         }
     }
 

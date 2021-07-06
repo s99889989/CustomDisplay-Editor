@@ -2,11 +2,14 @@ package com.daxton.page.main;
 
 import com.daxton.Main;
 import com.daxton.api.FxmlLoader;
+import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -35,26 +38,27 @@ public class ActionMenuPage {
         }
 
     }
-
+    //重整動作內容
     public static void setSelectActionContent(){
         ActionMenu actionMenu = (ActionMenu) Manager.controller_Map.get("ActionMenu");
         if(actionMenu != null){
-            actionMenu.selectActionContnet.setText(actionContent + targetContent);
+            actionMenu.selectActionContnet.setText(actionContent + " " + targetContent);
         }
 
     }
-
-    public static void changeActionContnet(String acitonType , Map<String, String> keyValue){
+    //改變動作內容
+    public static void changeActionContnet(String acitonType){
 
         output = acitonType+"[";
         count = 1;
         keyValue.forEach((s, s2) -> {
-            if(count > 1){
-                output += ";";
+            if(!s2.isEmpty()){
+                if(count > 1){
+                    output += ";";
+                }
+                output += s+"="+s2;
+                count++;
             }
-
-            output += s+"="+s2;
-            count++;
         });
 
         output += "]";
@@ -62,6 +66,41 @@ public class ActionMenuPage {
         actionContent = output;
 
         setSelectActionContent();
+
+    }
+
+    //依照類型獲取值
+    public static String getValue(Object obj){
+        String output = "";
+        if(obj instanceof ListView<?>){
+            String o = (String) ((ListView<?>) obj).getSelectionModel().getSelectedItem();
+            if(o != null){
+                return o;
+            }
+        }
+        if(obj instanceof TextField){
+            String o = ((TextField) obj).getText();
+            return o;
+        }
+        if(obj instanceof CheckBox){
+            return String.valueOf(((CheckBox) obj).isSelected());
+        }
+        return output;
+    }
+    //依照類型設定值
+    public static void setValue(Object obj, Map<String, String> inputMap, String[] findKey){
+        String messageString = StringConversion.getActionKey(inputMap, findKey);
+        if(!messageString.isEmpty()){
+            if(obj instanceof ListView<?>){
+                ((ListView<String>) obj).getSelectionModel().select(messageString);
+            }
+        }
+        if(obj instanceof TextField){
+            ((TextField) obj).setText(messageString);
+        }
+        if(obj instanceof CheckBox){
+            ((CheckBox) obj).setSelected(Boolean.parseBoolean(messageString));
+        }
 
     }
 

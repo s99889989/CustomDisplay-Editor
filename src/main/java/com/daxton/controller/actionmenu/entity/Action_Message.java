@@ -28,12 +28,14 @@ public class Action_Message {
     public void onMessageEnd(){
         ActionMenu actionMenu = (ActionMenu) Manager.controller_Map.get("ActionMenu");
         if(actionMenu != null){
+            if(!messageText.getText().isEmpty()){
+                String output = "Message[Message="+messageText.getText()+"]";
 
-            String output = "Message[Message="+messageText.getText()+"]";
+                ActionMenuPage.actionContent = output;
 
-            ActionMenuPage.actionContent = output;
+                ActionMenuPage.setSelectActionContent();
+            }
 
-            ActionMenuPage.setSelectActionContent();
         }
 
 

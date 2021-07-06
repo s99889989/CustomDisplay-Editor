@@ -16,6 +16,36 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label text="標題內容">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="title" onKeyReleased="#onChangeContent" />
+      <Label text="副標題內容">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="subtitle" onKeyReleased="#onChangeContent" />
+      <Label text="淡入時間">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fadeIn" onKeyReleased="#onChangeContent" />
+      <Label text="停留時間">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="duration" onKeyReleased="#onChangeContent" />
+      <Label text="淡出時間">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fadeOut" onKeyReleased="#onChangeContent" />
       <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
    </children>
    <opaqueInsets>
