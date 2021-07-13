@@ -2,194 +2,194 @@ Title: 'CustomDisplay-Editor'
 
 Server-Menu:
   Status:
-    Open: '开启'
-    Close: '关闭'
+    Open: 'Open'
+    Close: 'Close'
 
 Aims:
   EntityTargeters:
-    Self: '自身'
-    Target: '目标'
-    SelfRadius: '自身圆半径'
-    TargetRadius: '目标圆半径'
-    SelfLine: '自身面向直线上的目标'
-    SelfInWorld: '针对自己所在世界中的所有生命实体'
-    Server: '伺服器上的所有生命实体'
+    Self: 'itself.'
+    Target: 'the goal.'
+    SelfRadius: 'The radius of its own circle.'
+    TargetRadius: 'The radius of the target circle.'
+    SelfLine: 'Face the goal in a straight line.'
+    SelfInWorld: 'For all living entities in the world in which you live.'
+    Server: 'All living entities on the server.'
   LocationTargeters:
-    LocSelf: '自身位置'
-    LocTarget: '目标位置'
-    LocWorld: '世界位置'
-    LocAdd: '在原有的位置增加座标量'
+    LocSelf: 'Own position.'
+    LocTarget: 'target location.'
+    LocWorld: 'World location.'
+    LocAdd: 'Increase the amount of coordinates in the original position.'
 
 Trigger:
-  ~onAttack: '当攻击时'
-  ~onCrit: '当爆击时'
-  ~onMagic: '当魔法攻击时'
-  ~onMCrit: '当魔法攻击爆击时'
-  ~onAtkMiss: '当攻击失败时'
-  ~onDamaged: '被攻击时'
-  ~onDamagedMiss: '被攻击失败时'
-  ~onRegainHealth: '当回血时'
-  ~onJoin: '当登入时'
-  ~onQuit: '当登出时'
-  ~onMove: '移动时'
-  ~onSneak: '蹲下时'
-  ~onStandup: '站起来时'
-  ~onDeath: '当死亡时'
-  ~onKeyFON: '当按下案件F时'
-  ~onKeyFOFF: '再按下案件F时'
-  ~onKey1: '当切换到第1个物品栏时'
-  ~onKey2: '当切换到第2个物品栏时'
-  ~onKey3: '当切换到第3个物品栏时'
-  ~onKey4: '当切换到第4个物品栏时'
-  ~onKey5: '当切换到第5个物品栏时'
-  ~onKey6: '当切换到第6个物品栏时'
-  ~onKey7: '当切换到第7个物品栏时'
-  ~onKey8: '当切换到第8个物品栏时'
-  ~onKey9: '当切换到第9个物品栏时'
-  ~onChat: '当说话时'
-  ~onCommand: '当输入指定指令时'
-  ~onLevelUp: '当等级提升时'
-  ~onLevelDown: '当等级降低时'
-  ~onExpUp: '当获得经验值时'
-  ~onExpDown: '当失去经验值时'
-  ~onMobDeath: '当怪物死亡时.(死亡原因必须是该玩家)'
-  ~LeftClickAir: '左键点击空气时'
-  ~LeftClickBlock: '左键点击方块时'
-  ~RightClickAir: '右键点击空气时'
-  ~RightClickBlock: '右键点击方块时'
-  ~PressurePlate: '踩到压力板时'
-  ~EqmCheck: '装备检查时'
-  ~onLeverOn: '当控制杆开启时'
-  ~onLeverOff: '当控制杆关闭时'
-  ~onButton: '当按下按钮时'
+  ~onAttack: 'When attacking.'
+  ~onCrit: 'When critical strike.'
+  ~onMagic: 'When magic attacks.'
+  ~onMCrit: 'When the magic attack critically strikes.'
+  ~onAtkMiss: 'When the attack fails.'
+  ~onDamaged: 'When damaged.'
+  ~onDamagedMiss: 'When the damaged fails.'
+  ~onRegainHealth: 'When the blood returns.'
+  ~onJoin: 'When logging in.'
+  ~onQuit: 'When logging out.'
+  ~onMove: 'When moving.'
+  ~onSneak: 'When squatting.'
+  ~onStandup: 'When standing up.'
+  ~onDeath: 'When dead.'
+  ~onKeyFON: 'When the case F is pressed.'
+  ~onKeyFOFF: ' When item F is pressed again.'
+  ~onKey1: 'When switching to the 1 inventory'
+  ~onKey2: 'When switching to the 2 inventory'
+  ~onKey3: 'When switching to the 3 inventory'
+  ~onKey4: 'When switching to the 4 inventory'
+  ~onKey5: 'When switching to the 5 inventory'
+  ~onKey6: 'When switching to the 6 inventory'
+  ~onKey7: 'When switching to the 7 inventory'
+  ~onKey8: 'When switching to the 8 inventory'
+  ~onKey9: 'When switching to the 9 inventory'
+  ~onChat: 'When talking.'
+  ~onCommand: 'When entering a specified command.'
+  ~onLevelUp: 'When the level increases.'
+  ~onLevelDown: 'When the level decreases.'
+  ~onExpUp: 'When gaining experience points.'
+  ~onExpDown: 'When losing experience points.'
+  ~onMobDeath: 'When the monster dies. (The cause of death must be the player)'
+  ~LeftClickAir: 'When left-clicking on air.'
+  ~LeftClickBlock: 'When left-clicking on the square.'
+  ~RightClickAir: 'When right-clicking on air.'
+  ~RightClickBlock: 'When right-clicking on the square.'
+  ~PressurePlate: 'When stepping on the pressure plate.'
+  ~EqmCheck: 'During equipment inspection.'
+  ~onLeverOn: 'When the lever is turned on.'
+  ~onLeverOff: 'When the lever is closed.'
+  ~onButton: 'When the button is pressed.'
 
 Actions:
-  Attribute: '設置臨時屬性。'
-  Damage: '造成指定傷害。'
-  DCMessage: '向Discord發送訊息。'
-  Glow: '使目標發光。'
-  Heal: '回復目標血量。'
-  Invisible: '使目標隱形包括裝備。'
-  LoggerInfo: '在後台顯示訊息。'
-  Message: '發送聊天訊息。'
-  Move: '使目標移動一段距離。'
-  MythicSkill: '使用MythicMobs的技能。'
-  Name: '自訂顯示名稱，只改變顯示，實際並不修改。'
-  PotionEffect: '向目標添加藥水效果。'
-  Teleport: '瞬間到指定位置。'
-  ActionBar: '物品欄上方顯示。'
-  BossBar: '上方欄位顯示。'
-  Command: '執行指令。'
-  Exp: '給予經驗。'
-  Item: '對物品的相關操作。'
-  Inventory: '對背包的相關操作。'
-  Level: '修改等級。'
-  Mana: '修改魔量。'
-  Money: '錢相關的功能。'
-  Title: '畫面中間顯示。'
-  Block: '放置方塊。'
-  Guise: '偽裝物品。'
-  Hologram: '全息顯示。'
-  Light: '發出類似火把的亮光。'
-  Model: 'ModelEngine實體。'
-  Particle: '粒子。'
-  Sound: '聲音。'
-  Action: '可以觸發其他動作列表。'
-  Break: '依照條件判斷是否中斷動作。'
-  Delay: '延遲。'
-  FixedPoint: '定點持續動作。'
-  Loop: '可以在時間內持續觸發動作列表。'
-  LocPng: '依照PNG圖片給座標動作。'
-  Orbital: '軌道式持續動作。'
-  SwitchAction: '條件選擇動作。'
-  CustomPoint: '點數。(升級時所獲得的點數，可用來升級屬性點)'
-  AttributePoint: '屬性點。(人物的一項統計屬性，可以把此屬性的佔位符放到Damage動作，來增加技能攻擊)'
-  ClassAttr: '設置臨時職業屬性。'
-  SetSkillLevel: '技能相關的操作。'
-  ModMessage: '在畫面指定位置發送訊息。'
+  Attribute: 'Set temporary properties.'
+  Damage: 'Inflict specified damage.'
+  DCMessage: 'Send a message to Discord.'
+  Glow: 'Makes the target glow.'
+  Heal: 'Restore the target blood volume.'
+  Invisible: 'Make the target invisible including equipment.'
+  LoggerInfo: 'Display a message on the terminal.'
+  Message: 'Send chat messages.'
+  Move: 'Move the target a certain distance.'
+  MythicSkill: 'Use the skills of MythicMobs.'
+  Name: 'Customize the display name, only change the display, not actually.'
+  PotionEffect: 'Add potion effect to the target.'
+  Teleport: 'To the designated location instantly.'
+  ActionBar: 'Displayed above the inventory.'
+  BossBar: 'The upper field is displayed.'
+  Command: 'Execute instructions.'
+  Exp: 'Give experience.'
+  Item: 'Related operations on items.'
+  Inventory: 'Related operations on the backpack.'
+  Level: 'Modify the level.'
+  Mana: 'Modify the mana.'
+  Money: 'Money related functions.'
+  Title: 'Displayed in the middle of the screen.'
+  Block: 'Place the block.'
+  Guise: 'The effect of placing items on the head of the armor stand.'
+  Hologram: 'HolographicDisplays.'
+  Light: 'Glows like a torch.'
+  Model: 'ModelEngine entity.'
+  Particle: 'Particle.'
+  Sound: 'Sound.'
+  Action: 'Can trigger other action lists.'
+  Break: 'Determine whether to interrupt the action according to the conditions.'
+  Delay: 'Delay.'
+  FixedPoint: 'Fixed-point continuous action.'
+  Loop: 'The action list can be triggered continuously within the time.'
+  LocPng: 'Follow the PNG image to give the coordinate action.'
+  Orbital: 'Orbital continuous action.'
+  SwitchAction: 'Conditional selection action.'
+  CustomPoint: 'Points. (The points obtained during the upgrade can be used to upgrade the attribute points)'
+  AttributePoint: 'Attribute points. (A statistical attribute of the character, you can put the placeholder of this attribute in the Damage action to increase the skill attack)'
+  ClassAttr: 'Set temporary occupation attributes.'
+  SetSkillLevel: 'Skill-related operations.'
+  ModMessage: 'Send a message at the specified location on the screen.'
 
 Attribute:
-  GENERIC_MAX_HEALTH: '生物的最大血量。'
-  GENERIC_KNOCKBACK_RESISTANCE: '當生物被攻擊的時候的擊退抗性。'
-  GENERIC_MOVEMENT_SPEED: '生物的移動速度。'
-  GENERIC_ATTACK_DAMAGE: '當生物攻擊其他生物/實體時所造成的傷害。'
-  GENERIC_ATTACK_SPEED: '生物的攻擊速率。'
-  GENERIC_ARMOR: '護甲的防禦值。'
-  GENERIC_ARMOR_TOUGHNESS: '護甲的韌性。'
-  GENERIC_LUCK: '掉落物品的運氣。'
+  GENERIC_ARMOR: 'Armor bonus of an Entity.'
+  GENERIC_ARMOR_TOUGHNESS: 'Armor durability bonus of an Entity.'
+  GENERIC_ATTACK_DAMAGE: 'Attack damage of an Entity.'
+  GENERIC_ATTACK_SPEED: 'Attack speed of an Entity.'
+  GENERIC_KNOCKBACK_RESISTANCE: 'Resistance of an Entity to knockback.'
+  GENERIC_LUCK: 'Luck bonus of an Entity.'
+  GENERIC_MAX_HEALTH: 'Maximum health of an Entity.'
+  GENERIC_MOVEMENT_SPEED: 'Movement speed of an Entity.'
 
 ChatColor:
-  AQUA: '淡藍色'
-  BLACK: '黑色'
-  BLUE: '藍色色'
-  DARK_AQUA: '深水色'
-  DARK_BLUE: '深藍色'
-  DARK_GRAY: '深灰色'
-  DARK_GREEN: '深綠色'
-  DARK_PURPLE: '深紫色色'
-  DARK_RED: '深紅'
-  GOLD: '橙色色'
-  GRAY: '灰色色'
-  GREEN: '綠色'
-  LIGHT_PURPLE: '紫色'
-  RED: '紅色'
-  WHITE: '白色'
-  YELLOW: '黃色'
+  AQUA: 'Represents aqua'
+  BLACK: 'Represents black'
+  BLUE: 'Represents blue'
+  DARK_AQUA: 'Represents dark blue (aqua)'
+  DARK_BLUE: 'Represents dark blue'
+  DARK_GRAY: 'Represents dark gray'
+  DARK_GREEN: 'Represents dark green'
+  DARK_PURPLE: 'Represents dark purple'
+  DARK_RED: 'Represents dark red'
+  GOLD: 'Represents gold'
+  GRAY: 'Represents gray'
+  GREEN: 'Represents green'
+  LIGHT_PURPLE: 'Represents light purple'
+  RED: 'Represents red'
+  WHITE: 'Represents white'
+  YELLOW: 'Represents yellow'
 
 PotionEffectType:
-  ABSORPTION: '提高生命值無法再生但每 30 秒補充一次的實體的最大生命值。'
-  BAD_OMEN: '凶兆。'
-  BLINDNESS: '致盲一個實體。'
-  CONDUIT_POWER: '附近管道賦予的效果。'
-  CONFUSION: '扭曲客戶的願景。'
-  DAMAGE_RESISTANCE: '減少對實體造成的傷害。'
-  DOLPHINS_GRACE: '海豚恩典。'
-  FAST_DIGGING: '提高挖掘速度。'
-  FIRE_RESISTANCE: '停止火焰傷害。'
-  GLOWING: '勾勒出實體的輪廓，以便從遠處看到它。'
-  HARM: '傷害實體。'
-  HEAL: '治愈一個實體。'
-  HEALTH_BOOST: '增加一個實體的最大生命值。'
+  ABSORPTION: 'Increases the maximum health of an entity with health that cannot be regenerated, but is refilled every 30 seconds.'
+  BAD_OMEN: 'oof.'
+  BLINDNESS: 'Blinds an entity.'
+  CONDUIT_POWER: 'Effects granted by a nearby conduit.'
+  CONFUSION: 'Warps vision on the client.'
+  DAMAGE_RESISTANCE: 'Decreases damage dealt to an entity.'
+  DOLPHINS_GRACE: 'Dolphins grace'
+  FAST_DIGGING: 'Increases dig speed.'
+  FIRE_RESISTANCE: 'Stops fire damage.'
+  GLOWING: 'Outlines the entity so that it can be seen from afar.'
+  HARM: 'Hurts an entity.'
+  HEAL: 'Heals an entity.'
+  HEALTH_BOOST: 'Increases the maximum health of an entity.'
   HERO_OF_THE_VILLAGE: '\o/.'
-  HUNGER: '增加飢餓感。'
-  INCREASE_DAMAGE: '增加造成的傷害。'
-  INVISIBILITY: '授予隱形。'
-  JUMP: '增加跳躍高度。'
-  LEVITATION: '使實體漂浮在空中。'
-  LUCK: '戰利品表運氣。'
-  NIGHT_VISION: '允許實體在黑暗中看到。'
-  POISON: '隨著時間的推移對實體造成傷害。'
-  REGENERATION: '恢復健康。'
-  SATURATION: '每跳增加一個實體的食物等級。'
-  SLOW: '降低移動速度。'
-  SLOW_DIGGING: '降低挖掘速度。'
-  SLOW_FALLING: '減慢實體掉落率。'
-  SPEED: '增加移動速度。'
-  UNLUCK: '戰利品表倒霉。'
-  WATER_BREATHING: '允許在水下呼吸。'
-  WEAKNESS: '減少實體造成的傷害。'
-  WITHER: '隨著時間的推移對實體造成傷害並為射手提供生命值。'
+  HUNGER: 'Increases hunger.'
+  INCREASE_DAMAGE: 'Increases damage dealt.'
+  INVISIBILITY: 'Grants invisibility.'
+  JUMP: 'Increases jump height.'
+  LEVITATION: 'Causes the entity to float into the air.'
+  LUCK: 'Loot table luck.'
+  NIGHT_VISION: 'Allows an entity to see in the dark.'
+  POISON: 'Deals damage to an entity over time.'
+  REGENERATION: 'Regenerates health.'
+  SATURATION: 'Increases the food level of an entity each tick.'
+  SLOW: 'Decreases movement speed.'
+  SLOW_DIGGING: 'Decreases dig speed.'
+  SLOW_FALLING: 'Slows entity fall rate.'
+  SPEED: 'Increases movement speed.'
+  UNLUCK: 'Loot table unluck.'
+  WATER_BREATHING: 'Allows breathing underwater.'
+  WEAKNESS: 'Decreases damage dealt by an entity.'
+  WITHER: 'Deals damage to an entity over time and gives the health to the shooter.'
 
 BarStyle:
-  SOLID: '1個部分'
-  SEGMENTED_6: '分為6個部分'
-  SEGMENTED_10: '分為10個部分'
-  SEGMENTED_12: '分為12個部分'
-  SEGMENTED_20: '分為20個部分'
+  SOLID: 'Makes the boss bar solid (no segments)'
+  SEGMENTED_6: 'Splits the boss bar into 6 segments'
+  SEGMENTED_10: 'Splits the boss bar into 10 segments'
+  SEGMENTED_12: 'Splits the boss bar into 12 segments'
+  SEGMENTED_20: 'Splits the boss bar into 20 segments'
 
 BarColor:
-  BLUE: '藍色'
-  GREEN: '綠色'
-  PINK: '粉紅色'
-  PURPLE: '紫色'
-  RED: '紅色'
-  WHITE: '白色'
-  YELLOW: '黃色'
+  BLUE: 'BLUE'
+  GREEN: 'GREEN'
+  PINK: 'PINK'
+  PURPLE: 'PURPLE'
+  RED: 'RED'
+  WHITE: 'WHITE'
+  YELLOW: 'YELLOW'
 
 BarFlag:
-  CREATE_FOG: '在血條所在的世界產生迷霧'
-  DARKEN_SKY: '凋零血條的屬性（戰鬥時天空會變暗）'
-  PLAY_BOSS_MUSIC: '終界龍的血條屬性，告訴客戶端該播放打終界龍時候的BGM'
+  CREATE_FOG: 'Creates fog around the world.'
+  DARKEN_SKY: 'Darkens the sky like during fighting a wither.'
+  PLAY_BOSS_MUSIC: 'Tells the client to play the Ender Dragon boss music.'
 
 Particle:
   ASH: ''
@@ -2374,122 +2374,138 @@ SoundCategory:
   WEATHER: ''
 
 Entity:
-  DROPPED_ITEM: dropped item
-  EXPERIENCE_ORB: experience orb
-  AREA_EFFECT_CLOUD: area effect cloud
-  EGG: egg
-  LEASH_HITCH: leash hitch
-  PAINTING: painting
-  ARROW: arrow
-  SNOWBALL: snowball
-  FIREBALL: fireball
-  SMALL_FIREBALL: small fireball
-  ENDER_PEARL: ender pearl
-  ENDER_SIGNAL: ender signal
-  SPLASH_POTION: splash potion
-  THROWN_EXP_BOTTLE: thrown exp bottle
-  ITEM_FRAME: item frame
-  PRIMED_TNT: primed tnt
-  FALLING_BLOCK: falling block
-  FIREWORK: firework
-  SPECTRAL_ARROW: spectral arrow
-  SHULKER_BULLET: shulker bullet
-  DRAGON_FIREBALL: dragon fireball
-  ARMOR_STAND: armor stand
-  EVOKER_FANGS: evoker fangs
-  MINECART_COMMAND: minecart command
-  BOAT: boat
-  MINECART: minecart
-  MINECART_CHEST: minecart chest
-  MINECART_FURNACE: minecart furnace
-  MINECART_TNT: minecart tnt
-  MINECART_HOPPER: minecart hopper
-  MINECART_MOB_SPAWNER: minecart mob spawner
-  FISHING_HOOK: fishing hook
-  LIGHTNING: lightning
-  UNKNOWN: unknown
+  DROPPED_ITEM: 'dropped item'
+  EXPERIENCE_ORB: 'experience orb'
+  AREA_EFFECT_CLOUD: 'area effect cloud'
+  EGG: 'egg'
+  LEASH_HITCH: 'leash hitch'
+  PAINTING: 'painting'
+  ARROW: 'arrow'
+  SNOWBALL: 'snowball'
+  FIREBALL: 'fireball'
+  SMALL_FIREBALL: 'small fireball'
+  ENDER_PEARL: 'ender pearl'
+  ENDER_SIGNAL: 'ender signal'
+  SPLASH_POTION: 'splash potion'
+  THROWN_EXP_BOTTLE: 'thrown exp bottle'
+  ITEM_FRAME: 'item frame'
+  PRIMED_TNT: 'primed tnt'
+  FALLING_BLOCK: 'falling block'
+  FIREWORK: 'firework'
+  SPECTRAL_ARROW: 'spectral arrow'
+  SHULKER_BULLET: 'shulker bullet'
+  DRAGON_FIREBALL: 'dragon fireball'
+  ARMOR_STAND: 'armor stand'
+  EVOKER_FANGS: 'evoker fangs'
+  MINECART_COMMAND: 'minecart command'
+  BOAT: 'boat'
+  MINECART: 'minecart'
+  MINECART_CHEST: 'minecart chest'
+  MINECART_FURNACE: 'minecart furnace'
+  MINECART_TNT: 'minecart tnt'
+  MINECART_HOPPER: 'minecart hopper'
+  MINECART_MOB_SPAWNER: 'minecart mob spawner'
+  FISHING_HOOK: 'fishing hook'
+  LIGHTNING: 'lightning'
+  UNKNOWN: 'unknown'
 
 LivingEntity:
-  ELDER_GUARDIAN: elder guardian
-  WITHER_SKELETON: wither skeleton
-  STRAY: stray
-  WITHER_SKULL: wither skull
-  HUSK: husk
-  ZOMBIE_VILLAGER: zombie villager
-  SKELETON_HORSE: skeleton horse
-  ZOMBIE_HORSE: zombie horse
-  DONKEY: donkey
-  MULE: mule
-  EVOKER: evoker
-  VEX: vex
-  VINDICATOR: vindicator
-  ILLUSIONER: illusioner
-  CREEPER: creeper
-  SKELETON: skeleton
-  SPIDER: spider
-  GIANT: giant
-  ZOMBIE: zombie
-  SLIME: slime
-  GHAST: ghast
-  ZOMBIFIED_PIGLIN: zombified piglin
-  ENDERMAN: enderman
-  CAVE_SPIDER: cave spider
-  SILVERFISH: silverfish
-  BLAZE: blaze
-  MAGMA_CUBE: magma cube
-  ENDER_DRAGON: ender dragon
-  WITHER: wither
-  BAT: bat
-  WITCH: witch
-  ENDERMITE: endermite
-  GUARDIAN: guardian
-  SHULKER: shulker
-  PIG: pig
-  SHEEP: sheep
-  COW: cow
-  CHICKEN: chicken
-  SQUID: squid
-  WOLF: wolf
-  MUSHROOM_COW: mushroom cow
-  SNOWMAN: snowman
-  OCELOT: ocelot
-  IRON_GOLEM: iron golem
-  HORSE: horse
-  RABBIT: rabbit
-  POLAR_BEAR: polar bear
-  LLAMA: llama
-  LLAMA_SPIT: llama spit
-  PARROT: parrot
-  VILLAGER: villager
-  ENDER_CRYSTAL: ender crystal
-  TURTLE: turtle
-  PHANTOM: phantom
-  TRIDENT: trident
-  COD: cod
-  SALMON: salmon
-  PUFFERFISH: pufferfish
-  TROPICAL_FISH: tropical fish
-  DROWNED: drowned
-  DOLPHIN: dolphin
-  CAT: cat
-  PANDA: panda
-  PILLAGER: pillager
-  RAVAGER: ravager
-  TRADER_LLAMA: trader llama
-  WANDERING_TRADER: wandering trader
-  FOX: fox
-  BEE: bee
-  HOGLIN: hoglin
-  PIGLIN: piglin
-  STRIDER: strider
-  ZOGLIN: zoglin
-  PIGLIN_BRUTE: piglin brute
-  PLAYER: player
+  ELDER_GUARDIAN: 'elder guardian'
+  WITHER_SKELETON: 'wither skeleton'
+  STRAY: 'stray'
+  WITHER_SKULL: 'wither skull'
+  HUSK: 'husk'
+  ZOMBIE_VILLAGER: 'zombie villager'
+  SKELETON_HORSE: 'skeleton horse'
+  ZOMBIE_HORSE: 'zombie horse'
+  DONKEY: 'donkey'
+  MULE: 'mule'
+  EVOKER: 'evoker'
+  VEX: 'vex'
+  VINDICATOR: 'vindicator'
+  ILLUSIONER: 'illusioner'
+  CREEPER: 'creeper'
+  SKELETON: 'skeleton'
+  SPIDER: 'spider'
+  GIANT: 'giant'
+  ZOMBIE: 'zombie'
+  SLIME: 'slime'
+  GHAST: 'ghast'
+  ZOMBIFIED_PIGLIN: 'zombified piglin'
+  ENDERMAN: 'enderman'
+  CAVE_SPIDER: 'cave spider'
+  SILVERFISH: 'silverfish'
+  BLAZE: 'blaze'
+  MAGMA_CUBE: 'magma cube'
+  ENDER_DRAGON: 'ender dragon'
+  WITHER: 'wither'
+  BAT: 'bat'
+  WITCH: 'witch'
+  ENDERMITE: 'endermite'
+  GUARDIAN: 'guardian'
+  SHULKER: 'shulker'
+  PIG: 'pig'
+  SHEEP: 'sheep'
+  COW: 'cow'
+  CHICKEN: 'chicken'
+  SQUID: 'squid'
+  WOLF: 'wolf'
+  MUSHROOM_COW: 'mushroom cow'
+  SNOWMAN: 'snowman'
+  OCELOT: 'ocelot'
+  IRON_GOLEM: 'iron golem'
+  HORSE: 'horse'
+  RABBIT: 'rabbit'
+  POLAR_BEAR: 'polar bear'
+  LLAMA: 'llama'
+  LLAMA_SPIT: 'llama spit'
+  PARROT: 'parrot'
+  VILLAGER: 'villager'
+  ENDER_CRYSTAL: 'ender crystal'
+  TURTLE: 'turtle'
+  PHANTOM: 'phantom'
+  TRIDENT: 'trident'
+  COD: 'cod'
+  SALMON: 'salmon'
+  PUFFERFISH: 'pufferfish'
+  TROPICAL_FISH: 'tropical fish'
+  DROWNED: 'drowned'
+  DOLPHIN: 'dolphin'
+  CAT: 'cat'
+  PANDA: 'panda'
+  PILLAGER: 'pillager'
+  RAVAGER: 'ravager'
+  TRADER_LLAMA: 'trader llama'
+  WANDERING_TRADER: 'wandering trader'
+  FOX: 'fox'
+  BEE: 'bee'
+  HOGLIN: 'hoglin'
+  PIGLIN: 'piglin'
+  STRIDER: 'strider'
+  ZOGLIN: 'zoglin'
+  PIGLIN_BRUTE: 'piglin brute'
+  PLAYER: 'player'
 
 Equipment:
-  HEAD: '頭'
-  HAND: '主手'
-  OFF_HAND: '副手'
-  CHEST: '胸甲'
-  FEET: '護腿'
-  LEGS: '靴子'
+  HEAD: 'Head'
+  HAND: 'Hand'
+  OFF_HAND: 'Off Hand'
+  CHEST: 'Chest'
+  FEET: 'Feet'
+  LEGS: 'Legs'
+
+Condition:
+  Compare: 'Compare the values on the left and right sides, divided into >, <, ~ (equal to).(E.g: &bsb_target_nowhealth&~0.0)'
+  Contains: 'The content on the left contains the content on the right. (E.g: &self_cast_command_help&~!help)'
+  Equals: 'The content on the left and right is exactly the same. (E.g: &self_cast_command_help&~!help)'
+  HealthChange: 'The target blood volume changes, divided into target and self. (E.g: target)'
+
+Placeholders:
+  Basic_Attributes: 'Basic attributes'
+  Biological_Attributes: 'Biological attributes'
+  Player: 'Player'
+  Class_Attributes: 'Class attributes'
+  MythicMobs: 'MythicMobs'
+  ModelEngine: 'ModelEngine'
+  MMOCore: 'MMOCore'
+  Other: 'Other'

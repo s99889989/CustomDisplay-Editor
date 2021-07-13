@@ -17,6 +17,11 @@ MythicMobs:
   #Folder path of MythicMobs
   Folder-Path: './plugins/MythicMobs'
 
+ModelEngine:
+  #ModelEngine的資料夾路徑
+  #Folder path of ModelEngine
+  Folder-Path: './plugins/ModelEngine'
+
 Backups:
   # 是否啟用套用備份程序
   BackUpCopyEnable: false

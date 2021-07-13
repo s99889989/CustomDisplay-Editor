@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Hologram">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Hologram">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,7 +16,81 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="標記">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mark" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <Label text="顯示內容">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="message" onKeyReleased="#onChangeContent" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="刪除指定行數">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="removeMessage" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="改變指定行數">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="changeMessage" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <CheckBox fx:id="teleport" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="移動">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="刪除">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="202.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="244.0">
+               <children>
+                  <Label text="物品類別">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="itmeType" onMouseClicked="#onChangeContentFind" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="264.0">
+               <children>
+                  <Label text="物品">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="item" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

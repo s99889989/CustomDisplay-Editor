@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.daxton.controller.actionmenu.meta.Action_Action">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.meta.Action_Action">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,7 +16,60 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <Label text="動作">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="141.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <ListView fx:id="actionType" onMouseClicked="#onChoiceType" prefHeight="100.0" prefWidth="231.0" />
+            <VBox prefHeight="100.0" prefWidth="277.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="actionFind" onKeyReleased="#actionFind" />
+                  <ListView fx:id="actionList" onMouseClicked="#onChoiceAction" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ListView fx:id="actionContent" prefHeight="167.0" prefWidth="520.0" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="標記">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mark" onKeyReleased="#onChangeContentFind" prefWidth="80.0" />
+            <Label text="執行次數">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="count" onKeyReleased="#onChangeContentFind" prefWidth="80.0" />
+            <Label text="執行間隔">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deley" onKeyReleased="#onChangeContentFind" prefWidth="80.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <CheckBox fx:id="needTarget" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="需要目標">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="stop" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="停止動作">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </HBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

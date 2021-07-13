@@ -1,0 +1,104 @@
+CustomCharacter:
+  Content: 'Put content including &&<>%%, and then convert.'
+  Conver: 'Convert for content.'
+  Math: 'Perform mathematical operations on the content.'
+
+ConverFunction:
+  Contain: 'As long as the content is included, the specified word is converted into the specified content.'
+  ContainAll: 'As long as the content is included, the entire content is converted to the specified content.'
+  ExSame: 'If the entire content is exactly the same, it is converted to the specified content.'
+  ConverHead: 'As long as the prefix contains the specified word, it will be converted into the specified content.'
+  ConverUnits: 'As long as the unit number of the content contains the specified content, it will be converted to the specified content.'
+  ConverDouble: 'As long as the double-digit number of the content contains the specified content, it will be converted to the specified content.'
+  ConverAddRL: 'Add the content you want to add on both sides of each word.'
+
+MathFunction:
+  Arithmetic: 'Do four operations on the content.'
+  Accumulate: 'Accumulate the content. (Place small numbers on the left and enlarged numbers on the right)'
+  Decimal: 'Limit the number of digits in digital content.'
+  Greater: 'Limit the size of the number, and convert it to a specified number if it is larger than it.
+ (Can only handle pure numbers)'
+  Less: 'Limit the size of the number, and convert it to a specified number if it is less than.
+ (Can only handle pure numbers)'
+  Format: 'Convert the number to k, m, b, t units. (Can only handle pure numbers)(For example, 1000 becomes 1k, and 7800000 becomes 7.8m)'
+
+Basic_Attributes:
+  base_name: 'Name.'
+  base_uuid: 'UUID.'
+  base_height: 'height.'
+  base_nowhealth: 'Current blood volume.'
+  base_maxhealth: 'The highest blood volume.'
+  base_type: 'Type of creature.'
+  base_biome: 'The ecological domain in which it is located.'
+  base_world: 'In the world.'
+  base_loc_x: 'The x coordinate of the world.'
+  base_loc_y: 'The y coordinate of the world.'
+  base_loc_z: 'The z coordinate of the world.'
+  base_vec_x: 'Vector x coordinate.'
+  base_vec_y: 'The vector y coordinate.'
+  base_vec_z: 'The z coordinate of the vector.'
+  base_attack_number: 'Number of attacks. (If it fails, it will show miss)'
+  base_damaged_number: 'The number of attacks.'
+
+Biological_Attributes:
+  attribute_max_health: 'The maximum blood volume of a creature.'
+  attribute_follow_range: 'The following range when a creature is following other creatures/people.'
+  attribute_knockback_resistance: 'Knockback resistance when the creature is attacked.'
+  attribute_movement_speed: 'The movement speed of the creature.'
+  attribute_flying_speed: 'The flight speed of the entity.'
+  attribute_attack_damage: 'The damage caused when a creature attacks other creatures/entities.'
+  attribute_attack_knockback: 'The attack of the creature repels the strength.'
+  attribute_attack_speed: 'The attack rate of the creature.'
+  attribute_armor: 'The defense value of the armor.'
+  attribute_armor_toughness: 'The toughness of the armor.'
+  attribute_luck: 'Luck of dropped items.'
+  attribute_horse_jump_strength: 'The charge bar for the horse to jump up.'
+  attribute_zombie_spawn_reinforcements: 'The probability of zombie reinforcements.'
+
+Player:
+  player_equipment_type_mainhand: 'Main hand equipment type.'
+  player_last_chat: 'The last sentence.'
+  player_cast_command: 'The last input keyword of the cast command. (/cd cast keyword)'
+  player_kill_mob_type: 'The type of monster killed last.'
+  player_kill_mythic_mob_id: 'The ID of the last MythicMobs monster killed.'
+  player_kill_mythic_mob_money: 'Money obtained by the last killed MythicMobs monster.'
+  player_kill_mythic_mob_exp: 'The experience gained by the last MythicMobs monster killed.'
+  player_kill_mythic_mob_item: 'The item obtained by the last MythicMobs monster killed.'
+  player_up_exp_type: 'Finally, increase the experience type of experience.'
+  player_down_exp_type: 'Finally reduce the experience type of experience.'
+  player_change_exp_amount: 'The amount of experience points last changed.'
+  player_up_level_type: 'The type of last upgrade.'
+  player_down_level_type: 'The type of last drop.'
+  player_item_amount_*: 'The number of items on the body. (Limited items made by CustomDisplay)'
+
+Class_Attributes:
+  class_name: 'Class name.'
+  class_nowmana: 'The current now mana.'
+  class_maxmana: 'The current max mana.'
+  class_level_*: 'Level and experience value.'
+  class_point_*: 'Points.'
+  class_attr_point_*: 'Attribute points.'
+  class_attr_stats_*: 'State attributes.'
+  class_eqm_stats_*: 'Equipment attributes.'
+  class_skill_*: 'Skill level.'
+  class_bind_name_*: 'The name of the bound skill. (1~8)'
+  class_bind_use_*: 'The usage level of the binding. (1~8)'
+
+MythicMobs:
+  mythic_id: 'The ID of MythicMob.'
+  mythic_level: 'MythicMobs level. '
+  mythic_faction: 'MythicMobs faction. '
+  mythic_class_stats_*: 'Custom attributes of monsters.'
+
+ModelEngine:
+  modelengine_id: 'The ModelEngine model ID used.'
+  modelengine_eye_hight: 'Eye height.(If it is not a ModelEngine creature, it will return the height of the creature)'
+  modelengine_hit_hight: 'HitBox height.(If it is not a ModelEngine creature, it will return the height of the creature)'
+  modelengine_hit_width: 'HitBox width.'
+
+MMOCore:
+  mmocore_actionbar_spell: 'The dynamic bar displayed by MMOCore.'
+
+Other:
+  cd_other_math_random_*: 'Random numbers.'
+  cd_other_damaged_number: 'No damage from the attacker was attacked.'

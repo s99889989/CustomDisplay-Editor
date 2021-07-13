@@ -1,7 +1,6 @@
 package com.daxton.controller.actionmenu.player;
 
 import com.daxton.api.StringControl;
-import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
@@ -35,11 +34,11 @@ public class Action_Title {
         if(actionMenu != null){
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
-            StringControl.setValue(title, inputMap, new String[]{"title","t"});
-            StringControl.setValue(subtitle, inputMap, new String[]{"subtitle","s"});
-            StringControl.setValue(fadeIn, inputMap, new String[]{"fadeIn","fi"});
-            StringControl.setValue(duration, inputMap, new String[]{"duration","d"});
-            StringControl.setValue(fadeOut, inputMap, new String[]{"fadeOut","fo"});
+            StringControl.setMapValue(title, inputMap, new String[]{"title","t"});
+            StringControl.setMapValue(subtitle, inputMap, new String[]{"subtitle","s"});
+            StringControl.setMapValue(fadeIn, inputMap, new String[]{"fadeIn","fi"});
+            StringControl.setMapValue(duration, inputMap, new String[]{"duration","d"});
+            StringControl.setMapValue(fadeOut, inputMap, new String[]{"fadeOut","fo"});
         }
     }
 

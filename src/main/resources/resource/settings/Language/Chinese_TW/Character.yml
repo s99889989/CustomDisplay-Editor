@@ -1,0 +1,102 @@
+CustomCharacter:
+  Content: '放入包含&&<>%%等內容，再進行轉換。'
+  Conver: '針對內容進行轉換。'
+  Math: '針對內容進行數學運算。'
+
+ConverFunction:
+  Contain: '只要包含該內容，就把指定字，轉換成指定內容。'
+  ContainAll: '只要包含該內容，就全部內容轉換成指定內容。'
+  ExSame: '整個內容完全相同，就轉換成指定內容。'
+  ConverHead: '只要字首包含指定字，就轉換成指定內容。'
+  ConverUnits: '只要內容的單位數字，包含指定內容，就轉成指定內容。'
+  ConverDouble: '只要內容的雙位數字，包含指定內容，就轉成指定內容。'
+  ConverAddRL: '在每個字的兩邊加上想要加的內容。'
+
+MathFunction:
+  Arithmetic: '對數字內容做四則運算。'
+  Accumulate: '對數字內容做累加。(左邊放小的數字，右邊放大的數字)'
+  Decimal: '對數字內容做位數限制。'
+  Greater: '對數字大小做限制，大於多少就轉成指定數字。(只能處理純數字)'
+  Less: '對數字大小做限制，小於多少就轉成指定數字。(只能處理純數字)'
+  Format: '把數字轉成k、m、b、t單位。(只能處理純數字)(例如1000變成1k、7800000變成7.8m)'
+
+Basic_Attributes:
+  base_name: '名稱。'
+  base_uuid: 'UUID。'
+  base_height: '身高。'
+  base_nowhealth: '目前的血量。'
+  base_maxhealth: '最高血量。'
+  base_type: '生物類型。'
+  base_biome: '所在的生態域。'
+  base_world: '所在的世界。'
+  base_loc_x: '所在世界的x座標。'
+  base_loc_y: '所在世界的y座標。'
+  base_loc_z: '所在世界的z座標。'
+  base_vec_x: '向量x座標。'
+  base_vec_y: '向量y座標。'
+  base_vec_z: '的向量z座標。'
+  base_attack_number: '攻擊的數字。'
+  base_damaged_number: '被攻擊的數字。'
+
+Biological_Attributes:
+  attribute_max_health: '生物的最大血量。'
+  attribute_follow_range: '當一個生物正在跟隨其他生物/人的時候的跟隨範圍。'
+  attribute_knockback_resistance: '當生物被攻擊的時候的擊退抗性。'
+  attribute_movement_speed: '生物的移動速度。'
+  attribute_flying_speed: '實體的飛行速度。'
+  attribute_attack_damage: '當生物攻擊其他生物/實體時所造成的傷害。'
+  attribute_attack_knockback: '生物的攻擊擊退力度。'
+  attribute_attack_speed: '生物的攻擊速率。'
+  attribute_armor: '護甲的防禦值。'
+  attribute_armor_toughness: '護甲的韌性。'
+  attribute_luck: '掉落物品的運氣。'
+  attribute_horse_jump_strength: '馬跳起來的蓄力條。'
+  attribute_zombie_spawn_reinforcements: '殭屍增援的機率。'
+
+Player:
+  player_equipment_type_mainhand: '主手裝備類型。'
+  player_last_chat: '最後一句說的話。'
+  player_cast_command: '最後輸入的cast指令關鍵字。(/cd cast 關鍵字)'
+  player_kill_mob_type: '最後殺死的怪物類型。'
+  player_kill_mythic_mob_id: '最後殺死的MythicMobs怪物ID。'
+  player_kill_mythic_mob_money: '最後殺死的MythicMobs怪物獲得的錢。'
+  player_kill_mythic_mob_exp: '最後殺死的MythicMobs怪物獲得的經驗。'
+  player_kill_mythic_mob_item: '最後殺死的MythicMobs怪物獲得的物品。'
+  player_up_exp_type: '最後增加經驗的經驗類型。'
+  player_down_exp_type: '最後減少經驗的經驗類型。'
+  player_change_exp_amount: '最後改變的經驗值量。'
+  player_up_level_type: '最後升等的類型。'
+  player_down_level_type: '最後降等的類型。'
+  player_item_amount_*: '物品在身上的數量。(限定CustomDisplay製作的物品)'
+
+Class_Attributes:
+  class_name: '職業名稱。'
+  class_nowmana: '目前魔量。'
+  class_maxmana: '最高魔量。'
+  class_level_*: '等級和經驗值。'
+  class_point_*: '點數。'
+  class_attr_point_*: '屬性點數。'
+  class_attr_stats_*: '狀態屬性。'
+  class_eqm_stats_*: '裝備屬性。'
+  class_skill_*: '技能等級。'
+  class_bind_name_*: '綁定的技能名稱。(1~8)'
+  class_bind_use_*: '綁定的使用等級。(1~8)'
+
+MythicMobs:
+  mythic_id: 'MythicMob的ID。'
+  mythic_level: 'MythicMobs等級。'
+  mythic_faction: 'MythicMobs派系。'
+  mythic_class_stats_*: '怪物的自訂屬性。'
+
+ModelEngine:
+  modelengine_id: '使用的ModelEngine模型ID。'
+  modelengine_eye_hight: '眼睛高度。(如果不是ModelEngine生物會回傳生物身高)'
+  modelengine_hit_hight: 'HitBox高度。(如果不是ModelEngine生物會回傳生物身高)'
+  modelengine_hit_width: 'HitBox寬度。'
+
+MMOCore:
+  mmocore_actionbar_spell: 'MMOCore顯示出來的動態欄。'
+
+Other:
+  cd_other_math_random_*: '亂數。'
+  cd_other_damaged_number: '無攻擊者的被攻擊傷害。'

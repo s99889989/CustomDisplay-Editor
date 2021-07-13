@@ -82,8 +82,8 @@ public class Action_Block {
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
 
-            StringControl.setValue(block, inputMap, new String[]{"bdata", "blockdata"});
-            StringControl.setValue(png, inputMap, new String[]{"img"});
+            StringControl.setMapValue(block, inputMap, new String[]{"bdata", "blockdata"});
+            StringControl.setMapValue(png, inputMap, new String[]{"img"});
 
             String messageString = StringConversion.getActionKey(inputMap, new String[]{"ira", "imgrotangle"});
             if(!messageString.isEmpty()){

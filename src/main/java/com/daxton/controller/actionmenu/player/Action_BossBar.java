@@ -60,13 +60,13 @@ public class Action_BossBar {
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
 
-            StringControl.setValue(message ,inputMap, new String[]{"m","message"});
-            StringControl.setValue(style ,inputMap, new String[]{"s","Style"});
-            StringControl.setValue(color ,inputMap, new String[]{"c","Color"});
-            StringControl.setValue(progress ,inputMap, new String[]{"p","Progress"});
-            StringControl.setValue(flag ,inputMap, new String[]{"f","Flag"});
-            StringControl.setValue(delete ,inputMap, new String[]{"d","Delete"});
-            StringControl.setValue(mark ,inputMap, new String[]{"mk","Mark"});
+            StringControl.setMapValue(message ,inputMap, new String[]{"m","message"});
+            StringControl.setMapValue(style ,inputMap, new String[]{"s","Style"});
+            StringControl.setMapValue(color ,inputMap, new String[]{"c","Color"});
+            StringControl.setMapValue(progress ,inputMap, new String[]{"p","Progress"});
+            StringControl.setMapValue(flag ,inputMap, new String[]{"f","Flag"});
+            StringControl.setMapValue(delete ,inputMap, new String[]{"d","Delete"});
+            StringControl.setMapValue(mark ,inputMap, new String[]{"mk","Mark"});
 
         }
     }

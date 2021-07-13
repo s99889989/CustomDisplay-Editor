@@ -1,7 +1,6 @@
 package com.daxton.controller.actionmenu.player;
 
 import com.daxton.api.StringControl;
-import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
@@ -38,8 +37,8 @@ public class Action_Exp {
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
 
-            StringControl.setValue(amount, inputMap, new String[]{"a","Amount"});
-            StringControl.setValue(type, inputMap, new String[]{"Type"});
+            StringControl.setMapValue(amount, inputMap, new String[]{"a","Amount"});
+            StringControl.setMapValue(type, inputMap, new String[]{"Type"});
         }
     }
 

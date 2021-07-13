@@ -17,7 +17,7 @@
          </font>
       </Label>
       <TextField fx:id="messageText" onKeyReleased="#onMessageEnd" />
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

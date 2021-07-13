@@ -44,9 +44,9 @@
     <bottom>
         <VBox prefHeight="250.0" prefWidth="1280.0" spacing="5.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
                     <children>
-                        <Label text="說明:" />
+                        <Label text="%action-description" />
                         <Text fx:id="description" strokeType="OUTSIDE" strokeWidth="0.0">
                             <HBox.margin>
                                 <Insets />
@@ -54,9 +54,9 @@
                         </Text>
                     </children>
                 </HBox>
-            <HBox prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
                <children>
-                      <Label minWidth="50.0" text="動作">
+                      <Label minWidth="50.0" text="%action-content">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -67,9 +67,9 @@
                 <ListView fx:id="actionContentList" onMouseClicked="#selectActionContent" prefHeight="400.0" prefWidth="200.0" />
                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#addActionContent" text="新增" />
-                        <Button mnemonicParsing="false" onAction="#editActionContent" text="確定編輯" />
-                        <Button mnemonicParsing="false" onAction="#removeActionConten" text="移除" />
+                        <Button mnemonicParsing="false" onAction="#addActionContent" text="%action-add" />
+                        <Button mnemonicParsing="false" onAction="#editActionContent" text="%action-edit" />
+                        <Button mnemonicParsing="false" onAction="#removeActionConten" text="%action-remove" />
                     </children>
                 </HBox>
             </children>
@@ -83,12 +83,12 @@
             <children>
                 <VBox prefHeight="588.0" prefWidth="200.0" spacing="5.0">
                     <children>
-                        <Label text="動作編輯">
+                        <Label text="%action-title">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label text="動作分類選擇">
+                        <Label text="%action-file-selection">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -97,11 +97,11 @@
                         <TextField fx:id="inputActionType" />
                         <HBox prefHeight="38.0" prefWidth="233.0" spacing="10.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#addActionType" text="新增" />
-                                <Button mnemonicParsing="false" onAction="#removeActionType" text="移除" />
+                                <Button mnemonicParsing="false" onAction="#addActionType" text="%action-add" />
+                                <Button mnemonicParsing="false" onAction="#removeActionType" text="%action-remove" />
                             </children>
                         </HBox>
-                        <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#defineModifyAction" prefWidth="100.0" text="確定修改動作" />
+                        <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#defineModifyAction" prefWidth="100.0" text="%action-modify" />
                     </children>
                     <opaqueInsets>
                         <Insets />
@@ -112,7 +112,7 @@
                 </VBox>
                 <VBox prefHeight="588.0" prefWidth="200.0" spacing="5.0">
                     <children>
-                        <Label text="動作選擇">
+                        <Label text="%action-selection">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -121,8 +121,8 @@
                         <TextField fx:id="inputAction" />
                         <HBox prefHeight="38.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#addAction" text="新增" />
-                                <Button mnemonicParsing="false" onAction="#removeAction" text="移除" />
+                                <Button mnemonicParsing="false" onAction="#addAction" text="%action-add" />
+                                <Button mnemonicParsing="false" onAction="#removeAction" text="%action-remove" />
                             </children>
                         </HBox>
                     </children>
@@ -130,13 +130,14 @@
                         <Insets bottom="5.0" />
                     </padding>
                 </VBox>
-                <VBox prefHeight="588.0" prefWidth="120.0">
+                <VBox prefHeight="588.0" prefWidth="120.0" spacing="5.0">
                     <children>
-                        <Label text="動作類型">
+                        <Label text="%action-type">
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </Label>
+                  <TextField fx:id="actionMenuFind" onKeyReleased="#onActionMenuFind" />
                         <ListView fx:id="actionMenuList" onMouseClicked="#selectActionMenu" prefHeight="562.0" prefWidth="200.0" />
                     </children>
                     <padding>
@@ -238,12 +239,7 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="200.0" spacing="5.0">
                                  <children>
-                                    <Label text="加上目標俯仰">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <CheckBox fx:id="targetLocationVecPitch" mnemonicParsing="false">
+                                    <CheckBox fx:id="targetLocationVecPitch" mnemonicParsing="false" text="加上目標俯仰">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -252,12 +248,7 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="200.0" spacing="5.0">
                                  <children>
-                                    <Label text="加上目標俯仰">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <CheckBox fx:id="targetLocationVecYaw" mnemonicParsing="false">
+                                    <CheckBox fx:id="targetLocationVecYaw" mnemonicParsing="false" text="加上目標偏行">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -271,7 +262,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationVecPitchAdd" maxWidth="80.0">
+                                    <TextField fx:id="targetLocationVecPitchAdd" maxWidth="80.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -285,7 +276,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationVecYawAdd" maxWidth="80.0">
+                                    <TextField fx:id="targetLocationVecYawAdd" maxWidth="80.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -299,7 +290,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationVecDisAdd" maxWidth="80.0">
+                                    <TextField fx:id="targetLocationVecDisAdd" maxWidth="80.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -319,7 +310,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationX" maxWidth="60.0">
+                                    <TextField fx:id="targetLocationX" maxWidth="60.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -329,7 +320,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationY" maxWidth="60.0">
+                                    <TextField fx:id="targetLocationY" maxWidth="60.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -339,7 +330,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationZ" maxWidth="60.0">
+                                    <TextField fx:id="targetLocationZ" maxWidth="60.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -353,7 +344,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="targetLocationDistance" maxWidth="100.0">
+                                    <TextField fx:id="targetLocationDistance" maxWidth="100.0" onKeyReleased="#onChangeTargetContent">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -362,12 +353,7 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="200.0" spacing="2.0">
                                  <children>
-                                              <Label text="在地板上">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <CheckBox fx:id="targetLocationOnTop" mnemonicParsing="false">
+                                    <CheckBox fx:id="targetLocationOnTop" mnemonicParsing="false" onMouseClicked="#onChangeTargetContent" text="在地板上">
                                        <font>
                                           <Font size="24.0" />
                                        </font>

@@ -11,13 +11,13 @@
       <Insets right="10.0" />
    </padding>
    <children>
-      <Label text="傷害值">
+      <Label text="%action-damage-amount">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="damageAmount" onKeyReleased="#onMessageEnd" />
-      <Button mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始值" />
+      <Button mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="5.0" />

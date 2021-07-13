@@ -1,7 +1,6 @@
 package com.daxton.controller.actionmenu.player;
 
 import com.daxton.api.StringControl;
-import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
@@ -48,9 +47,9 @@ public class Action_Level {
         if(actionMenu != null){
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
-            StringControl.setValue(levelType, inputMap, new String[]{"Type"});
-            StringControl.setValue(levelFunction, inputMap, new String[]{"fc", "Function"});
-            StringControl.setValue(levelAmount, inputMap, new String[]{"a", "Amount"});
+            StringControl.setMapValue(levelType, inputMap, new String[]{"Type"});
+            StringControl.setMapValue(levelFunction, inputMap, new String[]{"fc", "Function"});
+            StringControl.setMapValue(levelAmount, inputMap, new String[]{"a", "Amount"});
         }
     }
 

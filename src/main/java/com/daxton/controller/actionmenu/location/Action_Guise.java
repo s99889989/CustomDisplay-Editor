@@ -90,15 +90,25 @@ public class Action_Guise {
         ActionMenuPage.keyValue.put("EntityType", StringControl.getValue(entityType));
         ActionMenuPage.keyValue.put("EntityName", StringControl.getValue(name));
         ActionMenuPage.keyValue.put("Visible", StringControl.getValue(canLook));
+
+        if(!StringControl.getValue(itmeType).isEmpty() && !StringControl.getValue(item).isEmpty())
         ActionMenuPage.keyValue.put("ItemID", StringControl.getValue(itmeType)+"_"+StringControl.getValue(item));
+
         ActionMenuPage.keyValue.put("EquipmentSlot", StringControl.getValue(eqmParts));
         ActionMenuPage.keyValue.put("Duration", StringControl.getValue(duration));
-        ActionMenuPage.keyValue.put("Head", headPitch.isSelected()+"|"+headPitch.isSelected()+"|"+headX+"|"+headY+"|"+headZ);
-        ActionMenuPage.keyValue.put("Body", bodyX+"|"+bodyY+"|"+bodyZ);
-        ActionMenuPage.keyValue.put("LeftArm", leftArmX+"|"+leftArmY+"|"+leftArmZ);
-        ActionMenuPage.keyValue.put("RightArm", rightArmX+"|"+rightArmY+"|"+rightArmZ);
-        ActionMenuPage.keyValue.put("LeftLeg", leftLegX+"|"+leftLegY+"|"+leftLegZ);
-        ActionMenuPage.keyValue.put("RightLeg", rightLegX+"|"+rightLegY+"|"+rightLegZ);
+        ActionMenuPage.keyValue.put("HeadAddLoc", headPitch.isSelected()+"|"+headYaw.isSelected());
+        if(!StringControl.getValue(headX).isEmpty() && !StringControl.getValue(headY).isEmpty() && !StringControl.getValue(headZ).isEmpty())
+        ActionMenuPage.keyValue.put("Head", StringControl.getValue(headX)+"|"+StringControl.getValue(headY)+"|"+StringControl.getValue(headZ));
+        if(!StringControl.getValue(bodyX).isEmpty() && !StringControl.getValue(bodyY).isEmpty() && !StringControl.getValue(bodyZ).isEmpty())
+        ActionMenuPage.keyValue.put("Body", StringControl.getValue(bodyX)+"|"+StringControl.getValue(bodyY)+"|"+StringControl.getValue(bodyZ));
+        if(!StringControl.getValue(leftArmX).isEmpty() && !StringControl.getValue(leftArmY).isEmpty() && !StringControl.getValue(leftArmZ).isEmpty())
+        ActionMenuPage.keyValue.put("LeftArm", StringControl.getValue(leftArmX)+"|"+StringControl.getValue(leftArmY)+"|"+StringControl.getValue(leftArmZ));
+        if(!StringControl.getValue(rightArmX).isEmpty() && !StringControl.getValue(rightArmY).isEmpty() && !StringControl.getValue(rightArmZ).isEmpty())
+        ActionMenuPage.keyValue.put("RightArm", StringControl.getValue(rightArmX)+"|"+StringControl.getValue(rightArmY)+"|"+StringControl.getValue(rightArmZ));
+        if(!StringControl.getValue(leftLegX).isEmpty() && !StringControl.getValue(leftLegY).isEmpty() && !StringControl.getValue(leftLegZ).isEmpty())
+        ActionMenuPage.keyValue.put("LeftLeg", StringControl.getValue(leftLegX)+"|"+StringControl.getValue(leftLegY)+"|"+StringControl.getValue(leftLegZ));
+        if(!StringControl.getValue(rightLegX).isEmpty() && !StringControl.getValue(rightLegY).isEmpty() && !StringControl.getValue(rightLegZ).isEmpty())
+        ActionMenuPage.keyValue.put("RightLeg", StringControl.getValue(rightLegX)+"|"+StringControl.getValue(rightLegY)+"|"+StringControl.getValue(rightLegZ));
         ActionMenuPage.changeActionContnet("Guise");
     }
 
@@ -109,9 +119,9 @@ public class Action_Guise {
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
 
-            StringControl.setValue(entityType, inputMap, new String[]{"ET", "EntityType"});
-            StringControl.setValue(name, inputMap, new String[]{"en", "EntityName"});
-            StringControl.setValue(canLook, inputMap, new String[]{"Visible"});
+            StringControl.setMapValue(entityType, inputMap, new String[]{"ET", "EntityType"});
+            StringControl.setMapValue(name, inputMap, new String[]{"en", "EntityName"});
+            StringControl.setMapValue(canLook, inputMap, new String[]{"Visible"});
 
             String itemString = StringConversion.getActionKey(inputMap, new String[]{"iid", "ItemID"});
             if(!itemString.isEmpty() && itemString.contains("_")){
@@ -123,16 +133,75 @@ public class Action_Guise {
                 }
             }
 
-            StringControl.setValue(eqmParts, inputMap, new String[]{"ES", "EquipmentSlot"});
-            StringControl.setValue(duration, inputMap, new String[]{"dt", "duration"});
+            StringControl.setMapValue(eqmParts, inputMap, new String[]{"ES", "EquipmentSlot"});
+            StringControl.setMapValue(duration, inputMap, new String[]{"dt", "duration"});
+
+            String halString = StringConversion.getActionKey(inputMap, new String[]{"hal", "HeadAddLoc"});
+            if(!halString.isEmpty() && halString.contains("|")){
+                String[] mArray = halString.split("\\|");
+                if(mArray.length == 2){
+                    headPitch.setSelected(Boolean.parseBoolean(mArray[0]));
+                    headYaw.setSelected(Boolean.parseBoolean(mArray[1]));
+                }
+            }
 
             String headString = StringConversion.getActionKey(inputMap, new String[]{"H", "Head"});
-            if(!itemString.isEmpty() && itemString.contains("|")){
-                String[] mArray = itemString.split("\\|");
-                if(mArray.length == 5){
-                    itmeType.getSelectionModel().select(mArray[0]);
-                    changeItemIDList();
-                    item.getSelectionModel().select(mArray[1]);
+            if(!headString.isEmpty() && headString.contains("|")){
+                String[] mArray = headString.split("\\|");
+                if(mArray.length == 3){
+                    headX.setText(mArray[0]);
+                    headY.setText(mArray[1]);
+                    headZ.setText(mArray[2]);
+                }
+            }
+
+            String bodyString = StringConversion.getActionKey(inputMap, new String[]{"b", "Body"});
+            if(!bodyString.isEmpty() && bodyString.contains("|")){
+                String[] mArray = bodyString.split("\\|");
+                if(mArray.length == 3){
+                    bodyX.setText(mArray[0]);
+                    bodyY.setText(mArray[1]);
+                    bodyZ.setText(mArray[2]);
+                }
+            }
+
+            String lARString = StringConversion.getActionKey(inputMap, new String[]{"LAR", "LeftArm"});
+            if(!lARString.isEmpty() && lARString.contains("|")){
+                String[] mArray = lARString.split("\\|");
+                if(mArray.length == 3){
+                    leftArmX.setText(mArray[0]);
+                    leftArmY.setText(mArray[1]);
+                    leftArmZ.setText(mArray[2]);
+                }
+            }
+
+            String rARString = StringConversion.getActionKey(inputMap, new String[]{"RAR", "RightArm"});
+            if(!rARString.isEmpty() && rARString.contains("|")){
+                String[] mArray = rARString.split("\\|");
+                if(mArray.length == 3){
+                    rightArmX.setText(mArray[0]);
+                    rightArmY.setText(mArray[1]);
+                    rightArmZ.setText(mArray[2]);
+                }
+            }
+
+            String lLGString = StringConversion.getActionKey(inputMap, new String[]{"LLG", "LeftLeg"});
+            if(!lLGString.isEmpty() && lLGString.contains("|")){
+                String[] mArray = lLGString.split("\\|");
+                if(mArray.length == 3){
+                    leftLegX.setText(mArray[0]);
+                    leftLegY.setText(mArray[1]);
+                    leftLegZ.setText(mArray[2]);
+                }
+            }
+
+            String rLGString = StringConversion.getActionKey(inputMap, new String[]{"RLG", "RightLeg"});
+            if(!rLGString.isEmpty() && rLGString.contains("|")){
+                String[] mArray = rLGString.split("\\|");
+                if(mArray.length == 3){
+                    rightLegX.setText(mArray[0]);
+                    rightLegY.setText(mArray[1]);
+                    rightLegZ.setText(mArray[2]);
                 }
             }
 

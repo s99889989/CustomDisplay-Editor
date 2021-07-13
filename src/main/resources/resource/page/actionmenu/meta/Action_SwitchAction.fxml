@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.daxton.controller.actionmenu.meta.Action_SwitchAction">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.meta.Action_SwitchAction">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,7 +16,49 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="判斷值">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="conditionContent" onKeyReleased="#onChangeContent" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="條件類型">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="conditionType" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#openActionList" text="動作選單" />
+            <Button mnemonicParsing="false" onMouseClicked="#addAction" text="添加" />
+            <Button mnemonicParsing="false" onMouseClicked="#editAction" text="改變" />
+            <Button mnemonicParsing="false" onMouseClicked="#removeAction" text="移除" />
+         </children>
+      </HBox>
+      <HBox prefHeight="277.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <ListView fx:id="caseList" prefHeight="200.0" prefWidth="262.0" />
+            <ListView fx:id="actionList" prefHeight="200.0" prefWidth="263.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#addCase" text="添加" />
+            <Button mnemonicParsing="false" onMouseClicked="#editCase" text="改變" />
+            <Button mnemonicParsing="false" onMouseClicked="#removeCase" text="移除" />
+            <TextField fx:id="caseInput" />
+         </children>
+      </HBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

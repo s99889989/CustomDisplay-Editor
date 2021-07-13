@@ -26,7 +26,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+processResources {
 
+    filteringCharset = "UTF-8"
+
+}
 jar {
     manifest {
         attributes(

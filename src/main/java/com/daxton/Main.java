@@ -5,6 +5,7 @@ import com.daxton.api.StringConversion;
 import com.daxton.config.FileConfig;
 import com.daxton.config.FileControl;
 import com.daxton.config.FileSearch;
+import com.daxton.controller.main.CharacterMenu;
 import com.daxton.function.Task;
 import com.daxton.page.main.*;
 import com.daxton.page.test.ControllerPage;
@@ -40,6 +41,8 @@ public class Main extends Application {
     public static FileConfiguration config;
 
     public static FileConfiguration languageConfig;
+    public static FileConfiguration placeholderAPIConfig;
+    public static FileConfiguration characterConfig;
 
     public static Timer timer = new Timer();
 
@@ -47,13 +50,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-//        String message = "@Target"; // {Filters=1;Distance=2;Radius=3}
-//        Map<String ,String> actionMap = FileSearch.setTargetAction(message);
-//        String messageString = StringConversion.getActionKey(actionMap, new String[]{"targettype"});
-//        String FiltersString = StringConversion.getActionKey(actionMap, new String[]{"Filters","f"});
-//        String Distance = StringConversion.getActionKey(actionMap, new String[]{"Distance","d"});
-//        String Radius = StringConversion.getActionKey(actionMap, new String[]{"Radius","r"});
-//        System.out.println("P: "+messageString+" : "+FiltersString+" : "+Distance+" : "+Radius);
+//        String message = "content[<cd_self_base_attack_number>]";
+//        Map<String ,String> getCharacterMap = FileSearch.getCharacterMap(message);
+//        System.out.println("TEST RUN");
+//        String charType = StringConversion.getActionKey(getCharacterMap, new String[]{"charactertype"});
+//        String charFunction = StringConversion.getActionKey(getCharacterMap, new String[]{"Function","fc"});
+//        String charMessage = StringConversion.getActionKey(getCharacterMap, new String[]{"message","m"});
+//        System.out.println("P: "+charType+" : "+charFunction+" : "+charMessage);
     }
 
     @Override
@@ -77,14 +80,15 @@ public class Main extends Application {
         //語言
 
         language = ResourceBundle.getBundle("resource/language/lang", FileConfig.getLocale());
-        //timer.schedule(new Task(), 0,5 * 1000);
+        timer.schedule(new Task(), 0,5 * 1000);
 
         setDefaultMainWindow();
         setSecondaryWindow();
 
-        ActionMenuPage.display();
+        //CharacterMenuPage.display();
         //ClassMenuPage.display();
         //ServerMenuPage.display();
+        ActionMenuPage.display();
         //SkillMenuPage.display();
         //ControllerPage.display();
 

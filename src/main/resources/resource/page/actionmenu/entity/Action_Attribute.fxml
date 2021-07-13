@@ -12,7 +12,7 @@
          <children>
             <VBox prefHeight="547.0" prefWidth="358.0">
                <children>
-                  <Label text="屬性">
+                  <Label text="%action-attribute-attributes">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -25,19 +25,19 @@
             </VBox>
             <VBox prefHeight="547.0" prefWidth="357.0">
                <children>
-                  <Label text="標籤">
+                  <Label text="%action-attribute-label">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                   <TextField fx:id="label" onKeyReleased="#onLabelPeleased" />
-                  <Label text="量">
+                  <Label text="%action-attribute-amount">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                   <TextField fx:id="amount" onKeyReleased="#onAmountReleased" />
-                  <Label text="持續時間">
+                  <Label text="%action-attribute-duration">
                      <font>
                         <Font size="24.0" />
                      </font>

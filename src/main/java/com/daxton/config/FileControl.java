@@ -131,7 +131,7 @@ public class FileControl {
         }
     }
 
-    //讀取CustomDisplay的設定檔
+    //讀取CustomDisplay-Editor的設定檔
     public static void loadSettings(){
         List<File> files = FileSearch.getFiles(System.getProperty("user.dir")+"/CustomDisplay-Editor");
         //ServerMenuPage.print(System.getProperty("user.dir")+"/CustomDisplay-Editor");
@@ -145,7 +145,8 @@ public class FileControl {
                 fileName = fileName.replace(fileName.substring(0, fileName.indexOf("/")+1),"");
             }
 
-            //ServerMenuPage.print(fileName);
+            //ServerMenuPage.print(key);
+            //ServerMenuPage.print(f.getPath());
             FileConfiguration fileConfiguration = YamlConfiguration.loadConfiguration(f);
             Manager.settings_Config_Map.put(key, fileConfiguration);
 

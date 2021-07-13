@@ -13,9 +13,13 @@ import java.util.Objects;
 
 public class FileConfig {
 
-    static FileConfiguration config;
+    public static FileConfiguration config;
 
-    static FileConfiguration languageConfig;
+    public static FileConfiguration languageConfig;
+
+    public static FileConfiguration placeholderAPIConfig;
+
+    public static FileConfiguration characterConfig;
 
     public static boolean create(){
         File file = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor");
@@ -37,8 +41,12 @@ public class FileConfig {
         File configFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/config.yml");
         config = YamlConfiguration.loadConfiguration(configFile);
         String languageString = config.getString("Language");
-        File languageFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/Language/"+languageString+".yml");
+        File languageFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/Language/"+languageString+"/Main.yml");
         languageConfig = YamlConfiguration.loadConfiguration(languageFile);
+        File placeholderAPIFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/Language/"+languageString+"/PlaceholderAPI.yml");
+        placeholderAPIConfig = YamlConfiguration.loadConfiguration(placeholderAPIFile);
+        File characterFile = new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/Language/"+languageString+"/Character.yml");
+        characterConfig = YamlConfiguration.loadConfiguration(characterFile);
 
         FileControl.loadSettings();
 

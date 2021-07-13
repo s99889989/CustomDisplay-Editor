@@ -35,7 +35,7 @@ public class StringControl {
         return output;
     }
     //依照類型設定值
-    public static void setValue(Object obj, Map<String, String> inputMap, String[] findKey){
+    public static void setMapValue(Object obj, Map<String, String> inputMap, String[] findKey){
         String messageString = StringConversion.getActionKey(inputMap, findKey);
 
         if(!messageString.isEmpty()){
@@ -53,6 +53,26 @@ public class StringControl {
             ((CheckBox) obj).setSelected(Boolean.parseBoolean(messageString));
         }
 
+    }
+
+    //依照類型設定值
+    public static void setValue(Object obj, String value){
+        String messageString = value;
+
+        if(!messageString.isEmpty()){
+            if(obj instanceof ListView<?>){
+                ((ListView<String>) obj).getSelectionModel().select(messageString);
+            }
+            if(obj instanceof ChoiceBox<?>){
+                ((ChoiceBox<String>) obj).getSelectionModel().select(messageString);
+            }
+        }
+        if(obj instanceof TextField){
+            ((TextField) obj).setText(messageString);
+        }
+        if(obj instanceof CheckBox){
+            ((CheckBox) obj).setSelected(Boolean.parseBoolean(messageString));
+        }
 
     }
 

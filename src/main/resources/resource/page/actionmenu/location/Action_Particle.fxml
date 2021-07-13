@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Particle">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.location.Action_Particle">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,7 +16,78 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="功能">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="function" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onMouseClicked="#imgMode" text="圖片模式" />
+         </children>
+      </HBox>
+      <HBox prefHeight="183.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label minWidth="100.0" prefWidth="100.0" text="粒子類型">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="183.0" prefWidth="416.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="particleFind" onKeyReleased="#onParticleFind" />
+                  <ListView fx:id="particle" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="171.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Label minWidth="80.0" text="副屬性">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onMouseClicked="#openColoerWeb" text="顏色" />
+               </children>
+            </VBox>
+            <VBox prefHeight="171.0" prefWidth="432.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="dataFind" onKeyReleased="#onDataFind" />
+                  <ListView fx:id="dataList" onMouseClicked="#onDataChoice" prefHeight="200.0" prefWidth="200.0" />
+                  <TextField fx:id="data" onKeyReleased="#onChangeContent" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label minWidth="80.0" text="粒子速度">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="speed" onKeyReleased="#onChangeContent" prefWidth="40.0" />
+            <Label minWidth="60.0" text="數量">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amount" onKeyReleased="#onChangeContent" prefWidth="40.0" />
+            <Label minWidth="60.0" text="擴散">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="offX" onKeyReleased="#onChangeContent" prefWidth="40.0" />
+            <TextField fx:id="offY" onKeyReleased="#onChangeContent" prefWidth="40.0" />
+            <TextField fx:id="offZ" onKeyReleased="#onChangeContent" prefWidth="40.0" />
+         </children>
+      </HBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

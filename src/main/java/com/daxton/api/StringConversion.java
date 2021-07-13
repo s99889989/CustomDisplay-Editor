@@ -72,7 +72,17 @@ public class StringConversion {
 
     }
 
-
+    //把開頭字母轉成大寫，後面字母轉乘小寫
+    public static String headToUP(String inputString){
+        String output;
+        String head = inputString.substring(0, 1).toUpperCase();
+        output = head;
+        if(inputString.length() > 2){
+            String tail = inputString.substring(1).toLowerCase();
+            output += tail;
+        }
+        return output;
+    }
 
 
 }

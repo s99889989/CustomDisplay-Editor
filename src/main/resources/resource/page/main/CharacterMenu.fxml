@@ -41,11 +41,159 @@
             </menus>
         </MenuBar>
     </top>
+   <left>
+      <HBox prefHeight="512.0" prefWidth="509.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="462.0" prefWidth="245.0" spacing="5.0">
+               <children>
+                  <Label text="CharacterMenu">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="字符分類">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="characterFileList" onMouseClicked="#onChoiceFileList" prefHeight="339.0" prefWidth="245.0" />
+                  <TextField fx:id="characterFile" />
+                  <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#addFile" text="新增" />
+                        <Button mnemonicParsing="false" onMouseClicked="#removeFile" text="移除" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="562.0" prefWidth="249.0" spacing="5.0">
+               <children>
+                  <Label text="字符選擇">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="characterSelectList" onMouseClicked="#onChoiceSelectList" prefHeight="371.0" prefWidth="249.0" />
+                  <TextField fx:id="characterSelect" />
+                  <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#addCharacter" text="新增" />
+                        <Button mnemonicParsing="false" onMouseClicked="#removeCharacter" text="移除" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" />
+         </padding>
+      </HBox>
+   </left>
+   <bottom>
+      <VBox prefHeight="280.0" prefWidth="1270.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="說明:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="description" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label minWidth="60.0" text="字符">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="1.0">
+                     <children>
+                        <ChoiceBox fx:id="characterType" prefWidth="150.0" />
+                        <ChoiceBox fx:id="characterFunction" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <TextField fx:id="characterContent" prefHeight="36.0" prefWidth="1100.0" />
+               </children>
+            </HBox>
+            <ListView fx:id="characterContentList" onMouseClicked="#onChoiceSelectContentList" prefHeight="153.0" prefWidth="1270.0" />
+            <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#addCharacterContent" text="新增" />
+                  <Button mnemonicParsing="false" onMouseClicked="#editCharacterContent" text="編輯" />
+                  <Button mnemonicParsing="false" onMouseClicked="#removeCharacterContent" text="移除" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
    <center>
-       <Label text="CharacterMenu" BorderPane.alignment="CENTER">
-           <font>
-               <Font size="30.0" />
-           </font>
-       </Label>
+      <VBox prefHeight="513.0" prefWidth="771.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="目標選擇">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="targetChoice" prefWidth="150.0" />
+                  <CheckBox fx:id="placeholderAPIEnable" mnemonicParsing="false" onMouseClicked="#changePlaceholdersType" text="使用PlaceholdersAPI變量">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="396.0" prefWidth="771.0" spacing="5.0">
+               <children>
+                  <VBox prefHeight="356.0" prefWidth="388.0" spacing="5.0">
+                     <children>
+                        <Label text="變量類別">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="placeholderTypeFind" />
+                        <ListView fx:id="placeholderTypeList" onMouseClicked="#choicePlaceholderTypeList" prefHeight="325.0" prefWidth="388.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="342.0" prefWidth="376.0" spacing="5.0">
+                     <children>
+                        <Label text="變量">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="placeholderFind" />
+                        <ListView fx:id="placeholderList" onMouseClicked="#choicePlaceholder" prefHeight="313.0" prefWidth="307.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#defineJoin" text="加入" />
+                  <Button mnemonicParsing="false" onMouseClicked="#clearContnt" text="清除" />
+                  <TextField fx:id="placeholderContent" prefHeight="36.0" prefWidth="563.0" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </VBox>
    </center>
 </BorderPane>

@@ -8,7 +8,6 @@ import com.daxton.function.Manager;
 import com.daxton.page.main.ActionMenuPage;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -67,8 +66,8 @@ public class Action_Item {
                     itemID.getSelectionModel().select(mArray[1]);
                 }
             }
-            StringControl.setValue(amount, inputMap, new String[]{"a", "Amount"});
-            StringControl.setValue(remove, inputMap, new String[]{"Remove","r"});
+            StringControl.setMapValue(amount, inputMap, new String[]{"a", "Amount"});
+            StringControl.setMapValue(remove, inputMap, new String[]{"Remove","r"});
         }
     }
 

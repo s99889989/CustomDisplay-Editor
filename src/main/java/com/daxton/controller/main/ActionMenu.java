@@ -28,10 +28,14 @@ public class ActionMenu {
 
     final public String[] actionArrayEntity = new String[]{"Attribute", "Damage", "DCMessage", "Glow", "Heal", "Invisible", "LoggerInfo", "Message", "Move", "MythicSkill", "Name", "PotionEffect", "Teleport"};
     final public String[] actionArrayPlayer = new String[]{"ActionBar", "BossBar", "Command", "Exp", "Item", "Inventory", "Level", "Mana", "Money", "Title"};
-    final public String[] actionArrayLocation = new String[]{"Block", "Guise", "Hologram:", "Light", "Model", "Particle", "Sound"};
+    final public String[] actionArrayLocation = new String[]{"Block", "Guise", "Hologram", "Light", "Model", "Particle", "ParticlePNG", "Sound"};
     final public String[] actionArrayMeta = new String[]{"Action", "Break", "Delay", "FixedPoint", "Loop", "LocPng", "Orbital", "SwitchAction"};
     final public String[] actionArrayClass = new String[]{"CustomPoint", "AttributePoint", "ClassAttr", "SetSkillLevel"};
     final public String[] actionArrayMod = new String[]{"ModMessage"};
+
+    final public String[] targetArray = new String[]{"Attribute", "Damage", "DCMessage", "Glow", "Heal", "Invisible", "LoggerInfo", "Message", "Move", "MythicSkill", "Name", "PotionEffect", "Teleport", "ActionBar", "BossBar", "Command", "Exp", "Item", "Inventory", "Level", "Mana", "Money", "Title", "Action", "Break", "Loop", "SwitchAction", "CustomPoint", "AttributePoint", "ClassAttr", "SetSkillLevel", "ModMessage"};
+    final public String[] locationArray = new String[]{"Block", "Guise", "Hologram", "Light", "Model", "Particle", "ParticlePNG", "Sound", "FixedPoint", "LocPng", "Orbital"};
+    final public String[] nonArray = new String[]{"Delay"};
 
     @FXML public ListView<String> actionTypeList;
     @FXML public TextField inputActionType;
@@ -39,6 +43,7 @@ public class ActionMenu {
     @FXML public TextField inputAction;
     @FXML public ListView<String> actionContentList;
     @FXML public TextField selectActionContnet;
+    @FXML public TextField actionMenuFind;
     @FXML public ListView<String> actionMenuList;
     @FXML public Text description;
 
@@ -54,6 +59,7 @@ public class ActionMenu {
     @FXML public ListView<String> targetEntityFilter;
     @FXML public TextField targetEntityDistance;
     @FXML public TextField targetEntityRadius;
+
     @FXML public VBox targetLocation;
     @FXML public ChoiceBox<String> targetLocationList;
     @FXML public ChoiceBox<String> targetLocationWorld;
@@ -68,6 +74,62 @@ public class ActionMenu {
     @FXML public TextField targetLocationZ;
     @FXML public TextField targetLocationDistance;
     @FXML public CheckBox targetLocationOnTop;
+
+    @FXML
+    void initialize() {
+
+        //Target
+        if(Main.languageConfig.getConfigurationSection("Aims.EntityTargeters") != null){
+            Main.languageConfig.getConfigurationSection("Aims.EntityTargeters").getKeys(false).forEach(s -> targetEntiytList.getItems().add(s));
+        }
+        if(Manager.file_Config_Map.get("Other/TargetFilters.yml") != null && Manager.file_Config_Map.get("Other/TargetFilters.yml").getConfigurationSection("") != null){
+            Manager.file_Config_Map.get("Other/TargetFilters.yml").getConfigurationSection("").getKeys(false).forEach(s -> targetEntityFilter.getItems().add(s));
+        }
+        //Location
+        if(Main.languageConfig.getConfigurationSection("Aims.LocationTargeters") != null){
+            Main.languageConfig.getConfigurationSection("Aims.LocationTargeters").getKeys(false).forEach(s -> targetLocationList.getItems().add(s));
+        }
+        targetLocationList.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            targetLocationList.getSelectionModel().select(targetLocationList.getItems().get(newValue.intValue()));
+            onChangeTargetContent();
+        });
+        if(Manager.file_Config_Map.get("config.yml") != null){
+            targetLocationWorld.getItems().add("Self");
+            Manager.file_Config_Map.get("config.yml").getStringList("World.List").forEach(s -> targetLocationWorld.getItems().add(s));
+        }
+        targetLocationWorld.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            targetLocationWorld.getSelectionModel().select(targetLocationWorld.getItems().get(newValue.intValue()));
+            onChangeTargetContent();
+        });
+        targetLocationVec.getItems().add("self");
+        targetLocationVec.getItems().add("target");
+        targetLocationVec.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            targetLocationVec.getSelectionModel().select(targetLocationVec.getItems().get(newValue.intValue()));
+            onChangeTargetContent();
+        });
+    }
+
+    //改變目標內容(座標)
+    public void onChangeTargetContent(){
+        //Location
+        if(targetLocationList.getSelectionModel().getSelectedItem() != null){
+
+            ActionMenuPage.keyValue.clear();
+
+            if(!StringControl.getValue(targetLocationVec).isEmpty() && !StringControl.getValue(targetLocationVecPitchAdd).isEmpty() && !StringControl.getValue(targetLocationVecYawAdd).isEmpty() && !StringControl.getValue(targetLocationVecDisAdd).isEmpty())
+                ActionMenuPage.keyValue.put("VectorAdd", StringControl.getValue(targetLocationVec)+"|"+StringControl.getValue(targetLocationVecPitch)+"|"+StringControl.getValue(targetLocationVecYaw)+"|"+StringControl.getValue(targetLocationVecPitchAdd)+"|"+StringControl.getValue(targetLocationVecYawAdd)+"|"+StringControl.getValue(targetLocationVecDisAdd));
+
+            if(!StringControl.getValue(targetLocationX).isEmpty() && !StringControl.getValue(targetLocationY).isEmpty() && !StringControl.getValue(targetLocationZ).isEmpty())
+                ActionMenuPage.keyValue.put("LocationAdd", StringControl.getValue(targetLocationX)+"|"+StringControl.getValue(targetLocationY)+"|"+StringControl.getValue(targetLocationZ));
+
+            ActionMenuPage.keyValue.put("Distance", StringControl.getValue(targetLocationDistance));
+            ActionMenuPage.keyValue.put("OnBlock", StringControl.getValue(targetLocationOnTop));
+            ActionMenuPage.keyValue.put("WorldName", StringControl.getValue(targetLocationWorld));
+
+
+            ActionMenuPage.changeTargetContnet(StringControl.getValue(targetLocationList));
+        }
+    }
 
     //當選擇目標
     public void onTargetEntityList(){
@@ -87,8 +149,10 @@ public class ActionMenu {
         addActionContentTarget();
     }
 
+    //改變目標內容(實體)
     public void addActionContentTarget(){
 
+        //Target
         if(targetEntiytList.getSelectionModel().getSelectedItem() != null){
             ActionMenuPage.targetContent = "";
 
@@ -127,17 +191,7 @@ public class ActionMenu {
 
     }
 
-    @FXML
-    void initialize() {
-        if(Main.languageConfig.getConfigurationSection("Aims.EntityTargeters") != null){
-            Main.languageConfig.getConfigurationSection("Aims.EntityTargeters").getKeys(false).forEach(s -> targetEntiytList.getItems().add(s));
-        }
 
-        if(Manager.file_Config_Map.get("Other/TargetFilters.yml") != null && Manager.file_Config_Map.get("Other/TargetFilters.yml").getConfigurationSection("") != null){
-            Manager.file_Config_Map.get("Other/TargetFilters.yml").getConfigurationSection("").getKeys(false).forEach(s -> targetEntityFilter.getItems().add(s));
-        }
-
-    }
 
     //------------------------------------------------------//
 
@@ -216,6 +270,19 @@ public class ActionMenu {
         file.delete();
 
     }
+
+    //當輸入動作關鍵字搜尋
+    public void onActionMenuFind(){
+        if(Main.languageConfig.getConfigurationSection("Actions") != null){
+            actionMenuList.getItems().clear();
+            Main.languageConfig.getConfigurationSection("Actions").getKeys(false).forEach(s -> {
+                if(s.toLowerCase().contains(actionMenuFind.getText().toLowerCase()))
+                actionMenuList.getItems().add(s);
+            });
+        }
+
+    }
+
     //選擇動作
     public void selectActionList(){
         String selectType = actionTypeList.getSelectionModel().getSelectedItem();
@@ -249,28 +316,66 @@ public class ActionMenu {
 
         actionMenuList.getSelectionModel().select(actionType);
         actionMenuList.scrollTo(actionMenuList.getSelectionModel().getSelectedIndex());
-
-
-
-        //更改目標選項
+        //更改目標選項(座標)
+        setTargetLoction(targetType);
+        //更改目標選項(實體)
         setTargetContent(targetType);
         //輸入動作類型來更改顯示
         actionMenuControl(actionType);
 
+    }
+    //更改目標選項(座標)
+    public void setTargetLoction(String inputString){
+        if(inputString.isEmpty()){
+            return;
+        }
+        Map<String ,String> actionMap = FileSearch.setTargetAction(inputString);
 
+        String targetType = inputString.substring(1, inputString.indexOf("{")).trim();
+
+        StringControl.setValue(targetLocationList, targetType);
+
+        StringControl.setMapValue(targetLocationDistance, actionMap, new String[]{"Distance", "d"});
+        StringControl.setMapValue(targetLocationOnTop, actionMap, new String[]{"OnBlock", "ob"});
+        StringControl.setMapValue(targetLocationWorld, actionMap, new String[]{"WorldName", "wn"});
+
+        String vecString = StringConversion.getActionKey(actionMap, new String[]{"VA", "VectorAdd"});
+        if(!vecString.isEmpty() && vecString.contains("|")){
+            String[] mArray = vecString.split("\\|");
+            if(mArray.length == 6){
+                StringControl.setValue(targetLocationVec, mArray[0]);
+                StringControl.setValue(targetLocationVecPitch, mArray[1]);
+                StringControl.setValue(targetLocationVecYaw, mArray[2]);
+                StringControl.setValue(targetLocationVecPitchAdd, mArray[3]);
+                StringControl.setValue(targetLocationVecYawAdd, mArray[4]);
+                StringControl.setValue(targetLocationVecDisAdd, mArray[5]);
+            }
+        }
+
+        String locString = StringConversion.getActionKey(actionMap, new String[]{"LA", "LocationAdd"});
+        if(!locString.isEmpty() && locString.contains("|")){
+            String[] mArray = locString.split("\\|");
+            if(mArray.length == 3){
+                StringControl.setValue(targetLocationX, mArray[0]);
+                StringControl.setValue(targetLocationY, mArray[1]);
+                StringControl.setValue(targetLocationZ, mArray[2]);
+
+            }
+        }
 
     }
-    //更改目標選項
+
+    //更改目標選項(實體)
     public void setTargetContent(String inputString){
         if(inputString.isEmpty()){
             return;
         }
         Map<String ,String> actionMap = FileSearch.setTargetAction(inputString);
 
-        StringControl.setValue(targetEntiytList, actionMap, new String[]{"targettype"});
-        StringControl.setValue(targetEntityFilter, actionMap, new String[]{"Filters","f"});
-        StringControl.setValue(targetEntityDistance, actionMap, new String[]{"Distance","d"});
-        StringControl.setValue(targetEntityRadius, actionMap, new String[]{"Radius","r"});
+        StringControl.setMapValue(targetEntiytList, actionMap, new String[]{"targettype"});
+        StringControl.setMapValue(targetEntityFilter, actionMap, new String[]{"Filters","f"});
+        StringControl.setMapValue(targetEntityDistance, actionMap, new String[]{"Distance","d"});
+        StringControl.setMapValue(targetEntityRadius, actionMap, new String[]{"Radius","r"});
 
     }
 
@@ -318,6 +423,23 @@ public class ActionMenu {
             return;
         }
         description.setText(Main.languageConfig.getString("Actions."+actionInputString));
+
+        //使用實體目標
+        if(Arrays.asList(targetArray).contains(actionInputString)){
+            targetEntity.setVisible(true);
+            targetLocation.setVisible(false);
+        }
+        //使用座標目標
+        if(Arrays.asList(locationArray).contains(actionInputString)){
+            targetEntity.setVisible(false);
+            targetLocation.setVisible(true);
+        }
+        //無目標
+        if(Arrays.asList(nonArray).contains(actionInputString)){
+            targetEntity.setVisible(false);
+            targetLocation.setVisible(false);
+        }
+
         //目標為實體
         if(Arrays.asList(actionArrayEntity).contains(actionInputString)){
             action_tab_entity.setVisible(true);
@@ -326,9 +448,6 @@ public class ActionMenu {
             action_tab_meta.setVisible(false);
             action_tab_class.setVisible(false);
             action_tab_mod.setVisible(false);
-
-            targetEntity.setVisible(true);
-            targetLocation.setVisible(false);
 
             for(String actionKey : actionArrayEntity){
                 VBox vBox = (VBox) action_tab_entity.lookup("#"+actionKey);
@@ -350,9 +469,6 @@ public class ActionMenu {
             action_tab_class.setVisible(false);
             action_tab_mod.setVisible(false);
 
-            targetEntity.setVisible(true);
-            targetLocation.setVisible(false);
-
             for(String actionKey : actionArrayPlayer){
                 VBox vBox = (VBox) action_tab_player.lookup("#"+actionKey);
                 vBox.setVisible(false);
@@ -372,9 +488,6 @@ public class ActionMenu {
             action_tab_meta.setVisible(false);
             action_tab_class.setVisible(false);
             action_tab_mod.setVisible(false);
-
-            targetEntity.setVisible(false);
-            targetLocation.setVisible(true);
 
             for(String actionKey : actionArrayLocation){
                 VBox vBox = (VBox) action_tab_location.lookup("#"+actionKey);
@@ -396,9 +509,6 @@ public class ActionMenu {
             action_tab_class.setVisible(false);
             action_tab_mod.setVisible(false);
 
-            targetEntity.setVisible(true);
-            targetLocation.setVisible(false);
-
             for(String actionKey : actionArrayMeta){
                 VBox vBox = (VBox) action_tab_meta.lookup("#"+actionKey);
                 vBox.setVisible(false);
@@ -418,9 +528,6 @@ public class ActionMenu {
             action_tab_meta.setVisible(false);
             action_tab_class.setVisible(true);
             action_tab_mod.setVisible(false);
-
-            targetEntity.setVisible(true);
-            targetLocation.setVisible(false);
 
             for(String actionKey : actionArrayClass){
                 VBox vBox = (VBox) action_tab_class.lookup("#"+actionKey);
@@ -442,9 +549,6 @@ public class ActionMenu {
             action_tab_meta.setVisible(false);
             action_tab_class.setVisible(false);
             action_tab_mod.setVisible(true);
-
-            targetEntity.setVisible(true);
-            targetLocation.setVisible(false);
 
             for(String actionKey : actionArrayMod){
                 VBox vBox = (VBox) action_tab_mod.lookup("#"+actionKey);

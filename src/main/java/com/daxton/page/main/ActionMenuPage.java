@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 
 
 public class ActionMenuPage {
@@ -33,7 +32,8 @@ public class ActionMenuPage {
             //-----------------------//
             FileSearch.getTypeFileKey("Actions/").forEach(s -> actionMenu.actionTypeList.getItems().add(s.substring(8)));
 
-            Objects.requireNonNull(Main.languageConfig.getConfigurationSection("Actions")).getKeys(false).forEach(s -> actionMenu.actionMenuList.getItems().add(s));
+            if(Main.languageConfig.getConfigurationSection("Actions") != null)
+                Main.languageConfig.getConfigurationSection("Actions").getKeys(false).forEach(s -> actionMenu.actionMenuList.getItems().add(s));
 
         }
 
@@ -45,6 +45,26 @@ public class ActionMenuPage {
             actionMenu.selectActionContnet.setText(actionContent + " " + targetContent);
         }
 
+    }
+    //改變目標內容
+    public static void changeTargetContnet(String targetType){
+        output = "@"+targetType +"{";
+        count = 1;
+        keyValue.forEach((s, s2) -> {
+            if(!s2.isEmpty()){
+                if(count > 1){
+                    output += ";";
+                }
+                output += s+"="+s2;
+                count++;
+            }
+        });
+
+        output += "}";
+
+        targetContent = output;
+
+        setSelectActionContent();
     }
     //改變動作內容
     public static void changeActionContnet(String acitonType){

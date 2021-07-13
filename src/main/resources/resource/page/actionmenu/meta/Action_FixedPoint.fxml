@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.daxton.controller.actionmenu.meta.Action_FixedPoint">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="525.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.actionmenu.meta.Action_FixedPoint">
    <padding>
       <Insets right="5.0" />
    </padding>
@@ -17,7 +16,99 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="獲取初始內容" />
+      <HBox prefHeight="123.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <ListView fx:id="actionType" onMouseClicked="#onChoiceType" prefHeight="172.0" prefWidth="248.0" />
+            <VBox prefHeight="172.0" prefWidth="268.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="actionFind" onKeyReleased="#actionFind" />
+                  <ListView fx:id="actionList" onMouseClicked="#onChoiceAction" prefHeight="136.0" prefWidth="265.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ListView fx:id="actionContent" prefHeight="124.0" prefWidth="520.0" />
+      <GridPane hgap="5.0" vgap="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.6666717529297" minWidth="10.0" prefWidth="138.6666717529297" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="307.33331298828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.66668701171875" minWidth="10.0" prefWidth="67.66668701171875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="開始動作">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="持續動作" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="命中動作" GridPane.rowIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="startAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" />
+            <TextField fx:id="timeAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="hitAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="選擇" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceHitAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="結束動作" GridPane.rowIndex="3">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="endAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="持續時間">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
+            <Label text="多久執行一次">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="period" onKeyReleased="#onChangeContent" prefWidth="80.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="命中範圍">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="hitRange" onKeyReleased="#onChangeContent" prefWidth="80.0" />
+            <Label text="命中次數">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="hitCount" onKeyReleased="#onChangeContent" prefWidth="80.0" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="death" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="自身死亡是否結束動作">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#getFirstContent" text="%action-get-initial-value" />
    </children>
    <opaqueInsets>
       <Insets right="10.0" />

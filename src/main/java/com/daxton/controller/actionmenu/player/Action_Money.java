@@ -1,7 +1,6 @@
 package com.daxton.controller.actionmenu.player;
 
 import com.daxton.api.StringControl;
-import com.daxton.api.StringConversion;
 import com.daxton.config.FileSearch;
 import com.daxton.controller.main.ActionMenu;
 import com.daxton.function.Manager;
@@ -27,7 +26,7 @@ public class Action_Money {
         if(actionMenu != null){
             String input = actionMenu.selectActionContnet.getText();
             Map<String, String> inputMap = FileSearch.setClassAction(input);
-            StringControl.setValue(moneyAmount, inputMap, new String[]{"Amount","a"});
+            StringControl.setMapValue(moneyAmount, inputMap, new String[]{"Amount","a"});
         }
     }
 
