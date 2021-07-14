@@ -11,18 +11,18 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="ModMessage">
+      <Label text="%action-mod-message-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="位置">
+      <Label text="%action-mod-message-position">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <ChoiceBox fx:id="position" prefWidth="150.0" />
-      <Label text="內容">
+      <Label text="%action-mod-message-message">
          <font>
             <Font size="24.0" />
          </font>

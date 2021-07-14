@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Particle_PNG">
+      <Label text="%action-particle-png-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="249.0" prefWidth="520.0">
          <children>
-            <Label text="圖片">
+            <Label text="%action-particle-png-image">
                <font>
                   <Font size="24.0" />
                </font>
@@ -33,7 +33,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="縮放">
+            <Label text="%action-particle-png-zoom">
                <font>
                   <Font size="24.0" />
                </font>
@@ -41,20 +41,20 @@
             <TextField fx:id="size" onKeyReleased="#onChangeContent" />
          </children>
       </HBox>
-      <Label text="圖片旋轉">
+      <Label text="%action-particle-png-rotation">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="基準目標">
+            <Label text="%action-particle-png-target">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="bast" prefWidth="150.0" />
-            <CheckBox fx:id="addPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上基準仰角">
+            <CheckBox fx:id="addPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-particle-png-pitch">
                <font>
                   <Font size="24.0" />
                </font>
@@ -63,25 +63,25 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="X">
+            <Label text="%action-particle-png-x">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="rX" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="Y">
+            <Label text="%action-particle-png-y">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="rY" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="Z">
+            <Label text="%action-particle-png-z">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="rZ" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <CheckBox fx:id="addYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上基準偏行">
+            <CheckBox fx:id="addYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-particle-png-yaw">
                <font>
                   <Font size="24.0" />
                </font>

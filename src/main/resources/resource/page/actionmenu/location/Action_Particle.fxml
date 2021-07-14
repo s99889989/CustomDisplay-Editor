@@ -11,25 +11,25 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Particle">
+      <Label text="%action-particle-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="功能">
+            <Label text="%action-particle-function">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="function" prefWidth="150.0" />
-            <Button mnemonicParsing="false" onMouseClicked="#imgMode" text="圖片模式" />
+            <Button mnemonicParsing="false" onMouseClicked="#imgMode" text="%action-particle-picture-mode" />
          </children>
       </HBox>
       <HBox prefHeight="183.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label minWidth="100.0" prefWidth="100.0" text="粒子類型">
+            <Label minWidth="100.0" prefWidth="100.0" text="%action-particle-particle">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,12 +46,12 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <Label minWidth="80.0" text="副屬性">
+                  <Label minWidth="80.0" text="%action-particle-data">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" onMouseClicked="#openColoerWeb" text="顏色" />
+                  <Button mnemonicParsing="false" onMouseClicked="#openColoerWeb" text="%action-particle-color" />
                </children>
             </VBox>
             <VBox prefHeight="171.0" prefWidth="432.0" spacing="5.0">
@@ -65,19 +65,19 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="80.0" text="粒子速度">
+            <Label minWidth="80.0" text="%action-particle-extra">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="speed" onKeyReleased="#onChangeContent" prefWidth="40.0" />
-            <Label minWidth="60.0" text="數量">
+            <Label minWidth="60.0" text="%action-particle-count">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="amount" onKeyReleased="#onChangeContent" prefWidth="40.0" />
-            <Label minWidth="60.0" text="擴散">
+            <Label minWidth="60.0" text="%action-particle-off">
                <font>
                   <Font size="24.0" />
                </font>

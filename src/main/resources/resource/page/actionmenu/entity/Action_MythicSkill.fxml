@@ -11,18 +11,18 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Mythic技能">
+      <Label text="%action-mythic-skill-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="搜尋關鍵字">
+      <Label text="%action-mythic-skill-key">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="findKey" onKeyReleased="#onKeyReleased" />
-      <Label text="選擇">
+      <Label text="%action-mythic-skill-select">
          <font>
             <Font size="24.0" />
          </font>

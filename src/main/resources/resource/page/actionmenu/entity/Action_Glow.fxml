@@ -11,7 +11,7 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="顏色">
+      <Label text="%action-glow-color">
          <font>
             <Font size="24.0" />
          </font>

@@ -23,7 +23,7 @@ public class CmdMain {
         String path = Main.config.getString("Server-Settings.Startup-Parameters");
         String cmd = "java "+path+" nogui";
 
-        if(process == null || !process.isAlive()){
+        if(!isActive()){
             ServerMenuPage.print("==========================================================================================");
             try {
                 process = Runtime.getRuntime().exec(cmd);
@@ -57,7 +57,7 @@ public class CmdMain {
     //停止伺服器
     public static void stopServer(){
         //CopyBackup.start();
-        if(process != null && process.isAlive()){
+        if(isActive()){
             ServerMenuPage.print("==========================================================================================");
             try {
                 BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
@@ -74,7 +74,7 @@ public class CmdMain {
     }
     //向伺服器發送指令
     public static void commandServer(String command){
-        if(process != null && process.isAlive()){
+        if(isActive()){
             try {
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
                 bufferedWriter.write(command+"\n");
@@ -89,7 +89,7 @@ public class CmdMain {
 
     //強制結束伺服器
     public static void forcedEndServer(){
-        if(process != null && process.isAlive()){
+        if(isActive()){
             process.destroy();
             //ServerMenuPage.print("強制結束伺服器");
             ServerMenuPage.print("==========================================================================================");
@@ -98,7 +98,7 @@ public class CmdMain {
     }
     //重啟伺服器
     public static void restartServer(){
-        if(process != null && process.isAlive()){
+        if(isActive()){
             ServerMenuPage.print("==========================================================================================");
             try {
                 BufferedWriter br = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
@@ -113,7 +113,7 @@ public class CmdMain {
     }
 
     public static boolean isActive(){
-        return process != null && process.isAlive();
+        return process != null && process.isAlive() && ServerMenuPage.serverState;
     }
 
 

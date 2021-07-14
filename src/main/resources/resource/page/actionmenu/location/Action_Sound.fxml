@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Sound">
+      <Label text="%action-sound-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="273.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="聲音">
+            <Label text="%action-sound-sound">
                <font>
                   <Font size="24.0" />
                </font>
@@ -34,7 +34,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="類型">
+            <Label text="%action-sound-category">
                <font>
                   <Font size="24.0" />
                </font>
@@ -44,13 +44,13 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label prefWidth="60.0" text="音量">
+            <Label prefWidth="60.0" text="%action-sound-volume">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="volume" onKeyReleased="#onChangeContent" prefWidth="40.0" />
-            <Label prefWidth="60.0" text="音調">
+            <Label prefWidth="60.0" text="%action-sound-pitch">
                <font>
                   <Font size="24.0" />
                </font>

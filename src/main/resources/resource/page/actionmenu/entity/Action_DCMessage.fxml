@@ -11,13 +11,13 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="訊息">
+      <Label text="%action-dcmessage-message">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="messageContent" onKeyReleased="#onMessageReleased" />
-      <Label text="頻道ID">
+      <Label text="%action-dcmessage-channel">
          <font>
             <Font size="24.0" />
          </font>

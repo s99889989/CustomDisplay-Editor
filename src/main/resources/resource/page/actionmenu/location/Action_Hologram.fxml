@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Hologram">
+      <Label text="%action-hologram-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="標記">
+            <Label text="%action-hologram-mark">
                <font>
                   <Font size="24.0" />
                </font>
@@ -26,7 +26,7 @@
             <TextField fx:id="mark" onKeyReleased="#onChangeContent" />
          </children>
       </HBox>
-      <Label text="顯示內容">
+      <Label text="%action-hologram-message">
          <font>
             <Font size="24.0" />
          </font>
@@ -34,7 +34,7 @@
       <TextField fx:id="message" onKeyReleased="#onChangeContent" />
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="刪除指定行數">
+            <Label text="%action-hologram-remove-message">
                <font>
                   <Font size="24.0" />
                </font>
@@ -44,7 +44,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="改變指定行數">
+            <Label text="%action-hologram-change-message">
                <font>
                   <Font size="24.0" />
                </font>
@@ -54,12 +54,12 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <CheckBox fx:id="teleport" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="移動">
+            <CheckBox fx:id="teleport" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-hologram-teleport">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="刪除">
+            <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-hologram-delete">
                <font>
                   <Font size="24.0" />
                </font>
@@ -70,7 +70,7 @@
          <children>
             <VBox prefHeight="100.0" prefWidth="244.0">
                <children>
-                  <Label text="物品類別">
+                  <Label text="%action-hologram-item-type">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -80,7 +80,7 @@
             </VBox>
             <VBox prefHeight="100.0" prefWidth="264.0">
                <children>
-                  <Label text="物品">
+                  <Label text="%action-hologram-item-id">
                      <font>
                         <Font size="24.0" />
                      </font>

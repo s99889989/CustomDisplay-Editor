@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Guise">
+      <Label text="%action-guise-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="100.0" text="實體類性">
+            <Label minWidth="100.0" text="%action-guise-entity-type">
                <font>
                   <Font size="24.0" />
                </font>
@@ -28,7 +28,7 @@
                <children>
                   <HBox prefHeight="55.0" prefWidth="218.0">
                      <children>
-                        <Label minWidth="100.0" text="裝備部位">
+                        <Label minWidth="100.0" text="%action-guise-equipment-slot">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -38,7 +38,7 @@
                   </HBox>
                   <HBox prefHeight="50.0" prefWidth="218.0">
                      <children>
-                        <Label minWidth="100.0" text="顯示時間">
+                        <Label minWidth="100.0" text="%action-guise-duration">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -52,13 +52,13 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="實體名稱">
+            <Label text="%action-guise-entity-name">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="name" onKeyReleased="#onChangeContent" />
-            <CheckBox fx:id="canLook" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="實體可見">
+            <CheckBox fx:id="canLook" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-guise-visible">
                <font>
                   <Font size="24.0" />
                </font>
@@ -67,13 +67,13 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="100.0" text="物品類別">
+            <Label minWidth="100.0" text="%action-guise-item-type">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <ListView fx:id="itmeType" onMouseClicked="#onChangeContentFind" prefHeight="200.0" prefWidth="200.0" />
-            <Label minWidth="50.0" text="物品">
+            <Label minWidth="50.0" text="%action-guise-item-id">
                <font>
                   <Font size="24.0" />
                </font>
@@ -81,14 +81,14 @@
             <ListView fx:id="item" onMouseClicked="#onChangeContent" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </HBox>
-      <Label text="盔甲架設定">
+      <Label text="%action-guise-armor">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="頭">
+            <Label text="%action-guise-armor-head">
                <font>
                   <Font size="24.0" />
                </font>
@@ -96,13 +96,13 @@
             <TextField fx:id="headX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="headY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="headZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
-            <CheckBox fx:id="headPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上座標仰角" />
-            <CheckBox fx:id="headYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上座標偏行" />
+            <CheckBox fx:id="headPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-guise-armor-pitch" />
+            <CheckBox fx:id="headYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-guise-armor-yaw" />
          </children>
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="身體">
+            <Label text="%action-guise-armor-body">
                <font>
                   <Font size="24.0" />
                </font>
@@ -114,7 +114,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="左手">
+            <Label text="%action-guise-armor-left-arm">
                <font>
                   <Font size="24.0" />
                </font>
@@ -122,7 +122,7 @@
             <TextField fx:id="leftArmX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="leftArmY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="leftArmZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
-            <Label text="右手">
+            <Label text="%action-guise-armor-right-arm">
                <font>
                   <Font size="24.0" />
                </font>
@@ -134,7 +134,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="左腳">
+            <Label text="%action-guise-armor-left-leg">
                <font>
                   <Font size="24.0" />
                </font>
@@ -142,7 +142,7 @@
             <TextField fx:id="leftLegX" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="leftLegY" maxWidth="60.0" onKeyReleased="#onChangeContent" />
             <TextField fx:id="leftLegZ" maxWidth="60.0" onKeyReleased="#onChangeContent" />
-            <Label text="右腳">
+            <Label text="%action-guise-armor-right-leg">
                <font>
                   <Font size="24.0" />
                </font>

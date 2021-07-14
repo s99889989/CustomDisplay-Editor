@@ -11,18 +11,18 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Exp">
+      <Label text="%action-exp-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="量">
+      <Label text="%action-exp-amount">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="amount" onKeyReleased="#onChangeContent" />
-      <Label text="類型">
+      <Label text="%action-exp-type">
          <font>
             <Font size="24.0" />
          </font>

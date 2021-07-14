@@ -11,31 +11,31 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="傳送位置">
+      <Label text="%action-teleport-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="座標">
+      <Label text="%action-teleport-location">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="X">
+            <Label text="%action-teleport-location-x">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="locX" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
-            <Label text="Y">
+            <Label text="%action-teleport-location-y">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="locY" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
-            <Label text="Z">
+            <Label text="%action-teleport-location-z">
                <font>
                   <Font size="24.0" />
                </font>
@@ -43,14 +43,14 @@
             <TextField fx:id="locZ" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
          </children>
       </HBox>
-      <Label text="向量座標">
+      <Label text="%action-teleport-vector">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="向量基準">
+            <Label text="%action-teleport-vector-target">
                <font>
                   <Font size="24.0" />
                </font>
@@ -58,19 +58,19 @@
             <ChoiceBox fx:id="vecTarget" prefWidth="150.0" />
          </children>
       </HBox>
-      <CheckBox fx:id="vecPitch" mnemonicParsing="false" onMouseClicked="#changeContent" text="加上基準仰角">
+      <CheckBox fx:id="vecPitch" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-teleport-vector-target-pitch">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="vecYaw" mnemonicParsing="false" onMouseClicked="#changeContent" text="加入基準偏行">
+      <CheckBox fx:id="vecYaw" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-teleport-vector-target-yaw">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="仰角">
+            <Label text="%action-teleport-vector-add-pitch">
                <font>
                   <Font size="24.0" />
                </font>
@@ -80,7 +80,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="偏行">
+            <Label text="%action-teleport-vector-add-yaw">
                <font>
                   <Font size="24.0" />
                </font>
@@ -90,7 +90,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="距離">
+            <Label text="%action-teleport-vector-add-distance">
                <font>
                   <Font size="24.0" />
                </font>
@@ -98,7 +98,7 @@
             <TextField fx:id="vecDistance" onKeyReleased="#changeContent" prefHeight="36.0" prefWidth="100.0" />
          </children>
       </HBox>
-      <CheckBox fx:id="onBlock" mnemonicParsing="false" onMouseClicked="#changeContent" text="在方塊上">
+      <CheckBox fx:id="onBlock" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-teleport-onblock">
          <font>
             <Font size="24.0" />
          </font>

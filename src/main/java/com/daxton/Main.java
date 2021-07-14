@@ -87,8 +87,8 @@ public class Main extends Application {
 
         //CharacterMenuPage.display();
         //ClassMenuPage.display();
-        //ServerMenuPage.display();
-        ActionMenuPage.display();
+        ServerMenuPage.display();
+        //ActionMenuPage.display();
         //SkillMenuPage.display();
         //ControllerPage.display();
 

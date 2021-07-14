@@ -11,18 +11,18 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Light">
+      <Label text="%action-light-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="亮度(1~15)">
+      <Label text="%action-light-level">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="lightLevel" onKeyReleased="#onChangeContent" />
-      <Label text="持續時間">
+      <Label text="%action-light-duration">
          <font>
             <Font size="24.0" />
          </font>

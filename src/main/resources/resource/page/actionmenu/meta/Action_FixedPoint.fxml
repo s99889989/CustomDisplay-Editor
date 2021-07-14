@@ -11,7 +11,7 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="FixedPoint">
+      <Label text="%action-fixed-point-title">
          <font>
             <Font size="24.0" />
          </font>
@@ -41,17 +41,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="開始動作">
+            <Label text="%action-fixed-point-start">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="持續動作" GridPane.rowIndex="1">
+            <Label text="%action-fixed-point-time" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="命中動作" GridPane.rowIndex="2">
+            <Label text="%action-fixed-point-hit" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
@@ -59,27 +59,27 @@
             <TextField fx:id="startAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" />
             <TextField fx:id="timeAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="hitAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="選擇" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceHitAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label text="結束動作" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="%action-fixed-point-select" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="%action-fixed-point-select" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceHitAction" text="%action-fixed-point-select" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="%action-fixed-point-end" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="endAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="%action-fixed-point-select" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-fixed-point-duration">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="多久執行一次">
+            <Label text="%action-fixed-point-period">
                <font>
                   <Font size="24.0" />
                </font>
@@ -89,13 +89,13 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="命中範圍">
+            <Label text="%action-fixed-point-hit-range">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="hitRange" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="命中次數">
+            <Label text="%action-fixed-point-hit-count">
                <font>
                   <Font size="24.0" />
                </font>
@@ -103,7 +103,7 @@
             <TextField fx:id="hitCount" onKeyReleased="#onChangeContent" prefWidth="80.0" />
          </children>
       </HBox>
-      <CheckBox fx:id="death" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="自身死亡是否結束動作">
+      <CheckBox fx:id="death" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-fixed-point-self-dead">
          <font>
             <Font size="24.0" />
          </font>

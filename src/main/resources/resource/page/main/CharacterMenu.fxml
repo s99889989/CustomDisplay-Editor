@@ -46,12 +46,12 @@
          <children>
             <VBox prefHeight="462.0" prefWidth="245.0" spacing="5.0">
                <children>
-                  <Label text="CharacterMenu">
+                  <Label text="%character-title">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label text="字符分類">
+                  <Label text="%character-file">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -60,15 +60,15 @@
                   <TextField fx:id="characterFile" />
                   <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#addFile" text="新增" />
-                        <Button mnemonicParsing="false" onMouseClicked="#removeFile" text="移除" />
+                        <Button mnemonicParsing="false" onMouseClicked="#addFile" text="%character-add" />
+                        <Button mnemonicParsing="false" onMouseClicked="#removeFile" text="%character-remove" />
                      </children>
                   </HBox>
                </children>
             </VBox>
             <VBox prefHeight="562.0" prefWidth="249.0" spacing="5.0">
                <children>
-                  <Label text="字符選擇">
+                  <Label text="%character-character-list">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -77,8 +77,8 @@
                   <TextField fx:id="characterSelect" />
                   <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#addCharacter" text="新增" />
-                        <Button mnemonicParsing="false" onMouseClicked="#removeCharacter" text="移除" />
+                        <Button mnemonicParsing="false" onMouseClicked="#addCharacter" text="%character-add" />
+                        <Button mnemonicParsing="false" onMouseClicked="#removeCharacter" text="%character-remove" />
                      </children>
                   </HBox>
                </children>
@@ -94,7 +94,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Label text="說明:">
+                  <Label text="%character-description">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -108,7 +108,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Label minWidth="60.0" text="字符">
+                  <Label minWidth="60.0" text="%character-character-content">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -125,9 +125,9 @@
             <ListView fx:id="characterContentList" onMouseClicked="#onChoiceSelectContentList" prefHeight="153.0" prefWidth="1270.0" />
             <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#addCharacterContent" text="新增" />
-                  <Button mnemonicParsing="false" onMouseClicked="#editCharacterContent" text="編輯" />
-                  <Button mnemonicParsing="false" onMouseClicked="#removeCharacterContent" text="移除" />
+                  <Button mnemonicParsing="false" onMouseClicked="#addCharacterContent" text="%character-add" />
+                  <Button mnemonicParsing="false" onMouseClicked="#editCharacterContent" text="%character-edit" />
+                  <Button mnemonicParsing="false" onMouseClicked="#removeCharacterContent" text="%character-remove" />
                </children>
             </HBox>
          </children>
@@ -141,13 +141,13 @@
          <children>
             <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Label text="目標選擇">
+                  <Label text="%character-target">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                   <ChoiceBox fx:id="targetChoice" prefWidth="150.0" />
-                  <CheckBox fx:id="placeholderAPIEnable" mnemonicParsing="false" onMouseClicked="#changePlaceholdersType" text="使用PlaceholdersAPI變量">
+                  <CheckBox fx:id="placeholderAPIEnable" mnemonicParsing="false" onMouseClicked="#changePlaceholdersType" text="%character-placeholders-api">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -158,7 +158,7 @@
                <children>
                   <VBox prefHeight="356.0" prefWidth="388.0" spacing="5.0">
                      <children>
-                        <Label text="變量類別">
+                        <Label text="%character-type-list">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -169,7 +169,7 @@
                   </VBox>
                   <VBox prefHeight="342.0" prefWidth="376.0" spacing="5.0">
                      <children>
-                        <Label text="變量">
+                        <Label text="%character-variable-list">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -182,8 +182,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#defineJoin" text="加入" />
-                  <Button mnemonicParsing="false" onMouseClicked="#clearContnt" text="清除" />
+                  <Button mnemonicParsing="false" onMouseClicked="#defineJoin" text="%character-join" />
+                  <Button mnemonicParsing="false" onMouseClicked="#clearContnt" text="%character-clear" />
                   <TextField fx:id="placeholderContent" prefHeight="36.0" prefWidth="563.0" />
                </children>
             </HBox>

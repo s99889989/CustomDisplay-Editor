@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Orbital">
+      <Label text="%action-orbital-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onMouseClicked="#openActionList" text="動作選單" />
+      <Button mnemonicParsing="false" onMouseClicked="#openActionList" text="%action-orbital-action-menu" />
       <GridPane hgap="5.0" vgap="2.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.6666717529297" minWidth="10.0" prefWidth="138.6666717529297" />
@@ -31,51 +31,51 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="開始動作">
+            <Label text="%action-orbital-start">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="持續動作" GridPane.rowIndex="1">
+            <Label text="%action-orbital-time" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" />
             <TextField fx:id="timeAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="選擇" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="結束動作" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="%action-orbital-select" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="%action-orbital-select" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="%action-orbital-end" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="endAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label text="期間命中" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="%action-orbital-select" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="%action-orbital-time-hit" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font></Label>
             <TextField fx:id="timeHitAction" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeHitAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="最後命中" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeHitAction" text="%action-orbital-select" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="%action-orbital-hit" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="endHitAction" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceEndHitAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndHitAction" text="%action-orbital-select" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-orbital-duration">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="多久執行一次">
+            <Label text="%action-orbital-period">
                <font>
                   <Font size="24.0" />
                </font>
@@ -85,19 +85,19 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="命中範圍">
+            <Label text="%action-orbital-hit-range">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="hitRange" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="命中次數">
+            <Label text="%action-orbital-hit-count">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="hitCount" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <CheckBox fx:id="hitStop" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="命中停止">
+            <CheckBox fx:id="hitStop" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-hit-stop">
                <font>
                   <Font size="24.0" />
                </font>
@@ -106,18 +106,18 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="速度">
+            <Label text="%action-orbital-speed">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="speed" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <CheckBox fx:id="selfDead" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="自身死亡停止">
+            <CheckBox fx:id="selfDead" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-selfDead">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="targetDead" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="目標死亡停止">
+            <CheckBox fx:id="targetDead" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-targetDead">
                <font>
                   <Font size="24.0" />
                </font>
@@ -126,17 +126,17 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="200.0">
          <children>
-            <Label text="軌道動向">
+            <Label text="%action-orbital-movement">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <CheckBox fx:id="orbitalPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上自身仰角">
+            <CheckBox fx:id="orbitalPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-movement-pitch">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="orbitalYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上自身偏行">
+            <CheckBox fx:id="orbitalYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-movement-yaw">
                <font>
                   <Font size="24.0" />
                </font>
@@ -145,19 +145,19 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="仰角">
+            <Label text="%action-orbital-movement-add-pitch">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="orbitalAddPitch" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="篇行">
+            <Label text="%action-orbital-movement-add-yaw">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="orbitalAddYaw" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <CheckBox fx:id="orbitalRandom" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="隨機正負偏行">
+            <CheckBox fx:id="orbitalRandom" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-movement-yaw-random">
                <font>
                   <Font size="24.0" />
                </font>
@@ -166,17 +166,17 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="200.0">
          <children>
-            <Label text="起點偏移">
+            <Label text="%action-orbital-start-title">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <CheckBox fx:id="startPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上自身仰角">
+            <CheckBox fx:id="startPitch" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-start-pitch">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="startYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="加上自身偏行">
+            <CheckBox fx:id="startYaw" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-orbital-start-yaw">
                <font>
                   <Font size="24.0" />
                </font>
@@ -185,25 +185,25 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="200.0" spacing="2.0">
          <children>
-            <Label text="仰角">
+            <Label text="%action-orbital-start-add-pitch">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startAddPitch" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="篇行">
+            <Label text="%action-orbital-start-add-yaw">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startAddYaw" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="距離">
+            <Label text="%action-orbital-start-distance">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startDistance" onKeyReleased="#onChangeContent" prefWidth="60.0" />
-            <Label text="高度">
+            <Label text="%action-orbital-start-height">
                <font>
                   <Font size="24.0" />
                </font>

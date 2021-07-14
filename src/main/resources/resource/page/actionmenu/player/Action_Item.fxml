@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Item">
+      <Label text="%action-item-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="123.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="物品類別">
+            <Label text="%action-item-type">
                <font>
                   <Font size="24.0" />
                </font>
@@ -28,7 +28,7 @@
       </HBox>
       <HBox prefHeight="248.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="物品名稱">
+            <Label text="%action-item-id">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,7 +38,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="數量">
+            <Label text="%action-item-amount">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,7 +46,7 @@
             <TextField fx:id="amount" onKeyReleased="#onChangeContent" />
          </children>
       </HBox>
-      <CheckBox fx:id="remove" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="移除物品">
+      <CheckBox fx:id="remove" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-item-remove">
          <font>
             <Font size="24.0" />
          </font>

@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="SwitchAction">
+      <Label text="%action-switch-action-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="判斷值">
+            <Label text="%action-switch-action-condition-content">
                <font>
                   <Font size="24.0" />
                </font>
@@ -28,7 +28,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="條件類型">
+            <Label text="%action-switch-action-condition-type">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,10 +38,10 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#openActionList" text="動作選單" />
-            <Button mnemonicParsing="false" onMouseClicked="#addAction" text="添加" />
-            <Button mnemonicParsing="false" onMouseClicked="#editAction" text="改變" />
-            <Button mnemonicParsing="false" onMouseClicked="#removeAction" text="移除" />
+            <Button mnemonicParsing="false" onMouseClicked="#openActionList" text="%action-switch-action-action-menu" />
+            <Button mnemonicParsing="false" onMouseClicked="#addAction" text="%action-switch-action-action-add" />
+            <Button mnemonicParsing="false" onMouseClicked="#editAction" text="%action-switch-action-action-change" />
+            <Button mnemonicParsing="false" onMouseClicked="#removeAction" text="%action-switch-action-action-remove" />
          </children>
       </HBox>
       <HBox prefHeight="277.0" prefWidth="520.0" spacing="5.0">
@@ -52,9 +52,9 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#addCase" text="添加" />
-            <Button mnemonicParsing="false" onMouseClicked="#editCase" text="改變" />
-            <Button mnemonicParsing="false" onMouseClicked="#removeCase" text="移除" />
+            <Button mnemonicParsing="false" onMouseClicked="#addCase" text="%action-switch-action-case-add" />
+            <Button mnemonicParsing="false" onMouseClicked="#editCase" text="%action-switch-action-case-change" />
+            <Button mnemonicParsing="false" onMouseClicked="#removeCase" text="%action-switch-action-case-remove" />
             <TextField fx:id="caseInput" />
          </children>
       </HBox>

@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="藥水效果">
+      <Label text="%action-potion-effect-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="效果選擇">
+      <Label text="%action-potion-effect-potion">
          <font>
             <Font size="24.0" />
          </font>
@@ -24,7 +24,7 @@
       <ListView fx:id="potionList" onMouseClicked="#changeContent" prefHeight="221.0" prefWidth="520.0" />
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="等級">
+            <Label text="%action-potion-effect-amplifir">
                <font>
                   <Font size="24.0" />
                </font>
@@ -34,7 +34,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-potion-effect-duration">
                <font>
                   <Font size="24.0" />
                </font>
@@ -42,12 +42,12 @@
             <TextField fx:id="duration" onKeyReleased="#changeContent" />
          </children>
       </HBox>
-      <CheckBox fx:id="ambient" mnemonicParsing="false" onMouseClicked="#changeContent" text="範圍">
+      <CheckBox fx:id="ambient" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-potion-effect-ambient">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="particles" mnemonicParsing="false" onMouseClicked="#changeContent" text="粒子">
+      <CheckBox fx:id="particles" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-potion-effect-particles">
          <font>
             <Font size="24.0" />
          </font>

@@ -11,7 +11,7 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="後台訊息">
+      <Label text="%action-logger-info-message">
          <font>
             <Font size="24.0" />
          </font>

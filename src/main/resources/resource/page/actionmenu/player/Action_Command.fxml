@@ -11,18 +11,18 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Command">
+      <Label text="%action-command-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="指令內容">
+      <Label text="%action-command-message">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="message" onKeyReleased="#onChangeContent" />
-      <CheckBox fx:id="console" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="由控制台發出">
+      <CheckBox fx:id="console" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-command-consoles">
          <font>
             <Font size="24.0" />
          </font>

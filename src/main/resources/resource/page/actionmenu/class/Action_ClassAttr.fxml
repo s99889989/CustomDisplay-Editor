@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="ClassAttr">
+      <Label text="%action-class-attr-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="屬性類型">
+            <Label text="%action-class-attr-type">
                <font>
                   <Font size="24.0" />
                </font>
@@ -29,21 +29,21 @@
       <ListView fx:id="typeFile" onMouseClicked="#onChoiceAttrFile" prefHeight="114.0" prefWidth="520.0" />
       <ListView fx:id="typeList" onMouseClicked="#onChoiceAttr" prefHeight="166.0" prefWidth="520.0" />
       <TextField fx:id="type" onKeyReleased="#onChangeContent" />
-      <HBox prefHeight="38.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="量">
+            <Label text="%action-class-attr-amount">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="amount" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="持續時間">
+            <Label text="%action-class-attr-duration">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="標籤">
+            <Label text="%action-class-attr-mark">
                <font>
                   <Font size="24.0" />
                </font>

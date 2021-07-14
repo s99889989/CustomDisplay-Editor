@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Mana">
+      <Label text="%action-mana-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="量">
+      <Label text="%action-mana-amount">
          <font>
             <Font size="24.0" />
          </font>

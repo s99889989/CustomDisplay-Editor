@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Action">
+      <Label text="%action-action-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="動作">
+      <Label text="%action-action-action">
          <font>
             <Font size="24.0" />
          </font>
@@ -35,19 +35,19 @@
       <ListView fx:id="actionContent" prefHeight="167.0" prefWidth="520.0" />
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="標記">
+            <Label text="%action-action-mark">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="mark" onKeyReleased="#onChangeContentFind" prefWidth="80.0" />
-            <Label text="執行次數">
+            <Label text="%action-action-count">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="count" onKeyReleased="#onChangeContentFind" prefWidth="80.0" />
-            <Label text="執行間隔">
+            <Label text="%action-action-period">
                <font>
                   <Font size="24.0" />
                </font>
@@ -57,12 +57,12 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <CheckBox fx:id="needTarget" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="需要目標">
+            <CheckBox fx:id="needTarget" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="%action-action-need-target">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="stop" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="停止動作">
+            <CheckBox fx:id="stop" mnemonicParsing="false" onMouseClicked="#onChangeContentFind" text="%action-action-stop">
                <font>
                   <Font size="24.0" />
                </font>

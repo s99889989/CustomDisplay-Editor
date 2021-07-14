@@ -11,7 +11,7 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Loop">
+      <Label text="%action-loop-title">
          <font>
             <Font size="24.0" />
          </font>
@@ -40,38 +40,38 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="開始動作">
+            <Label text="%action-loop-start">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="持續動作" GridPane.rowIndex="1">
+            <Label text="%action-loop-time" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" />
             <TextField fx:id="timeAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="選擇" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="結束動作" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="%action-loop-select" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="%action-loop-select" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="%action-loop-end" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="endAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="%action-loop-select" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-loop-duration">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="多久執行一次">
+            <Label text="%action-loop-period">
                <font>
                   <Font size="24.0" />
                </font>

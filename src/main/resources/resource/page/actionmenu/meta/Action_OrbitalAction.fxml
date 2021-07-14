@@ -11,7 +11,7 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="動作">
+      <Label text="%action-orbital-action">
          <font>
             <Font size="24.0" />
          </font>

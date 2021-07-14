@@ -11,49 +11,49 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="隱形">
+      <Label text="%action-invisible-invisible">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <CheckBox fx:id="entity" mnemonicParsing="false" onMouseClicked="#onCheckEntity" selected="true" text="實體消失">
+      <CheckBox fx:id="entity" mnemonicParsing="false" onMouseClicked="#onCheckEntity" selected="true" text="%action-invisible-entity">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="mainHand" mnemonicParsing="false" onMouseClicked="#onCheckMainHand" selected="true" text="主手消失">
+      <CheckBox fx:id="mainHand" mnemonicParsing="false" onMouseClicked="#onCheckMainHand" selected="true" text="%action-invisible-main-hand">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="offHand" mnemonicParsing="false" onMouseClicked="#onCheckOffHand" selected="true" text="副手消失">
+      <CheckBox fx:id="offHand" mnemonicParsing="false" onMouseClicked="#onCheckOffHand" selected="true" text="%action-invisible-off-hand">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="head" mnemonicParsing="false" onMouseClicked="#onCheckHead" selected="true" text="頭盔消失">
+      <CheckBox fx:id="head" mnemonicParsing="false" onMouseClicked="#onCheckHead" selected="true" text="%action-invisible-head">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="chest" mnemonicParsing="false" onMouseClicked="#onCheckChest" selected="true" text="胸甲消失">
+      <CheckBox fx:id="chest" mnemonicParsing="false" onMouseClicked="#onCheckChest" selected="true" text="%action-invisible-chest">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="legs" mnemonicParsing="false" onMouseClicked="#onCheckLegs" selected="true" text="護腿消失">
+      <CheckBox fx:id="legs" mnemonicParsing="false" onMouseClicked="#onCheckLegs" selected="true" text="%action-invisible-legs">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="feet" mnemonicParsing="false" onMouseClicked="#onCheckFeet" selected="true" text="靴子消失">
+      <CheckBox fx:id="feet" mnemonicParsing="false" onMouseClicked="#onCheckFeet" selected="true" text="%action-invisible-feet">
          <font>
             <Font size="24.0" />
          </font>
       </CheckBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-invisible-duration">
                <font>
                   <Font size="24.0" />
                </font>

@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Inventory">
+      <Label text="%action-inventory-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="功能">
+            <Label text="%action-inventory-function">
                <font>
                   <Font size="24.0" />
                </font>
@@ -28,7 +28,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="標題">
+            <Label text="%action-inventory-message">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,7 +38,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text="格數">
+            <Label text="%action-inventory-aAmount">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,7 +46,7 @@
             <ChoiceBox fx:id="amount" prefWidth="150.0" />
          </children>
       </HBox>
-      <Label text="介面ID">
+      <Label text="%action-inventory-gui-id">
          <font>
             <Font size="24.0" />
          </font>

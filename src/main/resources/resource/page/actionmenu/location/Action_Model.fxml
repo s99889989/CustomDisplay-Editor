@@ -11,14 +11,14 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Model">
+      <Label text="%action-model-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="300.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label text=" 模型ID">
+            <Label text="%action-model-id">
                <font>
                   <Font size="24.0" />
                </font>
@@ -31,7 +31,7 @@
             </VBox>
          </children>
       </HBox>
-      <Label text="模型的姿勢">
+      <Label text="%action-model-pose">
          <font>
             <Font size="24.0" />
          </font>
@@ -48,22 +48,22 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="狀態">
+            <Label text="%action-model-state">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="延遲時間" GridPane.columnIndex="1">
+            <Label text="%action-model-lerpin" GridPane.columnIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="結束時間" GridPane.columnIndex="2">
+            <Label text="%action-model-lerpout" GridPane.columnIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="速度" GridPane.columnIndex="3">
+            <Label text="%action-model-speed" GridPane.columnIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
@@ -76,12 +76,12 @@
       </GridPane>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <CheckBox fx:id="teleport" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="移動">
+            <CheckBox fx:id="teleport" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-model-teleport">
                <font>
                   <Font size="24.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="刪除">
+            <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-model-delete">
                <font>
                   <Font size="24.0" />
                </font>

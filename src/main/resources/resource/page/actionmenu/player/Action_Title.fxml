@@ -11,36 +11,36 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Title">
+      <Label text="%action-title-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="標題內容">
+      <Label text="%action-title-maintitle">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="title" onKeyReleased="#onChangeContent" />
-      <Label text="副標題內容">
+      <Label text="%action-title-subtitle">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="subtitle" onKeyReleased="#onChangeContent" />
-      <Label text="淡入時間">
+      <Label text="%action-title-fade-in">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="fadeIn" onKeyReleased="#onChangeContent" />
-      <Label text="停留時間">
+      <Label text="%action-title-duration">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="duration" onKeyReleased="#onChangeContent" />
-      <Label text="淡出時間">
+      <Label text="%action-title-fade-out">
          <font>
             <Font size="24.0" />
          </font>

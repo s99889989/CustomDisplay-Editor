@@ -11,13 +11,13 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="名稱">
+      <Label text="%action-name-message">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="showName" onKeyReleased="#changeContent" />
-      <CheckBox fx:id="alawayShow" mnemonicParsing="false" onMouseClicked="#changeContent" text="不看目標時也顯示">
+      <CheckBox fx:id="alawayShow" mnemonicParsing="false" onMouseClicked="#changeContent" text="%action-name-always">
          <font>
             <Font size="24.0" />
          </font>

@@ -100,10 +100,11 @@ public class ServerMenu {
 
     public void cdreload(){
         CmdMain.commandServer("customdisplay reload");
-        ServerMenuPage.print(System.getProperty("user.dir")+"/CustomDisplay-Editor/buttom.mp3");
-        Media sound=new Media(new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/swish1.mp3").toURI().toString());
-        MediaPlayer mediaPlayer=new MediaPlayer(sound);
-        mediaPlayer.play();
+
+//        ServerMenuPage.print(System.getProperty("user.dir")+"/CustomDisplay-Editor/buttom.mp3");
+//        Media sound=new Media(new File(System.getProperty("user.dir")+"/CustomDisplay-Editor/swish1.mp3").toURI().toString());
+//        MediaPlayer mediaPlayer=new MediaPlayer(sound);
+//        mediaPlayer.play();
 
 
 //        File f = new File(Main.resourcePath+"/swish1.mp3");

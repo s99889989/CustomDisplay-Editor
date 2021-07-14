@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Delay">
+      <Label text="%action-delay-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="延遲時間">
+      <Label text="%action-delay-ticks">
          <font>
             <Font size="24.0" />
          </font>

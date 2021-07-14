@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="Money">
+      <Label text="%action-money-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="量">
+      <Label text="%action-money-amount">
          <font>
             <Font size="24.0" />
          </font></Label>

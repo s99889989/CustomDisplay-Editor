@@ -14,6 +14,8 @@ import javafx.scene.paint.Color;
 
 public class ServerMenuPage {
 
+    public static boolean serverState = false;
+
     //打開伺服器介面
     public static void display(){
         ServerMenu serverMenu = FxmlLoader.display("/page/main/ServerMenu.fxml", Main.mainWindow);
@@ -30,7 +32,7 @@ public class ServerMenuPage {
         }
 
     }
-
+    //在列表發送訊息
     public static void print(String message){
         ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
 
@@ -41,6 +43,47 @@ public class ServerMenuPage {
         //mm(message);
     }
 
+
+
+    //輸入指令
+    public static void enter(){
+        ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
+        if(serverMenu != null){
+            TextField textField = serverMenu.inputText;
+            print("[Command]: "+textField.getText());
+            CmdMain.commandServer(textField.getText());
+            textField.clear();
+        }
+
+    }
+    //設定伺服器狀態
+    public static void setServerState(Boolean b){
+        ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
+        if(serverMenu != null){
+            if(b){
+                serverMenu.state.setFill(Color.DARKGREEN);
+                String open = Main.languageConfig.getString("Server-Menu.Status.Open");
+                serverState = true;
+                if(open != null){
+                    serverMenu.state.setText(open);
+                }else {
+                    serverMenu.state.setText("Open");
+                }
+            }else {
+                serverMenu.state.setFill(Color.DARKRED);
+                String close = Main.languageConfig.getString("Server-Menu.Status.Close");
+                serverState = false;
+                if(close != null){
+                    serverMenu.state.setText(close);
+                }else {
+                    serverMenu.state.setText("Close");
+                }
+
+            }
+        }
+
+    }
+    //
     public static void mm(String message){
         if(message.contains("INFO]: Done")){
             CmdMain.serverStart = true;
@@ -67,42 +110,6 @@ public class ServerMenuPage {
         if(message.contains("INFO]: There are") && message.contains(" players online: ")){
             String number = message.substring(message.indexOf("There are ")+10,message.indexOf(" of a max of"));
             //Discord.setChannelName("message"+number);
-        }
-
-    }
-
-    public static void enter(){
-        ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
-        if(serverMenu != null){
-            TextField textField = serverMenu.inputText;
-            print("[Command]: "+textField.getText());
-            CmdMain.commandServer(textField.getText());
-            textField.clear();
-        }
-
-    }
-
-    public static void setServerState(Boolean b){
-        ServerMenu serverMenu = (ServerMenu) Manager.controller_Map.get("ServerMenu");
-        if(serverMenu != null){
-            if(b){
-                serverMenu.state.setFill(Color.DARKGREEN);
-                String open = Main.languageConfig.getString("Server-Menu.Status.Open");
-                if(open != null){
-                    serverMenu.state.setText(open);
-                }else {
-                    serverMenu.state.setText("Open");
-                }
-            }else {
-                serverMenu.state.setFill(Color.DARKRED);
-                String close = Main.languageConfig.getString("Server-Menu.Status.Close");
-                if(close != null){
-                    serverMenu.state.setText(close);
-                }else {
-                    serverMenu.state.setText("Close");
-                }
-
-            }
         }
 
     }

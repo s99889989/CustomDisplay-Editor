@@ -11,12 +11,12 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="BossBar">
+      <Label text="%action-boss-bar-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="顯示內容">
+      <Label text="%action-boss-bar-message">
          <font>
             <Font size="24.0" />
          </font>
@@ -24,7 +24,7 @@
       <TextField fx:id="message" onKeyReleased="#onChangeContent" />
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="60.0" text="樣式">
+            <Label minWidth="60.0" text="%action-boss-bar-style">
                <font>
                   <Font size="24.0" />
                </font>
@@ -34,7 +34,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="60.0" text="顏色">
+            <Label minWidth="60.0" text="%action-boss-bar-color">
                <font>
                   <Font size="24.0" />
                </font>
@@ -44,7 +44,7 @@
       </HBox>
       <HBox prefHeight="35.0" prefWidth="520.0" spacing="5.0">
          <children>
-            <Label minWidth="60.0" text="進度">
+            <Label minWidth="60.0" text="%action-boss-bar-progress">
                <font>
                   <Font size="24.0" />
                </font>
@@ -54,7 +54,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label minWidth="60.0" text="類型">
+            <Label minWidth="60.0" text="%action-boss-bar-flag">
                <font>
                   <Font size="24.0" />
                </font>
@@ -64,7 +64,7 @@
       </HBox>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="標記">
+            <Label text="%action-boss-bar-mark">
                <font>
                   <Font size="24.0" />
                </font>
@@ -72,7 +72,7 @@
             <TextField fx:id="mark" onKeyReleased="#onChangeContent" />
          </children>
       </HBox>
-      <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="刪除">
+      <CheckBox fx:id="delete" mnemonicParsing="false" onMouseClicked="#onChangeContent" text="%action-boss-bar-delete">
          <font>
             <Font size="24.0" />
          </font>

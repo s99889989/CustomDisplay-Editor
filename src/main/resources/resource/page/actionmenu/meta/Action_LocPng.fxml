@@ -11,15 +11,15 @@
       <Insets right="5.0" />
    </padding>
    <children>
-      <Label text="LocPng">
+      <Label text="%action-loc-png-title">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#openPNGSettings" text="圖片設定" />
-            <Button mnemonicParsing="false" onMouseClicked="#onChangeContent" prefWidth="200.0" text="圖片設定應用" />
+            <Button mnemonicParsing="false" onMouseClicked="#openPNGSettings" text="%action-loc-png-img" />
+            <Button mnemonicParsing="false" onMouseClicked="#onChangeContent" prefWidth="200.0" text="%action-loc-png-img-application" />
          </children>
       </HBox>
       <HBox prefHeight="123.0" prefWidth="520.0" spacing="5.0">
@@ -46,38 +46,38 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="開始動作">
+            <Label text="%action-loc-png-start">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="持續動作" GridPane.rowIndex="1">
+            <Label text="%action-loc-png-time" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="startAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" />
             <TextField fx:id="timeAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="選擇" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="結束動作" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onMouseClicked="#choiceStartAction" text="%action-loc-png-select" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceTimeAction" text="%action-loc-png-select" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="%action-loc-png-end" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="endAction" onKeyReleased="#onChangeContent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="選擇" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onMouseClicked="#choiceEndAction" text="%action-loc-png-select" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <HBox prefHeight="38.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Label text="持續時間">
+            <Label text="%action-loc-png-duration">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <TextField fx:id="duration" onKeyReleased="#onChangeContent" prefWidth="80.0" />
-            <Label text="多久執行一次">
+            <Label text="%action-loc-png-period">
                <font>
                   <Font size="24.0" />
                </font>
