@@ -62,6 +62,10 @@ Trigger:
   ~onLeverOn: '当控制杆开启时'
   ~onLeverOff: '当控制杆关闭时'
   ~onButton: '当按下按钮时'
+  ~onMMobDeath: '当MythicMobs的怪物死亡.(死亡原因必须是该玩家)'
+  ~onMMobDropExp: '当MythicMobs的怪物掉落经验'
+  ~onMMobDropMoney: '当MythicMobs的怪物掉落金钱'
+  ~onMMobDropItem: '当MythicMobs的怪物掉落物品'
 
 Actions:
   Attribute: '設置臨時屬性。'

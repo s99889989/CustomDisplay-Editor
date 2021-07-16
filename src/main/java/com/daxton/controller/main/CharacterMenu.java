@@ -182,6 +182,21 @@ public class CharacterMenu {
     }
 
     //**=============================================================================**/
+
+    //當選擇字符分類
+    public void onChoiceFileList(){
+        String fileName = "Character/"+characterFileList.getSelectionModel().getSelectedItem();
+        //設置字符設定檔
+        CharacterMenuPage.setCharaterConfig(fileName);
+        characterFile.setText(characterFileList.getSelectionModel().getSelectedItem());
+        if(Manager.file_Config_Map.get(fileName) != null){
+            FileConfiguration charConfig = Manager.file_Config_Map.get(fileName);
+            if(charConfig.getConfigurationSection("") != null){
+                characterSelectList.getItems().clear();
+                charConfig.getConfigurationSection("").getKeys(false).forEach(s -> characterSelectList.getItems().add(s));
+            }
+        }
+    }
     //新增檔案
     public void addFile(){
         if(!characterFile.getText().isEmpty()){
@@ -214,7 +229,9 @@ public class CharacterMenu {
             file.delete();
         }
         characterFileList.getItems().remove(characterFileList.getSelectionModel().getSelectedItem());
-
+        characterSelectList.getItems().clear();
+        characterContent.clear();
+        characterContentList.getItems().clear();
     }
     //新增字符
     public void addCharacter(){
@@ -256,11 +273,21 @@ public class CharacterMenu {
                     if(!StringControl.getValue(characterFunction).isEmpty()){
                         output += ";";
                     }
-                    output += "Message="+characterContent.getText();
+                    if(StringControl.getValue(characterType).equals("Content")){
+                        output += characterContent.getText();
+                    }else {
+                        output += "Message="+characterContent.getText();
+                    }
                 }
 
                 output += "]";
                 characterContentList.getItems().add(output);
+
+                //設置字符設定
+                List<String> set = new ArrayList<>();
+                set.addAll(characterContentList.getItems());
+                CharacterMenuPage.setValue(set);
+
             }
 
         }
@@ -281,11 +308,21 @@ public class CharacterMenu {
                     if(!StringControl.getValue(characterFunction).isEmpty()){
                         output += ";";
                     }
-                    output += "Message="+characterContent.getText();
+                    if(StringControl.getValue(characterType).equals("Content")){
+                        output += characterContent.getText();
+                    }else {
+                        output += "Message="+characterContent.getText();
+                    }
+
                 }
 
                 output += "]";
                 characterContentList.getItems().set(characterContentList.getSelectionModel().getSelectedIndex() ,output);
+                //設置字符設定
+                List<String> set = new ArrayList<>();
+                set.addAll(characterContentList.getItems());
+                CharacterMenuPage.setValue(set);
+
             }
 
         }
@@ -294,20 +331,13 @@ public class CharacterMenu {
     //移除字符內容
     public void removeCharacterContent(){
         characterContentList.getItems().remove(characterContentList.getSelectionModel().getSelectedItem());
+        //設置字符設定
+        List<String> set = new ArrayList<>();
+        set.addAll(characterContentList.getItems());
+        CharacterMenuPage.setValue(set);
     }
 
-    //當選擇字符分類
-    public void onChoiceFileList(){
-        String fileName = "Character/"+characterFileList.getSelectionModel().getSelectedItem();
-        characterFile.setText(characterFileList.getSelectionModel().getSelectedItem());
-        if(Manager.file_Config_Map.get(fileName) != null){
-            FileConfiguration charConfig = Manager.file_Config_Map.get(fileName);
-            if(charConfig.getConfigurationSection("") != null){
-                characterSelectList.getItems().clear();
-                charConfig.getConfigurationSection("").getKeys(false).forEach(s -> characterSelectList.getItems().add(s));
-            }
-        }
-    }
+
     //當選擇字符
     public void onChoiceSelectList(){
         String fileName = "Character/"+characterFileList.getSelectionModel().getSelectedItem();
@@ -316,6 +346,8 @@ public class CharacterMenu {
             FileConfiguration charConfig = Manager.file_Config_Map.get(fileName);
             characterContentList.getItems().clear();
             charConfig.getStringList(charName+".message").forEach(s -> characterContentList.getItems().add(s));
+
+            CharacterMenuPage.setPatch(charName+".message");
         }
     }
 
@@ -328,12 +360,19 @@ public class CharacterMenu {
         String charType = StringConversion.getActionKey(getCharacterMap, new String[]{"charactertype"});
         String charFunction = StringConversion.getActionKey(getCharacterMap, new String[]{"Function","fc"});
         String charMessage = StringConversion.getActionKey(getCharacterMap, new String[]{"message","m"});
+        if(StringConversion.headToUP(charType).equals("Content")){
+            //字符功能內容
+            if(getCharacterMap.get("mid") != null)
+            characterContent.setText(getCharacterMap.get("mid"));
+        }else {
+            //字符功能內容
+            characterContent.setText(charMessage);
+            //選定字符功能選項
+            CharacterMenuPage.setFunction(charFunction, characterFunction);
+        }
         //選定字符方法
         StringControl.setValue(characterType, StringConversion.headToUP(charType));
-        //字符功能內容
-        characterContent.setText(charMessage);
-        //選定字符功能選項
-        CharacterMenuPage.setFunction(charFunction, characterFunction);
+
 
     }
 

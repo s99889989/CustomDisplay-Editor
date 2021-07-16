@@ -17,10 +17,7 @@ import javafx.scene.text.Text;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class ActionMenu {
 
@@ -243,9 +240,14 @@ public class ActionMenu {
     public void selectActionTypeList(){
         String selectType = actionTypeList.getSelectionModel().getSelectedItem();
         inputActionType.setText(selectType);
-        FileConfiguration actionConfig = Manager.file_Config_Map.get("Actions/"+selectType);
-        actionList.getItems().clear();
-        Objects.requireNonNull(actionConfig.getConfigurationSection("")).getKeys(false).forEach(s -> actionList.getItems().add(s));
+        String filePatch = "Actions/"+selectType;
+        if(Manager.file_Config_Map.get(filePatch) != null){
+            ActionMenuPage.setActionConfig(filePatch);
+            FileConfiguration actionConfig = Manager.file_Config_Map.get(filePatch);
+            actionList.getItems().clear();
+            actionConfig.getConfigurationSection("").getKeys(false).forEach(s -> actionList.getItems().add(s));
+        }
+
     }
     //新增動作類型表
     public void addActionType(){
@@ -288,6 +290,7 @@ public class ActionMenu {
         String selectType = actionTypeList.getSelectionModel().getSelectedItem();
         FileConfiguration actionConfig = Manager.file_Config_Map.get("Actions/"+selectType);
         String selectAction = actionList.getSelectionModel().getSelectedItem();
+        ActionMenuPage.setPatch(selectAction+".Action");
         List<String> actionContentList = actionConfig.getStringList(selectAction+".Action");
         this.actionContentList.getItems().clear();
         this.actionContentList.getItems().addAll(actionContentList);
@@ -296,8 +299,6 @@ public class ActionMenu {
     public void addAction(){}
     //移除動作
     public void removeAction(){}
-    //確定修改動作
-    public void defineModifyAction(){}
     //選擇內容動作
     public void selectActionContent(){
         String selectContent = actionContentList.getSelectionModel().getSelectedItem();
@@ -384,6 +385,11 @@ public class ActionMenu {
         String editString = selectActionContnet.getText();
         if(!editString.isEmpty()){
             actionContentList.getItems().add(editString);
+
+            //設置字符設定
+            List<String> set = new ArrayList<>();
+            set.addAll(actionContentList.getItems());
+            ActionMenuPage.setValue(set);
         }
 
 
@@ -395,12 +401,19 @@ public class ActionMenu {
         actionContentList.getItems().set(actionContentList.getSelectionModel().getSelectedIndex(), editString);
 
         actionContentList.getSelectionModel().select(editString);
+        //設置字符設定
+        List<String> set = new ArrayList<>();
+        set.addAll(actionContentList.getItems());
+        ActionMenuPage.setValue(set);
     }
     //移除內容動作
-    public void removeActionConten(){
+    public void removeActionContent(){
 
         actionContentList.getItems().remove(actionContentList.getSelectionModel().getSelectedIndex());
-
+        //設置字符設定
+        List<String> set = new ArrayList<>();
+        set.addAll(actionContentList.getItems());
+        ActionMenuPage.setValue(set);
     }
 
     //----------------------------------------------------------//

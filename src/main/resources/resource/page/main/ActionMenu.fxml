@@ -6,7 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.main.ActionMenu">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.daxton.controller.main.ActionMenu">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -67,9 +68,9 @@
                 <ListView fx:id="actionContentList" onMouseClicked="#selectActionContent" prefHeight="400.0" prefWidth="200.0" />
                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#addActionContent" text="%action-add" />
-                        <Button mnemonicParsing="false" onAction="#editActionContent" text="%action-edit" />
-                        <Button mnemonicParsing="false" onAction="#removeActionConten" text="%action-remove" />
+                        <Button mnemonicParsing="false" onMouseClicked="#addActionContent" text="%action-add" />
+                        <Button mnemonicParsing="false" onMouseClicked="#editActionContent" text="%action-edit" />
+                        <Button mnemonicParsing="false" onMouseClicked="#removeActionContent" text="%action-remove" />
                     </children>
                 </HBox>
             </children>
@@ -97,11 +98,10 @@
                         <TextField fx:id="inputActionType" />
                         <HBox prefHeight="38.0" prefWidth="233.0" spacing="10.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#addActionType" text="%action-add" />
-                                <Button mnemonicParsing="false" onAction="#removeActionType" text="%action-remove" />
+                                <Button mnemonicParsing="false" onMouseClicked="#addActionType" text="%action-add" />
+                                <Button mnemonicParsing="false" onMouseClicked="#removeActionType" text="%action-remove" />
                             </children>
                         </HBox>
-                        <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#defineModifyAction" prefWidth="100.0" text="%action-modify" />
                     </children>
                     <opaqueInsets>
                         <Insets />
@@ -121,8 +121,8 @@
                         <TextField fx:id="inputAction" />
                         <HBox prefHeight="38.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#addAction" text="%action-add" />
-                                <Button mnemonicParsing="false" onAction="#removeAction" text="%action-remove" />
+                                <Button mnemonicParsing="false" onMouseClicked="#addAction" text="%action-add" />
+                                <Button mnemonicParsing="false" onMouseClicked="#removeAction" text="%action-remove" />
                             </children>
                         </HBox>
                     </children>

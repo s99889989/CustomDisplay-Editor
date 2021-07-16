@@ -6,22 +6,22 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="350.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.classmenu.ActionAdd">
-    <children>
-        <Label text="%class-secondary-action-add">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
-        <ListView fx:id="actionList" prefHeight="300.0" prefWidth="200.0" />
-        <HBox prefHeight="38.0" prefWidth="200.0" spacing="10.0">
-            <children>
-                <Button mnemonicParsing="false" onAction="#define" text="%class-define" />
-                <Button mnemonicParsing="false" onAction="#cancel" text="%class-cancel" />
-            </children>
-        </HBox>
-    </children>
-    <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-    </padding>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="340.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daxton.controller.classmenu.ActionAdd">
+   <children>
+      <Label text="%class-secondary-action-add">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="actionList" prefHeight="313.0" prefWidth="341.0" />
+      <HBox prefHeight="38.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#define" text="%class-define" />
+            <Button mnemonicParsing="false" onMouseClicked="#cancel" text="%class-cancel" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </VBox>

@@ -86,8 +86,8 @@ public class Main extends Application {
         setSecondaryWindow();
 
         //CharacterMenuPage.display();
-        //ClassMenuPage.display();
-        ServerMenuPage.display();
+        ClassMenuPage.display();
+        //ServerMenuPage.display();
         //ActionMenuPage.display();
         //SkillMenuPage.display();
         //ControllerPage.display();

@@ -119,7 +119,10 @@
                         <ChoiceBox fx:id="characterFunction" prefWidth="150.0" />
                      </children>
                   </VBox>
-                  <TextField fx:id="characterContent" prefHeight="36.0" prefWidth="1100.0" />
+                  <TextField fx:id="characterContent" prefHeight="36.0" prefWidth="1100.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                </children>
             </HBox>
             <ListView fx:id="characterContentList" onMouseClicked="#onChoiceSelectContentList" prefHeight="153.0" prefWidth="1270.0" />

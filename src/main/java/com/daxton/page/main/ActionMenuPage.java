@@ -9,6 +9,7 @@ import com.daxton.function.Manager;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,6 +23,27 @@ public class ActionMenuPage {
     public static Map<String,String> keyValue = new LinkedHashMap<>();
     public static String output;
     public static int count;
+
+    public static FileConfiguration actionConfig;
+
+    public static String patch;
+
+    //設置動作設定檔
+    public static void setActionConfig(String patch){
+        if(Manager.file_Config_Map.get(patch) != null){
+            actionConfig = Manager.file_Config_Map.get(patch);
+        }
+    }
+    //設置內容路徑
+    public static void setPatch(String inputPatch){
+        patch = inputPatch;
+    }
+    //設置動作設定
+    public static void setValue(Object value){
+        if(actionConfig != null && patch != null){
+            actionConfig.set(patch, value);
+        }
+    }
 
     //打開動作編輯介面
     public static void display(){

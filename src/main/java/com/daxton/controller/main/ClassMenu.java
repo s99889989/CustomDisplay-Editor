@@ -78,6 +78,10 @@ public class ClassMenu {
 
     /**=============================================================================**/
 
+    @FXML//初始設定
+    void initialize() {
+
+    }
 
     //新增職業
     public void classAdd(){
@@ -105,11 +109,11 @@ public class ClassMenu {
 
     //新增動作
     public void addAction(){
-        ActionOption.addDisplay();
+        ActionOption.addAction();
     }
     //編輯動作
     public void editAction(){
-        //AlertBos.display();
+        ActionOption.editAction();
     }
     //移除動作
     public void removeAction(){

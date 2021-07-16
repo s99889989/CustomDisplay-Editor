@@ -62,6 +62,10 @@ Trigger:
   ~onLeverOn: 'When the lever is turned on.'
   ~onLeverOff: 'When the lever is closed.'
   ~onButton: 'When the button is pressed.'
+  ~onMMobDeath: 'When the monster of MythicMobs dies. (The cause of death must be the player)'
+  ~onMMobDropExp: 'When the monsters of MythicMobs drop experience.'
+  ~onMMobDropMoney: 'When the monsters of MythicMobs drop money.'
+  ~onMMobDropItem: 'When monsters in MythicMobs drop items.'
 
 Actions:
   Attribute: 'Set temporary properties.'

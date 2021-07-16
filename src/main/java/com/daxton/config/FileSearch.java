@@ -140,6 +140,7 @@ public class FileSearch {
                 actionMap.put("charactertype",actionType.trim());
 
                 String midSet = inputString.substring(inputString.indexOf("[")+1, inputString.indexOf("]"));
+                actionMap.put("mid",midSet);
                 List<String> midSetList = getBlockList(midSet,";");
                 midSetList.forEach(midKey -> {
                     String[] midArray = midKey.split("=");

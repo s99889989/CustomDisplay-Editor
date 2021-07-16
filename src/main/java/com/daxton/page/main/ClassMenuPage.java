@@ -70,7 +70,7 @@ public class ClassMenuPage {
 
 
             });
-
+            classMenu.classList.getSelectionModel().select("Default_Player");
         }
 
     }

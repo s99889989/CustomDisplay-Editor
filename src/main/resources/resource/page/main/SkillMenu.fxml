@@ -53,7 +53,7 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <ListView fx:id="skillListList" onMouseClicked="#selectSkillList" prefHeight="250.0" prefWidth="200.0" />
+            <ListView fx:id="skillListList" onMouseClicked="#onSelectSkillList" prefHeight="250.0" prefWidth="200.0" />
             <TextField fx:id="addSkillListName" />
             <HBox prefHeight="38.0" prefWidth="233.0" spacing="10.0">
                <children>
@@ -65,7 +65,7 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <ListView fx:id="skillList" onMouseClicked="#selectSkill" prefHeight="250.0" prefWidth="200.0" />
+            <ListView fx:id="skillList" onMouseClicked="#onSelectSkill" prefHeight="250.0" prefWidth="200.0" />
             <TextField fx:id="addSkillName" />
             <HBox prefHeight="38.0" prefWidth="200.0" spacing="10.0">
                <children>
@@ -73,7 +73,6 @@
                   <Button mnemonicParsing="false" onAction="#removeSkill" text="%skill-remove" />
                </children>
             </HBox>
-            <Button maxWidth="200.0" minWidth="100.0" mnemonicParsing="false" onAction="#defineModifySkill" prefWidth="100.0" text="%skill-define-modify-skill" />
          </children>
          <opaqueInsets>
             <Insets />
@@ -158,7 +157,7 @@
                   </Label>
                   <HBox prefHeight="200.0" spacing="5.0" GridPane.columnIndex="1">
                      <children>
-                        <TextField fx:id="barName" minWidth="250.0" />
+                        <TextField fx:id="barName" minWidth="250.0" onKeyReleased="#onBarName" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                      <GridPane.margin>
@@ -167,49 +166,49 @@
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <TextField fx:id="material" minWidth="250.0" />
+                        <TextField fx:id="material" minWidth="250.0" onKeyReleased="#onMaterial" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <TextField fx:id="customModelData" minWidth="250.0" />
+                        <TextField fx:id="customModelData" minWidth="250.0" onKeyReleased="#onCustomModelData" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <TextField fx:id="name" minWidth="250.0" />
+                        <TextField fx:id="name" minWidth="250.0" onKeyReleased="#onName" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-addin" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <TextField fx:id="mana" minWidth="250.0" />
+                        <TextField fx:id="mana" minWidth="250.0" onKeyReleased="#onMana" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
-                        <TextField fx:id="targetDistance" minWidth="250.0" />
+                        <TextField fx:id="targetDistance" minWidth="250.0" onKeyReleased="#onTargetDistance" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <children>
-                        <TextField fx:id="castDelay" minWidth="250.0" />
+                        <TextField fx:id="castDelay" minWidth="250.0" onKeyReleased="#onCastDelay" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <TextField fx:id="coolDown" minWidth="250.0" />
+                        <TextField fx:id="coolDown" minWidth="250.0" onKeyReleased="#onCoolDown" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
-                        <TextField fx:id="castTime" minWidth="250.0" />
+                        <TextField fx:id="castTime" minWidth="250.0" onKeyReleased="#onCastTime" />
                         <Button mnemonicParsing="false" prefWidth="150.0" text="%skill-select" />
                      </children>
                   </HBox>
@@ -218,8 +217,8 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="needTarget" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <CheckBox fx:id="passiveSkill" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <CheckBox fx:id="needTarget" mnemonicParsing="false" onMouseClicked="#onNeedTarget" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <CheckBox fx:id="passiveSkill" mnemonicParsing="false" onMouseClicked="#onPassiveSkill" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />

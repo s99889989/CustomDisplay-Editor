@@ -45,8 +45,6 @@ public class SkillMenu {
 
     @FXML public TextField loreText;
 
-    public static List<String> loreList2 = new ArrayList<>();
-    public static List<String> actionList2 = new ArrayList<>();
 
     //打開設定檔
     public void open() {
@@ -94,8 +92,10 @@ public class SkillMenu {
     /**=============================================================================**/
 
     //選擇技能列表
-    public void selectSkillList(){
+    public void onSelectSkillList(){
         SkillMenuPage.setSkillList(skillListList, skillList);
+
+
     }
 
     //增加技能列表
@@ -141,10 +141,12 @@ public class SkillMenu {
     }
 
     //選擇技能
-    public void selectSkill(){
+    public void onSelectSkill(){
         String selectSkillList = skillListList.getSelectionModel().getSelectedItem();
         FileConfiguration skillConfig = Manager.file_Config_Map.get("Class/Skill/"+selectSkillList+".yml");
         String selectSkill = skillList.getSelectionModel().getSelectedItem();
+
+        SkillMenuPage.setConfigPath("Skills."+selectSkill);
 
         String barNameString = skillConfig.getString("Skills."+selectSkill+".BarName");
         barName.setText(barNameString);
@@ -184,68 +186,91 @@ public class SkillMenu {
         loreListString.forEach(s -> loreList.getItems().add(s));
         loreList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        loreList2 = loreListString;
+
 
         List<String> actionListString = skillConfig.getStringList("Skills."+selectSkill+".Action");
         actionList.getItems().clear();
         actionListString.forEach(s -> actionList.getItems().add(s));
         actionList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        actionList2 = actionListString;
+
 
     }
-
-    //確定修改技能
-    public void defineModifySkill(){
-        String selectSkillList = skillListList.getSelectionModel().getSelectedItem();
-        FileConfiguration skillConfig = Manager.file_Config_Map.get("Class/Skill/"+selectSkillList+".yml");
-        String selectSkill = skillList.getSelectionModel().getSelectedItem();
-        ServerMenuPage.print(selectSkill);
-        skillConfig.set("Skills."+selectSkill+".BarName", barName.getText());
-
-        skillConfig.set("Skills."+selectSkill+".Material", material.getText());
-
-        skillConfig.set("Skills."+selectSkill+".CustomModelData", StringConversion.getInt(0, customModelData.getText()));
-
-        skillConfig.set("Skills."+selectSkill+".Name", name.getText());
-
-        skillConfig.set("Skills."+selectSkill+".NeedTarget", needTarget.isSelected());
-
-        skillConfig.set("Skills."+selectSkill+".PassiveSkill", passiveSkill.isSelected());
-
+    //設置BarName
+    public void onBarName(){
+        SkillMenuPage.setValue("BarName", barName.getText());
+    }
+    //設置Material
+    public void onMaterial(){
+        SkillMenuPage.setValue("Material", material.getText());
+    }
+    //設置CustomModelData
+    public void onCustomModelData(){
+        SkillMenuPage.setValue("CustomModelData", StringConversion.getInt(0, customModelData.getText()));
+    }
+    //設置Name
+    public void onName(){
+        SkillMenuPage.setValue("Name", name.getText());
+    }
+    //設置NeedTarget
+    public void onNeedTarget(){
+        SkillMenuPage.setValue("NeedTarget", needTarget.isSelected());
+    }
+    //設置PassiveSkill
+    public void onPassiveSkill(){
+        SkillMenuPage.setValue("PassiveSkill", passiveSkill.isSelected());
+    }
+    //設置TargetDistance
+    public void onTargetDistance(){
         if(StringConversion.isNumber(targetDistance.getText())){
-            skillConfig.set("Skills."+selectSkill+".TargetDistance", StringConversion.getDoubel(0, targetDistance.getText()));
+            SkillMenuPage.setValue("TargetDistance", StringConversion.getDoubel(0, targetDistance.getText()));
         }else {
-            skillConfig.set("Skills."+selectSkill+".TargetDistance", targetDistance.getText());
+            SkillMenuPage.setValue("TargetDistance", targetDistance.getText());
         }
+    }
+    //設置CoolDown
+    public void onCoolDown(){
         if(StringConversion.isNumber(coolDown.getText())){
-            skillConfig.set("Skills."+selectSkill+".CoolDown", StringConversion.getDoubel(0, coolDown.getText()));
+            SkillMenuPage.setValue("CoolDown", StringConversion.getDoubel(0, coolDown.getText()));
         }else {
-            skillConfig.set("Skills."+selectSkill+".CoolDown", coolDown.getText());
+            SkillMenuPage.setValue("CoolDown", coolDown.getText());
         }
-
+    }
+    //設置CastTime
+    public void onCastTime(){
         if(StringConversion.isNumber(castTime.getText())){
-            skillConfig.set("Skills."+selectSkill+".CastTime", StringConversion.getDoubel(0, castTime.getText()));
+            SkillMenuPage.setValue("CastTime", StringConversion.getDoubel(0, castTime.getText()));
         }else {
-            skillConfig.set("Skills."+selectSkill+".CastTime", castTime.getText());
+            SkillMenuPage.setValue("CastTime", castTime.getText());
         }
-
+    }
+    //設置CastDelay
+    public void onCastDelay(){
         if(StringConversion.isNumber(castDelay.getText())){
-            skillConfig.set("Skills."+selectSkill+".CastDelay", StringConversion.getDoubel(0, castDelay.getText()));
+            SkillMenuPage.setValue("CastDelay", StringConversion.getDoubel(0, castDelay.getText()));
         }else {
-            skillConfig.set("Skills."+selectSkill+".CastDelay", castDelay.getText());
+            SkillMenuPage.setValue("CastDelay", castDelay.getText());
         }
-
+    }
+    //設置Mana
+    public void onMana(){
         if(StringConversion.isNumber(mana.getText())){
-            skillConfig.set("Skills."+selectSkill+".Mana", StringConversion.getDoubel(0, mana.getText()));
+            SkillMenuPage.setValue("Mana", StringConversion.getDoubel(0, mana.getText()));
         }else {
-            skillConfig.set("Skills."+selectSkill+".Mana", mana.getText());
+            SkillMenuPage.setValue("Mana", mana.getText());
         }
-
-        skillConfig.set("Skills."+selectSkill+".Lore", loreList2);
-
-        skillConfig.set("Skills."+selectSkill+".Action", actionList2);
-
+    }
+    //設置Lore
+    public void onLore(){
+        List<String> lore = new ArrayList<>();
+        lore.addAll(loreList.getItems());
+        SkillMenuPage.setValue("Lore", lore);
+    }
+    //設置Action
+    public void onAction(){
+        List<String> action = new ArrayList<>();
+        action.addAll(actionList.getItems());
+        SkillMenuPage.setValue("Action", action);
     }
 
     //增加技能
@@ -321,32 +346,27 @@ public class SkillMenu {
     }
     //新增Lore
     public void addLore(){
-
-        String skillListName = skillListList.getSelectionModel().getSelectedItem();
-        FileConfiguration skillConfig = Manager.file_Config_Map.get("Class/Skill/"+skillListName+".yml");
-        String selectSkill = skillList.getSelectionModel().getSelectedItem();
-        int order = loreList.getItems().size();
-        order++;
-        loreList2.add(order+"");
-        loreList.getItems().add(order+"");
-        skillConfig.set("Skills."+selectSkill+".Lore", loreList2);
-
+        String changeString = loreText.getText();
+        loreList.getItems().add(changeString);
+        onLore();
     }
     //編輯Lore
     public void editLore(){
         String changeString = loreText.getText();
         int selectedIndex = loreList.getSelectionModel().getSelectedIndex();
         loreList.getItems().set(selectedIndex, changeString);
-        loreList2.set(selectedIndex, changeString);
+
+        onLore();
     }
     //移除Lore
     public void removeLore(){
-        loreList.getItems().removeAll(loreList.getSelectionModel().getSelectedItems());
+        loreList.getItems().remove(loreList.getSelectionModel().getSelectedIndex());
+        onLore();
     }
     //新增Action
     public void addAction(){
         actionList.getItems().add("Action[action=Novice_FirstAid]");
-        actionList2.add("Action[action=Novice_FirstAid]");
+        onAction();
     }
     //編輯Action
     public void editAction(){
@@ -354,7 +374,8 @@ public class SkillMenu {
     }
     //移除Action
     public void removeAction(){
-        actionList.getItems().remove(actionList.getSelectionModel().getSelectedItem());
+        actionList.getItems().remove(actionList.getSelectionModel().getSelectedIndex());
+        onAction();
     }
 
 }

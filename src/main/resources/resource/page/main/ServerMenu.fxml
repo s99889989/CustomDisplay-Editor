@@ -69,6 +69,7 @@
                         <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#forcedEnd" text="%server-forced-end" />
                         <Label text="CustomDisplay" />
                         <Button minHeight="20.0" minWidth="150.0" mnemonicParsing="false" onAction="#cdreload" text="%server-customdisplay-reload" />
+                  <Button mnemonicParsing="false" text="其他指令" />
                     </children>
                 </VBox>
                 <VBox prefHeight="742.0" prefWidth="1094.0" spacing="10.0">

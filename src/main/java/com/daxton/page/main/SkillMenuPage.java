@@ -15,6 +15,28 @@ import java.util.Objects;
 
 public class SkillMenuPage {
 
+    public static FileConfiguration skillConfig;
+
+    public static String configPath;
+    //設置目前技能設定檔
+    public static void setSkillConfig(String skillConfigPatch){
+        if(skillConfigPatch != null && Manager.file_Config_Map.get(skillConfigPatch) != null){
+            skillConfig = Manager.file_Config_Map.get(skillConfigPatch);
+        }
+    }
+
+    public static void setConfigPath(String configPathString){
+        if(configPathString != null)
+            configPath = configPathString;
+    }
+
+    public static void setValue(String keyPatch, Object keyValue){
+        if(keyPatch == null && keyValue == null && skillConfig == null && configPath == null){
+            return;
+        }
+        skillConfig.set(configPath+"."+keyPatch, keyValue);
+    }
+
     //打開技能編輯介面
     public static void display(){
         SkillMenu skillMenu = FxmlLoader.display("/page/main/SkillMenu.fxml", Main.mainWindow);
@@ -74,6 +96,7 @@ public class SkillMenuPage {
     public static void setSkillList(ListView<String> skillListList, ListView<String> skillList){
         String selectSkillList = skillListList.getSelectionModel().getSelectedItem();
         FileConfiguration fileConfiguration = Manager.file_Config_Map.get("Class/Skill/"+selectSkillList+".yml");
+        setSkillConfig("Class/Skill/"+selectSkillList+".yml");
         skillList.getItems().clear();
         Objects.requireNonNull(fileConfiguration.getConfigurationSection("Skills")).getKeys(false).forEach(s -> skillList.getItems().add(s));
     }

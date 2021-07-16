@@ -123,7 +123,8 @@ public class SkillActionEdit {
 
             if(!getFineString().isEmpty()){
                 skillMenu.actionList.getItems().set(selectOrder, getFineString());
-                SkillMenu.actionList2.set(selectOrder, getFineString());
+
+                skillMenu.onAction();
             }
 
         }
